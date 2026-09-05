@@ -1,0 +1,1251 @@
+<title>Cycle Double Cover Short Course</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400;1,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F3F4F7;
+    --surface: #FFFFFF;
+    --ink: #1B1F2A;
+    --muted: #5C6275;
+    --rule: #C7CBD6;
+    --rule-soft: #E2E5EC;
+    --accent: #1F5FBF;
+    --accent-ink: #164A96;
+    --accent-soft: rgba(31, 95, 191, 0.09);
+    --lane-a: rgba(27, 31, 42, 0.025);
+    --lane-b: rgba(27, 31, 42, 0.055);
+    --serif: "STIX Two Text", "Times New Roman", Georgia, serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14161C; --surface: #1B1E26; --ink: #E7E9EF; --muted: #9CA3B6;
+      --rule: #3A3F4E; --rule-soft: #2A2E3A; --accent: #7BA5F2; --accent-ink: #A9C4F7;
+      --accent-soft: rgba(123, 165, 242, 0.14);
+      --lane-a: rgba(231, 233, 239, 0.03); --lane-b: rgba(231, 233, 239, 0.06);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14161C; --surface: #1B1E26; --ink: #E7E9EF; --muted: #9CA3B6;
+    --rule: #3A3F4E; --rule-soft: #2A2E3A; --accent: #7BA5F2; --accent-ink: #A9C4F7;
+    --accent-soft: rgba(123, 165, 242, 0.14);
+    --lane-a: rgba(231, 233, 239, 0.03); --lane-b: rgba(231, 233, 239, 0.06);
+  }
+
+  body { background: var(--paper); color: var(--ink); font-family: var(--serif); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1160px; margin: 0 auto; padding: 48px 28px 96px; }
+  .col { max-width: 68ch; }
+  a { color: var(--accent-ink); text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  p { margin: 0 0 14px; }
+  i, .m { font-family: var(--serif); font-style: italic; }
+  sub, sup { font-size: 0.72em; line-height: 0; }
+  sup i, sub i { font-style: italic; }
+  .up { font-style: normal; }
+
+  /* Front matter */
+  .eyebrow { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-family: var(--serif); font-weight: 600; font-size: 44px; line-height: 1.08; letter-spacing: -0.012em; margin: 10px 0 8px; text-wrap: balance; }
+  .subtitle { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--muted); margin: 0 0 22px; }
+  .lede { font-size: 20px; line-height: 1.45; }
+  .sources { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 22px 0 0; }
+  .sources dt { font-family: var(--mono); font-size: 12.5px; color: var(--ink); padding-top: 2px; }
+  .sources dd { margin: 0; }
+  .sources dd b { color: var(--ink); font-weight: 500; }
+
+  /* Contents */
+  .toc { margin: 36px 0 0; padding-top: 18px; border-top: 1px solid var(--rule); font-family: var(--sans); font-size: 14.5px; }
+  .toc .part { font-size: 11.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 14px 0 6px; }
+  .toc ol { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; }
+  .toc li { display: contents; }
+  .toc .no { font-family: var(--mono); font-size: 12.5px; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
+  .toc a { color: var(--ink); text-decoration: none; }
+  .toc a:hover { color: var(--accent-ink); text-decoration: underline; }
+  .toc .sec { color: var(--muted); font-size: 13.5px; }
+
+  /* Chapters */
+  .part-label { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-ink); margin: 88px 0 0; padding-top: 18px; border-top: 2px solid var(--ink); }
+  .ch-label { font-family: var(--sans); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 64px 0 0; padding-top: 16px; border-top: 1px solid var(--rule); }
+  .part-label + .ch-label { margin-top: 24px; padding-top: 0; border-top: none; }
+  h2 { font-family: var(--serif); font-weight: 600; font-size: 32px; line-height: 1.12; letter-spacing: -0.01em; margin: 8px 0 18px; text-wrap: balance; }
+  h3 { font-family: var(--serif); font-weight: 600; font-size: 21px; line-height: 1.25; margin: 36px 0 10px; text-wrap: balance; }
+  h3 .no { font-family: var(--mono); font-weight: 400; font-size: 13px; color: var(--muted); margin-right: 12px; vertical-align: 0.18em; }
+
+  /* Environments */
+  .env { margin: 18px 0 16px; padding: 2px 0 2px 18px; border-left: 2px solid var(--accent); }
+  .env.def { border-left-color: var(--rule); }
+  .env.rem { border-left: none; padding-left: 0; }
+  .env .hd { font-family: var(--sans); font-size: 13.5px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .env.def .hd, .env.rem .hd { font-weight: 600; }
+  .env .hd .who { font-weight: 400; color: var(--muted); margin-left: 6px; }
+  .env .hd .src { font-family: var(--mono); font-weight: 400; font-size: 11.5px; color: var(--muted); margin-left: 10px; }
+  .env p:last-child { margin-bottom: 0; }
+  .env.thm > p, .env.thm ol { font-style: italic; }
+  .proof { margin: 0 0 18px; }
+  .proof .pf { font-style: italic; }
+  .proof .qed { float: right; margin-left: 12px; }
+  .proof p:last-child::after { content: ""; display: block; clear: both; }
+  .eq { text-align: center; margin: 12px 0 16px; font-size: 18px; }
+  .eq .tag { float: right; font-family: var(--mono); font-size: 12.5px; font-style: normal; color: var(--muted); }
+  .step { display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 500; line-height: 1.5; color: var(--accent-ink); background: var(--accent-soft); border-radius: 3px; padding: 0 6px; vertical-align: 0.12em; white-space: nowrap; }
+  .note { font-family: var(--sans); font-size: 14px; color: var(--muted); }
+  ul.list { padding-left: 1.1em; margin: 0 0 14px; }
+  ul.list li { margin-bottom: 8px; padding-left: 0.3em; }
+  ul.list li b { font-family: var(--sans); font-weight: 600; font-size: 15px; }
+  ol.plain { padding-left: 1.4em; margin: 0 0 14px; }
+  ol.plain li { margin-bottom: 6px; }
+  .ex { background: var(--surface); border: 1px solid var(--rule-soft); border-radius: 4px; padding: 18px 22px 8px; margin: 18px 0 22px; font-size: 16px; line-height: 1.5; }
+  .ex .k { display: block; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 8px; }
+  .ex p { margin-bottom: 10px; }
+  .mat { font-family: var(--mono); font-size: 13.5px; line-height: 1.55; font-variant-numeric: tabular-nums; white-space: pre; overflow-x: auto; margin: 6px 0 12px; color: var(--ink); }
+  .mat .c { color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+  .two .ex { margin-top: 12px; }
+  .ops { display: flex; gap: 36px; flex-wrap: wrap; margin: 4px 0 16px; }
+  .ops table { width: auto; min-width: 0; font-family: var(--mono); font-size: 14px; text-align: center; font-variant-numeric: tabular-nums; border-collapse: collapse; }
+  .ops th, .ops td { padding: 5px 13px; border: none; font-size: 14px; }
+  .ops th { color: var(--muted); font-weight: 500; }
+  .ops thead th { border-bottom: 1px solid var(--rule); }
+  .ops thead th.op { color: var(--ink); font-family: var(--serif); font-size: 17px; border-right: 1px solid var(--rule); }
+  .ops tbody th { border-right: 1px solid var(--rule); }
+  .ops td { color: var(--ink); }
+
+  /* Exercises */
+  .exs-hd { font-family: var(--sans); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 34px 0 8px; padding-top: 12px; border-top: 1px solid var(--rule-soft); }
+  ol.exs { padding-left: 0; margin: 0; list-style: none; counter-reset: ex; }
+  ol.exs li { position: relative; padding-left: 2.6em; margin-bottom: 12px; counter-increment: ex; font-size: 16px; }
+  ol.exs li::before { content: counter(ex); position: absolute; left: 0; top: 0.15em; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+  details { margin-top: 4px; font-family: var(--sans); font-size: 14px; color: var(--muted); }
+  summary { cursor: pointer; color: var(--accent-ink); font-size: 13px; letter-spacing: 0.02em; }
+  summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  details p { margin: 6px 0 0; }
+
+  /* Tables */
+  .tbl { overflow-x: auto; margin: 18px 0; }
+  table { border-collapse: collapse; width: 100%; min-width: 640px; font-family: var(--sans); font-size: 14px; line-height: 1.45; }
+  th { text-align: left; font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 14px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: bottom; }
+  td { padding: 11px 14px 11px 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  td.n { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; width: 2ch; white-space: nowrap; }
+  td.stmt { font-family: var(--serif); font-size: 15.5px; color: var(--ink); width: 26%; }
+  td.at { white-space: nowrap; font-family: var(--mono); font-size: 12.5px; color: var(--muted); }
+  tr.acc td.n { color: var(--accent-ink); }
+
+  /* Diagrams (shared with the domain map) */
+  figure { margin: 26px 0 0; }
+  .scroll { overflow-x: auto; padding-bottom: 6px; }
+  .scroll svg { display: block; min-width: 980px; max-width: 100%; height: auto; font-family: var(--sans); }
+  .scroll.small svg { min-width: 720px; }
+  figcaption { font-family: var(--sans); font-size: 14px; line-height: 1.5; color: var(--muted); max-width: 78ch; margin: 12px 0 0; }
+  figcaption b { color: var(--ink); font-weight: 500; }
+  .lane { fill: var(--lane-a); }
+  .lane.b { fill: var(--lane-b); }
+  .lane.c { fill: var(--accent-soft); }
+  .lane-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; fill: var(--muted); }
+  .lane-label tspan.sub { font-weight: 400; letter-spacing: 0; }
+  .node rect { fill: var(--surface); stroke: var(--ink); stroke-width: 1.2; }
+  .node.acc rect { stroke: var(--accent); stroke-width: 1.4; }
+  .node.end rect { stroke-width: 2; }
+  .node .t { font-size: 13px; font-weight: 600; fill: var(--ink); }
+  .node .d { font-size: 11.5px; fill: var(--muted); }
+  .node .tag { font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; fill: var(--accent-ink); }
+  .edge { stroke: var(--ink); stroke-width: 1.3; fill: none; }
+  .edge.acc { stroke: var(--accent); }
+  .edge.dep { stroke-dasharray: 5 4; }
+  .lbl { font-size: 11px; fill: var(--ink); }
+  .lbl.acc { fill: var(--accent-ink); }
+  .lbl tspan.n { font-weight: 600; }
+  .lbl.small { font-size: 10.5px; fill: var(--muted); }
+  .fano-wrap { display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 28px; align-items: center; margin: 20px 0 8px; }
+  .fano { margin: 0; }
+  .fano svg { width: 100%; height: auto; display: block; font-family: var(--mono); }
+  .fano .ln { stroke: var(--ink); stroke-width: 1.1; fill: none; opacity: 0.55; }
+  .fano .ln.acc { stroke: var(--accent); stroke-width: 2.6; opacity: 1; }
+  .fano .ln.dual { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 4; opacity: 1; }
+  .fano .pt { fill: var(--surface); stroke: var(--ink); stroke-width: 1.3; }
+  .fano .pt.acc { fill: var(--accent); stroke: var(--accent); }
+  .fano .pl { font-size: 12px; fill: var(--ink); }
+  .fano-notes { font-family: var(--sans); font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+  .fano-notes b { color: var(--ink); font-weight: 500; }
+  .fano-notes p { margin-bottom: 10px; }
+
+  /* Bibliography */
+  .bib { font-family: var(--sans); font-size: 14px; line-height: 1.5; color: var(--muted); padding-left: 0; list-style: none; margin: 0; }
+  .bib li { padding-left: 4.2em; position: relative; margin-bottom: 8px; }
+  .bib li .key { position: absolute; left: 0; font-family: var(--mono); font-size: 12.5px; color: var(--ink); }
+  .bib b { color: var(--ink); font-weight: 500; }
+
+  @media (max-width: 720px) {
+    h1 { font-size: 34px; }
+    h2 { font-size: 27px; }
+    .two, .fano-wrap { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="page">
+  <div class="col">
+    <div class="eyebrow">A short course in one theorem</div>
+    <h1>The Cycle Double Cover Theorem</h1>
+    <p class="subtitle">From bridgeless graphs to a parity count over 𝔽<sub>2</sub></p>
+    <p class="lede">
+      Every bridgeless graph has a list of cycles that covers each edge exactly twice. Conjectured in the 1970s and
+      proved in 2026, the theorem is settled by carrying the question out of graph theory, through flows and edge labels,
+      into linear algebra over the two-element field, and finishing it there with a count that comes out even.
+      This course teaches the proof in that order: the technique first, the field second, the theorem third.
+    </p>
+    <h3 style="margin-top:28px">Who this is for</h3>
+    <p>
+      A reader who knows graph theory at the level of a first course (connectivity, edge cuts, spanning trees, Eulerian
+      graphs, matchings and edge colourings) and linear algebra over the reals (subspaces, dimension, rank, the dot
+      product, orthogonal complements, Gaussian elimination), but who has never worked over a finite field. Chapter 2
+      builds everything about 𝔽<sub>2</sub> that the proof uses, from the addition table up.
+    </p>
+    <h3>Sources</h3>
+    <p>
+      The proof is due to OpenAI's model GPT 5.6 and was announced in a three-page note in July 2026. Sang-il Oum's
+      exposition of August 2026 made it self-contained and pitched it at advanced undergraduates. This course follows
+      Oum's route and, like Oum, takes exactly two theorems on faith: Fleischner's splitting lemma and the
+      Tutte–Nash-Williams tree packing theorem. Everything else is proved. Where the two writeups differ, the difference is noted.
+    </p>
+    <dl class="sources">
+      <dt>[OpenAI]</dt>
+      <dd><b>OpenAI, “A proof of the cycle double cover conjecture.”</b> July 2026. Three pages.</dd>
+      <dt>[Oum]</dt>
+      <dd><b>Sang-il Oum, “A proof of the cycle double cover conjecture by OpenAI: an exposition.”</b> arXiv 2607.16356v3, August 2026.</dd>
+      <dt>[Map]</dt>
+      <dd><b>“Cycle Double Cover Domain Map.”</b> A companion case study of the proof's domain transfers, whose two diagrams appear in Chapters 1 and 8.</dd>
+    </dl>
+
+    <nav class="toc" aria-label="Contents">
+      <div class="part">Part I · The technique</div>
+      <ol>
+        <li><span class="no">1</span><a href="#ch1">Moving a problem between domains</a></li>
+      </ol>
+      <div class="part">Part II · The tools</div>
+      <ol>
+        <li><span class="no">2</span><a href="#ch2">Linear algebra over 𝔽<sub>2</sub></a></li>
+      </ol>
+      <div class="part">Part III · The theorem</div>
+      <ol>
+        <li><span class="no">3</span><a href="#ch3">Cycles, covers, and the statement</a></li>
+        <li><span class="no">4</span><a href="#ch4">Reducing to cubic 3-edge-connected graphs</a></li>
+        <li><span class="no">5</span><a href="#ch5">Three trees and a nowhere-zero flow</a></li>
+        <li><span class="no">6</span><a href="#ch6">From two-element labels to a cover</a></li>
+        <li><span class="no">7</span><a href="#ch7">The linear system and the parity count</a></li>
+      </ol>
+      <div class="part">Part IV · The landscape</div>
+      <ol>
+        <li><span class="no">8</span><a href="#ch8">Neighbouring domains and open conjectures</a></li>
+        <li><span class="no">—</span><a href="#epilogue">Epilogue: what the pattern teaches</a></li>
+        <li><span class="no">—</span><a href="#bib">Bibliography</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <!-- ============================ PART I ============================ -->
+  <div class="part-label">Part I · The technique</div>
+  <div class="ch-label">Chapter 1</div>
+  <h2 id="ch1">Moving a problem between domains</h2>
+  <div class="col">
+    <p>
+      A cycle double cover is a floppy object. It is a list of cycles of unspecified length and number, subject to one
+      global counting condition. Nobody has a good way to build such a list directly in an arbitrary bridgeless graph,
+      and the proof does not try. It never writes down a cycle. Instead it repeatedly changes the <em>kind</em> of object
+      being sought, each time for something more rigid, until the object is a solution of a system of linear equations
+      and its existence can be decided by a computation.
+    </p>
+
+    <h3><span class="no">1.1</span>The shape of a domain transfer</h3>
+    <p>
+      Each hop in the proof has the same two halves, and it is worth naming them before seeing nine examples.
+    </p>
+    <ul class="list">
+      <li><b>A lifting lemma.</b> A statement of the form “if the rigid object exists, then so does the floppy one.” The proof of
+      such a lemma is usually a short construction that reads the floppy object off the rigid one: cycles off an Eulerian
+      subgraph, Eulerian subgraphs off a labelling, a labelling off a vector.</li>
+      <li><b>A construction in the new domain.</b> Once the target has been replaced, the question is asked again in the new
+      domain, where more structure is available. Sometimes the answer is a cited theorem (tree packing), sometimes a
+      definition (fundamental cycles), and once, at the very end, a genuine calculation.</li>
+    </ul>
+    <p>
+      The skill in such a proof is choosing the domains so that every lifting lemma is easy and the final calculation is
+      trivial. In this proof the final calculation is a parity: a sum in 𝔽<sub>2</sub> in which every term appears twice.
+    </p>
+
+    <h3><span class="no">1.2</span>The route</h3>
+    <p>
+      The figure below is the whole proof at a glance. Each box is a domain, a kind of object. Each arrow is a mapping that
+      turns a question about the source into a question about the target. The top lane is where the theorem is stated, the
+      middle lane is where the combinatorial structure lives, and the bottom lane, in blue, is where the only real work happens.
+      Later chapters prove the arrows; the numbers on them are used as cross-references throughout, written as
+      <span class="step">hop 5</span>.
+    </p>
+  </div>
+
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 1280 540" role="img" aria-label="The proof moves from bridgeless graphs to cubic graphs, to spanning trees, to a nowhere-zero flow over the field with eight elements, then drops into a linear system over the two-element field, dualises it to an orthogonality check, resolves that by a parity count at each vertex, lifts the solution back to two-element edge labels, and reads off a cycle double cover.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+          <marker id="ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" style="fill: var(--accent)"/>
+          </marker>
+        </defs>
+
+        <!-- lanes -->
+        <rect class="lane" x="24" y="28" width="1232" height="146" rx="6"/>
+        <rect class="lane b" x="24" y="194" width="1232" height="146" rx="6"/>
+        <rect class="lane c" x="24" y="360" width="1232" height="146" rx="6"/>
+        <text class="lane-label" x="36" y="50">GRAPHS <tspan class="sub">· where the question is asked</tspan></text>
+        <text class="lane-label" x="36" y="216">FLOWS AND EDGE LABELS <tspan class="sub">· where the structure lives</tspan></text>
+        <text class="lane-label" x="36" y="382">LINEAR ALGEBRA OVER 𝔽₂ <tspan class="sub">· where it is actually solved</tspan></text>
+
+        <!-- lane A nodes -->
+        <g class="node end">
+          <rect x="40" y="66" width="168" height="88" rx="4"/>
+          <text class="tag" x="52" y="83">START · HARD</text>
+          <text class="t" x="52" y="103">Bridgeless graph</text>
+          <text class="d" x="52" y="123">any finite graph, no bridge</text>
+          <text class="d" x="52" y="141">does it have a CDC?</text>
+        </g>
+        <g class="node">
+          <rect x="292" y="66" width="168" height="88" rx="4"/>
+          <text class="t" x="304" y="98">Cubic, 3-edge-connected</text>
+          <text class="d" x="304" y="120">every vertex has 3 edges</text>
+          <text class="d" x="304" y="138">a minimum counterexample</text>
+        </g>
+        <g class="node end">
+          <rect x="1048" y="66" width="168" height="88" rx="4"/>
+          <text class="tag" x="1060" y="83">FINISH · ANSWER</text>
+          <text class="t" x="1060" y="103">Cycle double cover</text>
+          <text class="d" x="1060" y="123">8 Eulerian subgraphs H<tspan baseline-shift="sub" font-size="8.5">s</tspan></text>
+          <text class="d" x="1060" y="141">each edge in exactly two</text>
+        </g>
+
+        <!-- lane B nodes -->
+        <g class="node">
+          <rect x="292" y="232" width="168" height="88" rx="4"/>
+          <text class="t" x="304" y="264">Three spanning trees</text>
+          <text class="d" x="304" y="286">T₁, T₂, T₃ with no edge</text>
+          <text class="d" x="304" y="304">common to all three</text>
+        </g>
+        <g class="node">
+          <rect x="544" y="232" width="168" height="88" rx="4"/>
+          <text class="t" x="556" y="264">Nowhere-zero 𝔽₂³-flow</text>
+          <text class="d" x="556" y="286">φ(e) ≠ 0 on every edge,</text>
+          <text class="d" x="556" y="304">Σ φ = 0 at every vertex</text>
+        </g>
+        <g class="node">
+          <rect x="1048" y="232" width="168" height="88" rx="4"/>
+          <text class="t" x="1060" y="264">Two-element edge labels</text>
+          <text class="d" x="1060" y="286">P<tspan baseline-shift="sub" font-size="8.5">e</tspan> ⊆ 𝔽₂³ with |P<tspan baseline-shift="sub" font-size="8.5">e</tspan>| = 2;</text>
+          <text class="d" x="1060" y="304">each value 0 or 2× per vertex</text>
+        </g>
+
+        <!-- lane C nodes -->
+        <g class="node acc">
+          <rect x="544" y="398" width="168" height="88" rx="4"/>
+          <text class="t" x="556" y="430">Linear system over 𝔽₂</text>
+          <text class="d" x="556" y="452">t<tspan baseline-shift="sub" font-size="8.5">u</tspan> + t<tspan baseline-shift="sub" font-size="8.5">v</tspan> ∈ d<tspan baseline-shift="sub" font-size="8.5">e</tspan> + ⟨φ(e)⟩</text>
+          <text class="d" x="556" y="470">i.e. A t = b, unknowns t<tspan baseline-shift="sub" font-size="8.5">v</tspan></text>
+        </g>
+        <g class="node acc">
+          <rect x="796" y="398" width="168" height="88" rx="4"/>
+          <text class="t" x="808" y="430">Orthogonality check</text>
+          <text class="d" x="808" y="452">b ∈ C(A)  ⇔  b ⊥ ker(Aᵀ)</text>
+          <text class="d" x="808" y="470">certificates: one h<tspan baseline-shift="sub" font-size="8.5">e</tspan> per edge</text>
+        </g>
+        <g class="node acc end">
+          <rect x="1048" y="398" width="168" height="88" rx="4"/>
+          <text class="tag" x="1060" y="415">SOLVED HERE · EASY</text>
+          <text class="t" x="1060" y="435">Parity at one vertex</text>
+          <text class="d" x="1060" y="455">λ = #{ h<tspan baseline-shift="sub" font-size="8.5">e</tspan> ≠ 0 at v } mod 2;</text>
+          <text class="d" x="1060" y="473">every edge has two ends ⇒ 0</text>
+        </g>
+
+        <!-- 1: A1 -> A2 -->
+        <line class="edge" x1="208" y1="110" x2="290" y2="110" marker-end="url(#ah)"/>
+        <text class="lbl" x="250" y="101" text-anchor="middle"><tspan class="n">1</tspan>  reduce</text>
+
+        <!-- 2: A2 -> B1 (down) -->
+        <line class="edge" x1="376" y1="154" x2="376" y2="230" marker-end="url(#ah)"/>
+        <text class="lbl" x="388" y="190"><tspan class="n">2</tspan>  double every edge,</text>
+        <text class="lbl" x="388" y="205">pack 3 spanning trees</text>
+
+        <!-- 3: B1 -> B2 -->
+        <line class="edge" x1="460" y1="276" x2="542" y2="276" marker-end="url(#ah)"/>
+        <text class="lbl" x="502" y="267" text-anchor="middle"><tspan class="n">3</tspan>  cycle space</text>
+
+        <!-- 4: B2 -> C1 (down, accent) -->
+        <line class="edge acc" x1="628" y1="320" x2="628" y2="396" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="640" y="356"><tspan class="n">4</tspan>  local labels must</text>
+        <text class="lbl acc" x="640" y="371">agree on each edge</text>
+
+        <!-- 5: C1 -> C2 -->
+        <line class="edge acc" x1="712" y1="442" x2="794" y2="442" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="754" y="433" text-anchor="middle"><tspan class="n">5</tspan>  dualise</text>
+
+        <!-- 6: C2 -> C3 -->
+        <line class="edge acc" x1="964" y1="442" x2="1046" y2="442" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="1006" y="433" text-anchor="middle"><tspan class="n">6</tspan>  one vertex</text>
+
+        <!-- 7: C3 -> B3 (up, accent) -->
+        <line class="edge acc" x1="1132" y1="398" x2="1132" y2="322" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="1120" y="356" text-anchor="end"><tspan class="n">7</tspan>  the t<tspan baseline-shift="sub" font-size="8.5">v</tspan> exist</text>
+        <text class="lbl acc small" x="1120" y="371" text-anchor="end">OpenAI Lemma 2.2 · Oum Prop. 14</text>
+
+        <!-- 8: B2 -> B3 (long, dashed: depends on 7) -->
+        <line class="edge dep" x1="712" y1="276" x2="1046" y2="276" marker-end="url(#ah)"/>
+        <text class="lbl" x="880" y="265" text-anchor="middle"><tspan class="n">8</tspan>  P<tspan baseline-shift="sub" font-size="8.5">e</tspan> = t<tspan baseline-shift="sub" font-size="8.5">v</tspan> + φ(f) + ⟨φ(e)⟩,  f another edge at v</text>
+        <text class="lbl small" x="880" y="293" text-anchor="middle">well defined only once 4 – 7 succeed</text>
+
+        <!-- 9: B3 -> A3 (up) -->
+        <line class="edge" x1="1132" y1="232" x2="1132" y2="156" marker-end="url(#ah)"/>
+        <text class="lbl" x="1120" y="190" text-anchor="end"><tspan class="n">9</tspan>  layer H<tspan baseline-shift="sub" font-size="8.5">s</tspan> = { e : s ∈ P<tspan baseline-shift="sub" font-size="8.5">e</tspan> }</text>
+        <text class="lbl small" x="1120" y="205" text-anchor="end">one Eulerian subgraph per s ∈ 𝔽₂³</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>The nine mappings of the proof.</b> Solid arrows are constructions that always go through. The dashed arrow 8 is the
+      definition that only makes sense after the blue loop 4 to 7 has produced the vertex vectors
+      <span class="m">t<sub>v</sub></span>. Numbers match the list below and the hop references throughout the course.
+    </figcaption>
+  </figure>
+
+  <div class="col">
+    <p style="margin-top:22px">Read in order, the nine hops are these. The chapter that proves each is in brackets.</p>
+    <ol class="plain">
+      <li><b>Bridgeless graph → cubic 3-edge-connected graph.</b> A minimum counterexample has no 2-edge-cut and no vertex of degree four or more. [Chapter 4]</li>
+      <li><b>Cubic 3-edge-connected graph → three spanning trees with no common edge.</b> Double every edge and pack trees. [Chapter 5]</li>
+      <li><b>Three trees → nowhere-zero 𝔽<sub>2</sub><sup>3</sup>-flow.</b> Each tree yields an even edge set containing every non-tree edge; the three indicator vectors are the flow. [Chapter 5]</li>
+      <li><b>Flow → linear system over 𝔽<sub>2</sub>.</b> Local two-element labels are automatic at each vertex; they must agree across each edge, and agreement is a linear condition. [Chapters 6, 7]</li>
+      <li><b>Linear system → orthogonality check.</b> A system is solvable exactly when the right-hand side is orthogonal to the left nullspace. [Chapters 2, 7]</li>
+      <li><b>Orthogonality check → parity at one vertex.</b> At a cubic vertex every would-be certificate of infeasibility contributes a single bit, the parity of the number of nonzero certificate vectors there. [Chapter 7]</li>
+      <li><b>Parity → the system is solvable.</b> Summing over vertices counts every edge at both ends, and twice anything is zero. [Chapter 7]</li>
+      <li><b>Flow and solution → two-element edge labels.</b> The labels are cosets of one-dimensional subspaces, which have exactly two elements. [Chapter 6]</li>
+      <li><b>Two-element labels → cycle double cover.</b> One Eulerian subgraph per element of 𝔽<sub>2</sub><sup>3</sup>, eight in all. [Chapter 6]</li>
+    </ol>
+
+    <h3><span class="no">1.3</span>Why the two-element field</h3>
+    <p>
+      Three features of the problem are all instances of the number two, and the proof works because a single algebraic
+      setting makes them the same two.
+    </p>
+    <ul class="list">
+      <li><b>The cover is double.</b> Every edge is used exactly twice. A set that uses each element an even number of times is
+      exactly a set whose indicator vector sums to zero over 𝔽<sub>2</sub>.</li>
+      <li><b>An edge has two ends.</b> Anything counted once per edge-end is counted twice per edge. In 𝔽<sub>2</sub>, twice anything is zero.</li>
+      <li><b>The field has characteristic two.</b> Here <i>x</i> = −<i>x</i>, so a flow needs no orientation, subtraction is addition,
+      and the cycle space of a graph is a vector space whose vectors are edge sets and whose addition is symmetric difference.</li>
+    </ul>
+    <p>
+      The specific space 𝔽<sub>2</sub><sup>3</sup> enters through the flow. A nowhere-zero flow with values in 𝔽<sub>2</sub><sup>3</sup> is three even edge sets that together
+      cover every edge, and it exists in every 3-edge-connected graph. Its eight values become the eight Eulerian layers of the final cover.
+    </p>
+
+    <h3><span class="no">1.4</span>Two writeups of one proof</h3>
+    <p>
+      The original note and Oum's exposition travel the same route with different vehicles on four legs. Knowing the differences
+      in advance makes both papers easier to read alongside this course, which follows Oum throughout.
+    </p>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Leg</th><th>OpenAI</th><th>Oum</th></tr></thead>
+      <tbody>
+        <tr><td class="stmt">Reaching cubic graphs</td><td>Cites Jaeger's reduction and notes a minimum counterexample is a snark.</td><td>Proves the reduction from Fleischner's splitting lemma and 2-edge-cut contraction. This course does the same.</td></tr>
+        <tr><td class="stmt">Reaching the flow</td><td>Cites the 8-flow theorem of Kilpatrick and Jaeger and converts an integer 8-flow to an 𝔽<sub>2</sub><sup>3</sup>-flow by Tutte's group-flow theorem.</td><td>Builds the 𝔽<sub>2</sub><sup>3</sup>-flow from three spanning trees and fundamental cycles; never mentions integer flows.</td></tr>
+        <tr><td class="stmt">Local labels</td><td>Asymmetric: one edge at each vertex is singled out, and an extra unknown bit per edge records which shift occurs.</td><td>Symmetric: the label is a coset that does not depend on which other edge is chosen, and the extra bit is absorbed.</td></tr>
+        <tr><td class="stmt">Solvability</td><td>Dual vector spaces: a vector lies in an image if every functional vanishing on the image vanishes on it.</td><td>An explicit block matrix and the identity “column space = (left nullspace)<sup>⊥</sup>”.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col">
+    <p>
+      The parity count itself, hops 6 and 7, is identical in both. Neither author found anything to simplify there, which is a
+      good sign that it is the real content of the proof.
+    </p>
+  </div>
+
+  <!-- ============================ PART II ============================ -->
+  <div class="part-label">Part II · The tools</div>
+  <div class="ch-label">Chapter 2</div>
+  <h2 id="ch2">Linear algebra over 𝔽<sub>2</sub></h2>
+  <div class="col">
+    <p>
+      Almost every theorem of a first linear algebra course is proved from the field axioms alone, and so holds over any field.
+      What changes over 𝔽<sub>2</sub> is not the theorems but the objects: subspaces are finite, a line has two points, and a nonzero vector
+      can be orthogonal to itself. This chapter goes through the definitions once, notes what is different, and ends with the
+      one proposition the proof needs, a criterion for the solvability of a system of equations indexed by the edges of a graph.
+    </p>
+
+    <h3><span class="no">2.1</span>The field with two elements</h3>
+    <div class="env def">
+      <div class="hd">Definition 2.1</div>
+      <p>𝔽<sub>2</sub> is the set {0, 1} with addition and multiplication taken modulo 2.</p>
+    </div>
+    <div class="ops">
+      <table>
+        <thead><tr><th class="op">+</th><th>0</th><th>1</th></tr></thead>
+        <tbody><tr><th>0</th><td>0</td><td>1</td></tr><tr><th>1</th><td>1</td><td>0</td></tr></tbody>
+      </table>
+      <table>
+        <thead><tr><th class="op">×</th><th>0</th><th>1</th></tr></thead>
+        <tbody><tr><th>0</th><td>0</td><td>0</td></tr><tr><th>1</th><td>0</td><td>1</td></tr></tbody>
+      </table>
+    </div>
+    <p>
+      Addition is exclusive-or and multiplication is “and”. The field axioms hold; the only one worth checking is that every
+      nonzero element has a multiplicative inverse, and the only nonzero element is 1, which is its own inverse.
+      Three consequences of the addition table are used constantly.
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 2.2</div>
+      <p>In 𝔽<sub>2</sub>, and hence in any vector space over 𝔽<sub>2</sub>:</p>
+      <ol class="plain">
+        <li>−<i>x</i> = <i>x</i> for every <i>x</i>, so subtraction is addition.</li>
+        <li><i>x</i> + <i>x</i> = 0 for every <i>x</i>.</li>
+        <li>A sum of <i>n</i> copies of 1 equals <i>n</i> mod 2. A sum of scalars is the parity of the number of 1s among them.</li>
+      </ol>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> 1 + 1 = 0 gives (ii) for scalars, and (i) follows since <i>x</i> + <i>x</i> = 0 means <i>x</i> is its own negative. For vectors apply (i) and (ii) coordinatewise. (iii) is (ii) applied repeatedly. <span class="qed">□</span></div>
+    <p>
+      Item (ii) is the sentence on which the proof turns, at <span class="step">hop 7</span>: anything counted once at each end of an edge is counted twice per edge, and twice anything is zero.
+    </p>
+
+    <h3><span class="no">2.2</span>Vectors are bit strings, and bit strings are sets</h3>
+    <p>
+      The vector space 𝔽<sub>2</sub><sup><i>n</i></sup> consists of strings of <i>n</i> bits, added position by position. It has 2ⁿ elements. Its most useful
+      reading is as the family of subsets of an <i>n</i>-element set.
+    </p>
+    <div class="env def">
+      <div class="hd">Definition 2.3</div>
+      <p>For a finite set <i>X</i> and a subset <i>S</i> ⊆ <i>X</i>, the <em>indicator vector</em> χ<sub><i>S</i></sub> ∈ 𝔽<sub>2</sub><sup><i>X</i></sup> has a 1 in position <i>x</i> exactly when <i>x</i> ∈ <i>S</i>. The <em>symmetric difference</em> <i>S</i> △ <i>T</i> is the set of elements in exactly one of <i>S</i> and <i>T</i>.</p>
+    </div>
+    <div class="env thm">
+      <div class="hd">Lemma 2.4</div>
+      <p>χ<sub><i>S</i></sub> + χ<sub><i>T</i></sub> = χ<sub><i>S</i> △ <i>T</i></sub>. Consequently <i>S</i> ↦ χ<sub><i>S</i></sub> is a bijection from subsets of <i>X</i> to 𝔽<sub>2</sub><sup><i>X</i></sup> under which symmetric difference becomes vector addition, and a family of subsets closed under symmetric difference and containing the empty set is a subspace.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> In position <i>x</i> the sum is 1 + 1 = 0 if <i>x</i> lies in both sets, 1 if it lies in exactly one, and 0 if in neither. <span class="qed">□</span></div>
+    <p>
+      Linear algebra over 𝔽<sub>2</sub> is therefore set algebra under symmetric difference. The proof uses this with <i>X</i> = <i>E</i>(<i>G</i>), the edge set of a graph.
+    </p>
+    <div class="env def">
+      <div class="hd">Definition 2.5</div>
+      <p>An edge set <i>F</i> ⊆ <i>E</i>(<i>G</i>) is <em>even</em> if every vertex is incident with an even number of edges of <i>F</i>, a loop counting twice. The set of even edge sets, viewed inside 𝔽<sub>2</sub><sup><i>E</i>(<i>G</i>)</sup>, is the <em>cycle space</em> of <i>G</i>.</p>
+    </div>
+    <div class="env thm">
+      <div class="hd">Lemma 2.6</div>
+      <p>The cycle space is a subspace of 𝔽<sub>2</sub><sup><i>E</i>(<i>G</i>)</sup>. In particular the symmetric difference of any number of even edge sets is even.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> The degree of <i>v</i> in <i>S</i> △ <i>T</i> is deg<sub><i>S</i></sub>(<i>v</i>) + deg<sub><i>T</i></sub>(<i>v</i>) − 2|<i>S</i> ∩ <i>T</i> ∩ δ(<i>v</i>)|, which is even when the first two terms are. The empty set is even. Apply Lemma 2.4. <span class="qed">□</span></div>
+    <p>
+      This is used at <span class="step">hop 3</span>, where three even edge sets are built as symmetric differences of cycles. The proof's other space is small.
+    </p>
+    <div class="env def">
+      <div class="hd">Definition 2.7</div>
+      <p>Γ = 𝔽<sub>2</sub><sup>3</sup>, the space of 3-bit strings. It has eight elements, seven of them nonzero.</p>
+    </div>
+    <p>
+      A function φ : <i>E</i>(<i>G</i>) → Γ is the same thing as three edge sets <i>F</i>₁, <i>F</i>₂, <i>F</i>₃, where bit <i>i</i> of φ(<i>e</i>) records whether <i>e</i> ∈ <i>F<sub>i</sub></i>. “φ(<i>e</i>) ≠ 0 for all <i>e</i>” says the three sets cover <i>E</i>(<i>G</i>); “Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> φ(<i>e</i>) = 0 for all <i>v</i>” says each <i>F<sub>i</sub></i> is even.
+    </p>
+
+    <h3><span class="no">2.3</span>Spans, cosets, and planes</h3>
+    <p>
+      For a subspace <i>W</i>′ of a vector space <i>W</i> and a vector <i>x</i>, the <em>coset</em> <i>x</i> + <i>W</i>′ is {<i>x</i> + <i>w</i> : <i>w</i> ∈ <i>W</i>′}. The <em>span</em> ⟨<i>p</i>⟩ of a single vector is {<i>ap</i> : <i>a</i> ∈ 𝔽<sub>2</sub>}. Over the reals a span of one nonzero vector is a line with infinitely many points. Here:
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 2.8</div>
+      <p>Let <i>p</i> ≠ 0. Then ⟨<i>p</i>⟩ = {0, <i>p</i>}, the coset <i>x</i> + ⟨<i>p</i>⟩ = {<i>x</i>, <i>x</i> + <i>p</i>} has exactly two elements, and <i>y</i> ∈ <i>x</i> + ⟨<i>p</i>⟩ if and only if <i>x</i> + <i>y</i> ∈ {0, <i>p</i>}.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> The only scalars are 0 and 1. The two elements <i>x</i> and <i>x</i> + <i>p</i> are distinct because <i>p</i> ≠ 0. Finally <i>y</i> = <i>x</i> + <i>ap</i> for some <i>a</i> if and only if <i>x</i> + <i>y</i> = <i>ap</i>, using −<i>x</i> = <i>x</i>. <span class="qed">□</span></div>
+    <p>
+      This is why the edge labels of <span class="step">hop 8</span> are two-element sets, and why the agreement condition of <span class="step">hop 4</span> reads “<i>t<sub>u</sub></i> + <i>t<sub>v</sub></i> + <i>d<sub>e</sub></i> is either 0 or φ(<i>e</i>)”.
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 2.9</div>
+      <p>A <i>k</i>-dimensional subspace of 𝔽<sub>2</sub><sup><i>n</i></sup> has exactly 2<sup><i>k</i></sup> elements. In particular a two-dimensional subspace consists of 0 and three nonzero vectors <i>x</i>, <i>y</i>, <i>x</i> + <i>y</i>, and these three sum to 0. Conversely, if <i>x</i>, <i>y</i>, <i>z</i> are distinct nonzero vectors with <i>x</i> + <i>y</i> + <i>z</i> = 0, then {0, <i>x</i>, <i>y</i>, <i>z</i>} is a two-dimensional subspace.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> With respect to a basis, the elements of the subspace are the 2<sup><i>k</i></sup> choices of coefficients in {0, 1}, all distinct by linear independence. For the converse, <i>z</i> = <i>x</i> + <i>y</i>, and <i>x</i>, <i>y</i> are independent since <i>ax</i> + <i>by</i> = 0 with (<i>a</i>, <i>b</i>) ≠ (0, 0) would force <i>x</i> = 0, <i>y</i> = 0, or <i>x</i> = <i>y</i>. So {0, <i>x</i>, <i>y</i>, <i>x</i> + <i>y</i>} is the span of <i>x</i> and <i>y</i>. <span class="qed">□</span></div>
+    <p>
+      At a cubic vertex the three flow values are nonzero and sum to zero, so they are distinct and form the nonzero part of a plane in Γ
+      (Lemma 5.7). The picture of Γ below is worth keeping in mind.
+    </p>
+
+    <div class="fano-wrap">
+      <figure class="fano" style="margin:0">
+        <svg viewBox="0 0 340 318" role="img" aria-label="The Fano plane: seven points labelled by the nonzero vectors of F2 cubed, and seven lines, six straight and one circle, each through three points that sum to zero. The bottom side, through 100, 110 and 010, is highlighted as a possible set of flow values at a vertex. The vertical median, through 001, 111 and 110, is dashed and is the orthogonal complement of 110.">
+          <!-- sides -->
+          <line class="ln" x1="170" y1="45" x2="40" y2="270"/>
+          <line class="ln" x1="170" y1="45" x2="300" y2="270"/>
+          <line class="ln acc" x1="40" y1="270" x2="300" y2="270"/>
+          <!-- medians -->
+          <line class="ln" x1="40" y1="270" x2="235" y2="157.5"/>
+          <line class="ln" x1="300" y1="270" x2="105" y2="157.5"/>
+          <line class="ln dual" x1="170" y1="45" x2="170" y2="270"/>
+          <!-- incircle -->
+          <circle class="ln" cx="170" cy="195" r="75"/>
+          <!-- points -->
+          <circle class="pt" cx="170" cy="45" r="5"/>
+          <circle class="pt acc" cx="40" cy="270" r="5"/>
+          <circle class="pt acc" cx="300" cy="270" r="5"/>
+          <circle class="pt acc" cx="170" cy="270" r="5"/>
+          <circle class="pt" cx="105" cy="157.5" r="5"/>
+          <circle class="pt" cx="235" cy="157.5" r="5"/>
+          <circle class="pt" cx="170" cy="195" r="5"/>
+          <!-- labels -->
+          <text class="pl" x="170" y="31" text-anchor="middle">001</text>
+          <text class="pl" x="40" y="293" text-anchor="middle">100</text>
+          <text class="pl" x="300" y="293" text-anchor="middle">010</text>
+          <text class="pl" x="170" y="293" text-anchor="middle">110</text>
+          <text class="pl" x="92" y="161" text-anchor="end">101</text>
+          <text class="pl" x="248" y="161" text-anchor="start">011</text>
+          <text class="pl" x="182" y="214" text-anchor="start">111</text>
+        </svg>
+      </figure>
+      <div class="fano-notes">
+        <p><b>The seven nonzero vectors of Γ = 𝔽<sub>2</sub><sup>3</sup> and its seven planes.</b> Each line, including the circle, passes through three points that sum to zero; every pair of points lies on exactly one line. This configuration is the Fano plane.</p>
+        <p><b>Solid blue line.</b> A triple that could be the flow values at a cubic vertex: 100 + 010 = 110. The third value is forced by the other two.</p>
+        <p><b>Dashed line.</b> The nonzero vectors orthogonal to 110, that is ⟨110⟩<sup>⊥</sup> without 0 (Section 2.4). It passes through 110 itself, because 110 · 110 = 1 + 1 = 0.</p>
+      </div>
+    </div>
+
+    <h3><span class="no">2.4</span>The dot product: parity of overlap</h3>
+    <div class="env def">
+      <div class="hd">Definition 2.10</div>
+      <p>For <i>h</i>, <i>p</i> ∈ 𝔽<sub>2</sub><sup><i>n</i></sup>, the dot product is <i>h</i> · <i>p</i> = Σ<sub><i>i</i></sub> <i>h<sub>i</sub> p<sub>i</sub></i>, computed in 𝔽<sub>2</sub>. For a subspace <i>W</i>, its orthogonal complement is <i>W</i><sup>⊥</sup> = {<i>h</i> : <i>h</i> · <i>w</i> = 0 for all <i>w</i> ∈ <i>W</i>}.</p>
+    </div>
+    <p>
+      By Lemma 2.2(iii), <i>h</i> · <i>p</i> is the parity of the number of positions where both vectors have a 1; in set language, the parity of |<i>H</i> ∩ <i>P</i>|. The two structural facts about complements that the proof needs both survive.
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 2.11</div>
+      <p>For every subspace <i>W</i> of 𝔽<sub>2</sub><sup><i>n</i></sup>, dim <i>W</i><sup>⊥</sup> = <i>n</i> − dim <i>W</i> and (<i>W</i><sup>⊥</sup>)<sup>⊥</sup> = <i>W</i>.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Let <i>w</i>₁, …, <i>w<sub>k</sub></i> be a basis of <i>W</i> and let <i>B</i> be the <i>k</i> × <i>n</i> matrix with these rows. Then <i>W</i><sup>⊥</sup> = ker <i>B</i>, and rank <i>B</i> = <i>k</i> since its rows are independent. Rank–nullity, valid over any field, gives dim ker <i>B</i> = <i>n</i> − <i>k</i>. For the second claim, every <i>w</i> ∈ <i>W</i> is orthogonal to everything in <i>W</i><sup>⊥</sup>, so <i>W</i> ⊆ (<i>W</i><sup>⊥</sup>)<sup>⊥</sup>; both have dimension <i>k</i> by the first claim applied twice, so they are equal. <span class="qed">□</span></div>
+    <p>
+      Both are used in Proposition 2.15 below. The first says ⟨<i>p</i>⟩<sup>⊥</sup> has dimension <i>n</i> − 1, so in Γ two vectors span it. The second turns “<i>x</i> ∈ ⟨<i>p</i>⟩” into “<i>r</i> · <i>x</i> = 0 for every <i>r</i> in a basis of ⟨<i>p</i>⟩<sup>⊥</sup>”, a list of linear equations.
+    </p>
+    <div class="env rem">
+      <div class="hd">Warning 2.12 <span class="who">what does not survive</span></div>
+      <p>
+        Over the reals <i>v</i> · <i>v</i> = 0 forces <i>v</i> = 0. Over 𝔽<sub>2</sub>, <i>v</i> · <i>v</i> is the parity of the number of 1s in <i>v</i>, so every vector of even weight is orthogonal to itself: 110 · 110 = 0. Consequently <i>W</i> and <i>W</i><sup>⊥</sup> can overlap, 𝔽<sub>2</sub><sup><i>n</i></sup> need not be <i>W</i> ⊕ <i>W</i><sup>⊥</sup>, and there are no lengths, angles, or orthogonal projections. In 𝔽<sub>2</sub><sup>4</sup> the subspace <i>W</i> = ⟨1100, 0011⟩ satisfies <i>W</i> = <i>W</i><sup>⊥</sup>. The proof never needs any of the lost geometry, but it does use the oddity once without comment: the certificate condition <i>h<sub>e</sub></i> · φ(<i>e</i>) = 0 allows <i>h<sub>e</sub></i> = φ(<i>e</i>) when φ(<i>e</i>) has even weight.
+      </p>
+    </div>
+
+    <h3><span class="no">2.5</span>Solving a system: elimination without fractions</h3>
+    <p>
+      Gaussian elimination works over any field. Over 𝔽<sub>2</sub> every nonzero pivot is 1, so no row is ever scaled, and the only row
+      operation is adding one row to another, a bitwise exclusive-or. The smallest example that matters for this course is a triangle,
+      because it already contains the mechanism of the final proof.
+    </p>
+    <div class="ex">
+      <span class="k">Example 2.13 · one bit per vertex on a triangle</span>
+      <p>Vertices <i>u</i>, <i>v</i>, <i>w</i>; edges <i>e</i>₁ = <i>uv</i>, <i>e</i>₂ = <i>vw</i>, <i>e</i>₃ = <i>wu</i>. Given bits <i>b</i>₁, <i>b</i>₂, <i>b</i>₃, find bits <i>x<sub>u</sub></i>, <i>x<sub>v</sub></i>, <i>x<sub>w</sub></i> with <i>x<sub>u</sub></i> + <i>x<sub>v</sub></i> = <i>b</i>₁, <i>x<sub>v</sub></i> + <i>x<sub>w</sub></i> = <i>b</i>₂, <i>x<sub>w</sub></i> + <i>x<sub>u</sub></i> = <i>b</i>₃. Rows are edges, columns are vertices.</p>
+<div class="mat">        u  v  w │
+   e₁   1  1  0 │ b₁
+   e₂   0  1  1 │ b₂
+   e₃   1  0  1 │ b₃
+
+   r₃ ← r₃ + r₁      0  1  1 │ b₁ + b₃
+   r₃ ← r₃ + r₂      0  0  0 │ b₁ + b₂ + b₃   <span class="c">← consistent only if this is 0</span></div>
+      <p>If <i>b</i>₁ + <i>b</i>₂ + <i>b</i>₃ = 0, back-substitute: <i>x<sub>w</sub></i> is free, <i>x<sub>v</sub></i> = <i>b</i>₂ + <i>x<sub>w</sub></i>, <i>x<sub>u</sub></i> = <i>b</i>₁ + <i>b</i>₂ + <i>x<sub>w</sub></i>. There are two solutions, differing by the all-ones vector, which spans the kernel: adding the same bit to every vertex changes no edge sum.</p>
+      <p>If <i>b</i>₁ + <i>b</i>₂ + <i>b</i>₃ = 1 there is no solution, and the vector <i>y</i> = (1, 1, 1) that added the three rows is the proof. The rows cancelled because every column has exactly two 1s: every edge has exactly two ends.</p>
+    </div>
+
+    <h3><span class="no">2.6</span>Column space and left nullspace</h3>
+    <p>
+      For an <i>m</i> × <i>n</i> matrix <i>A</i> over a field 𝔽, write <i>C</i>(<i>A</i>) = {<i>Ax</i> : <i>x</i> ∈ 𝔽ⁿ} for the column space and ker(<i>A</i><sup>T</sup>) = {<i>y</i> ∈ 𝔽<sup><i>m</i></sup> : <i>A</i><sup>T</sup><i>y</i> = 0} for the left nullspace. The first is the set of right-hand sides for which <i>Ax</i> = <i>b</i> is solvable; the second is the set of ways of combining rows so that the left-hand sides cancel.
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 2.14 <span class="who">column space and left nullspace</span><span class="src">Oum, Lemma 13</span></div>
+      <p>Let 𝔽 be any field and <i>A</i> an <i>m</i> × <i>n</i> matrix over 𝔽. With respect to the standard dot product on 𝔽<sup><i>m</i></sup>,</p>
+      <p class="eq"><i>C</i>(<i>A</i>) = ker(<i>A</i><sup>T</sup>)<sup>⊥</sup>.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> If <i>A</i><sup>T</sup><i>y</i> = 0 then <i>y</i><sup>T</sup><i>A</i> = 0, so <i>y</i> is orthogonal to every column of <i>A</i> and hence to <i>C</i>(<i>A</i>). Thus <i>C</i>(<i>A</i>) ⊆ ker(<i>A</i><sup>T</sup>)<sup>⊥</sup>. Both sides have dimension rank <i>A</i>: the left by definition, the right because dim ker(<i>A</i><sup>T</sup>) = <i>m</i> − rank <i>A</i><sup>T</sup> = <i>m</i> − rank <i>A</i>, and Lemma 2.11 (which holds verbatim over any field) subtracts this from <i>m</i>. A subspace contained in another of the same dimension equals it. <span class="qed">□</span></div>
+    <p>
+      In words: <i>Ax</i> = <i>b</i> has a solution unless some <i>y</i> cancels every left-hand side while <i>y</i> · <i>b</i> ≠ 0. Such a <i>y</i> is a <em>certificate of infeasibility</em>. To prove that a system is solvable, it suffices to show that every candidate certificate has <i>y</i> · <i>b</i> = 0. In Example 2.13 the only nonzero candidate is (1, 1, 1). This is <span class="step">hop 5</span>.
+    </p>
+
+    <h3><span class="no">2.7</span>A consistency criterion for systems on a graph</h3>
+    <p>
+      The proof's system has one unknown vector per vertex and one coset condition per edge. The following proposition,
+      stated over any field and any dimension, is the exact form in which Lemma 2.14 will be applied. It is pure linear algebra; the
+      graph only supplies the index sets. Here δ(<i>v</i>) denotes the set of edges incident with <i>v</i>.
+    </p>
+    <div class="env thm">
+      <div class="hd">Proposition 2.15 <span class="who">elementary consistency criterion</span><span class="src">Oum, Prop. 14</span></div>
+      <p>Let 𝔽 be a field, <i>n</i> ≥ 2, and <i>W</i> = 𝔽ⁿ with the standard dot product. Let <i>G</i> be a loopless graph. For every edge <i>e</i> let <i>p<sub>e</sub></i> ∈ <i>W</i> be nonzero and let <i>d<sub>e</sub></i> ∈ <i>W</i>. The following are equivalent.</p>
+      <ol class="plain">
+        <li>There are vectors <i>t<sub>v</sub></i> ∈ <i>W</i>, one per vertex, such that <i>t<sub>u</sub></i> + <i>t<sub>v</sub></i> ∈ <i>d<sub>e</sub></i> + ⟨<i>p<sub>e</sub></i>⟩ for every edge <i>e</i> = <i>uv</i>.</li>
+        <li>For every family (<i>h<sub>e</sub></i>)<sub><i>e</i> ∈ <i>E</i>(<i>G</i>)</sub> of vectors in <i>W</i> satisfying <i>h<sub>e</sub></i> · <i>p<sub>e</sub></i> = 0 for every edge <i>e</i> and Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>h<sub>e</sub></i> = 0 for every vertex <i>v</i>, one has Σ<sub><i>e</i> ∈ <i>E</i>(<i>G</i>)</sub> <i>h<sub>e</sub></i> · <i>d<sub>e</sub></i> = 0.</li>
+      </ol>
+    </div>
+    <div class="proof">
+      <p><span class="pf">Proof.</span> (i) ⇒ (ii). Suppose the <i>t<sub>v</sub></i> exist and let (<i>h<sub>e</sub></i>) satisfy the two hypotheses of (ii). For each edge <i>e</i> = <i>uv</i> choose λ<sub><i>e</i></sub> ∈ 𝔽 with <i>t<sub>u</sub></i> + <i>t<sub>v</sub></i> = <i>d<sub>e</sub></i> + λ<sub><i>e</i></sub><i>p<sub>e</sub></i>. Since <i>h<sub>e</sub></i> · <i>p<sub>e</sub></i> = 0,</p>
+      <p class="eq">Σ<sub><i>e</i></sub> <i>h<sub>e</sub></i> · <i>d<sub>e</sub></i> = Σ<sub><i>e</i> = <i>uv</i></sub> <i>h<sub>e</sub></i> · (<i>t<sub>u</sub></i> + <i>t<sub>v</sub></i>) = Σ<sub><i>v</i></sub> (Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>h<sub>e</sub></i>) · <i>t<sub>v</sub></i> = 0,</p>
+      <p>where the middle equality regroups the sum by vertex: each edge <i>e</i> = <i>uv</i> contributes <i>h<sub>e</sub></i> · <i>t<sub>u</sub></i> to the term for <i>u</i> and <i>h<sub>e</sub></i> · <i>t<sub>v</sub></i> to the term for <i>v</i>.</p>
+      <p>(ii) ⇒ (i). For each edge choose a basis <i>r</i><sub><i>e</i>,1</sub>, …, <i>r</i><sub><i>e</i>,<i>n</i>−1</sub> of ⟨<i>p<sub>e</sub></i>⟩<sup>⊥</sup>, which has dimension <i>n</i> − 1 by Lemma 2.11, and let <i>R<sub>e</sub></i> be the (<i>n</i> − 1) × <i>n</i> matrix with these rows. Since (⟨<i>p<sub>e</sub></i>⟩<sup>⊥</sup>)<sup>⊥</sup> = ⟨<i>p<sub>e</sub></i>⟩, a vector <i>x</i> lies in ⟨<i>p<sub>e</sub></i>⟩ if and only if <i>R<sub>e</sub></i><i>x</i> = 0. Hence condition (i) is equivalent to</p>
+      <p class="eq"><i>R<sub>e</sub></i>(<i>t<sub>u</sub></i> + <i>t<sub>v</sub></i>) = <i>R<sub>e</sub></i><i>d<sub>e</sub></i>&emsp;for all <i>e</i> = <i>uv</i>.</p>
+      <p>Form the block matrix <i>A</i> with block rows indexed by edges and block columns indexed by vertices, whose block in position (<i>e</i>, <i>v</i>) is <i>R<sub>e</sub></i> if <i>v</i> is an end of <i>e</i> and 0 otherwise. With <i>t</i> = (<i>t<sub>v</sub></i>)<sub><i>v</i></sub> and <i>b</i> = (<i>R<sub>e</sub></i><i>d<sub>e</sub></i>)<sub><i>e</i></sub>, condition (i) is precisely the solvability of <i>At</i> = <i>b</i>.</p>
+      <p>By Lemma 2.14 it remains to show <i>b</i> ⊥ ker(<i>A</i><sup>T</sup>). Take <i>y</i> = (<i>y<sub>e</sub></i>)<sub><i>e</i></sub> ∈ ker(<i>A</i><sup>T</sup>) with <i>y<sub>e</sub></i> ∈ 𝔽<sup><i>n</i>−1</sup>, and put <i>h<sub>e</sub></i> = <i>R<sub>e</sub></i><sup>T</sup><i>y<sub>e</sub></i>. Then <i>h<sub>e</sub></i> is a combination of the rows of <i>R<sub>e</sub></i>, so <i>h<sub>e</sub></i> · <i>p<sub>e</sub></i> = 0. The block of <i>A</i><sup>T</sup><i>y</i> indexed by a vertex <i>v</i> is Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>R<sub>e</sub></i><sup>T</sup><i>y<sub>e</sub></i> = Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>h<sub>e</sub></i>, which is therefore 0. So (<i>h<sub>e</sub></i>) satisfies the hypotheses of (ii), and</p>
+      <p class="eq"><i>y</i><sup>T</sup><i>b</i> = Σ<sub><i>e</i></sub> <i>y<sub>e</sub></i><sup>T</sup><i>R<sub>e</sub></i><i>d<sub>e</sub></i> = Σ<sub><i>e</i></sub> <i>h<sub>e</sub></i> · <i>d<sub>e</sub></i> = 0.</p>
+      <p>Thus <i>b</i> ∈ ker(<i>A</i><sup>T</sup>)<sup>⊥</sup> = <i>C</i>(<i>A</i>), the system <i>At</i> = <i>b</i> has a solution, and (i) holds. <span class="qed">□</span></p>
+    </div>
+    <div class="env rem">
+      <div class="hd">Remark 2.16</div>
+      <p>The families (<i>h<sub>e</sub></i>) in (ii) are the certificates of infeasibility of Section 2.6, translated back from the rows of <i>A</i> to one vector per edge. Their two defining conditions are local: an edge condition, <i>h<sub>e</sub></i> ⊥ <i>p<sub>e</sub></i>, and a vertex condition, zero sum at <i>v</i>. That locality is what makes the parity count of Chapter 7 possible.</p>
+    </div>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>Show that over 𝔽<sub>2</sub> a vector is orthogonal to itself if and only if it has an even number of 1s. Which of the seven nonzero vectors of Γ are self-orthogonal? Locate them in the Fano figure.</li>
+      <li>List ⟨101⟩<sup>⊥</sup> in Γ and check that its three nonzero elements form a line of the Fano plane. Do the same for ⟨111⟩<sup>⊥</sup>, and observe that 111 does not lie on its own line.
+        <details><summary>Hint</summary><p>Two vectors span ⟨101⟩<sup>⊥</sup>; 010 is one of them.</p></details></li>
+      <li>Verify that <i>W</i> = ⟨1100, 0011⟩ ⊆ 𝔽<sub>2</sub><sup>4</sup> satisfies <i>W</i> = <i>W</i><sup>⊥</sup>, and explain why this is consistent with Lemma 2.11.</li>
+      <li>In Example 2.13, replace the triangle by an arbitrary connected graph <i>G</i> with one bit per vertex and the equation <i>x<sub>u</sub></i> + <i>x<sub>v</sub></i> = <i>b<sub>e</sub></i> per edge. Show that the left nullspace is spanned by the all-ones vector, and deduce that the system is solvable if and only if Σ<sub><i>e</i></sub> <i>b<sub>e</sub></i> = 0 in 𝔽<sub>2</sub>.
+        <details><summary>Hint</summary><p>A vector <i>y</i> in the left nullspace assigns a bit to every edge so that the bits at each vertex sum to zero; but every column has exactly two 1s, so the sum of all rows is 0 and, for connected <i>G</i>, this is the only relation up to the cycle space. Alternatively, compare with Proposition 2.15 for <i>n</i> = 1.</p></details></li>
+      <li>Show that the cycle space of a connected graph with <i>n</i> vertices and <i>m</i> edges has dimension <i>m</i> − <i>n</i> + 1, spanned by the fundamental cycles of any spanning tree.
+        <details><summary>Hint</summary><p>Every even set <i>F</i> equals the symmetric difference of the fundamental cycles of its non-tree edges: the two sides agree off the tree, and an even set contained in a tree is empty.</p></details></li>
+    </ol>
+  </div>
+
+  <!-- ============================ PART III ============================ -->
+  <div class="part-label">Part III · The theorem</div>
+  <div class="ch-label">Chapter 3</div>
+  <h2 id="ch3">Cycles, covers, and the statement</h2>
+  <div class="col">
+    <p>
+      Graphs in this course are finite and may have loops and parallel edges. For a vertex <i>v</i>, δ(<i>v</i>) is the set of edges incident with <i>v</i>, and the degree <i>d</i>(<i>v</i>) counts a loop twice. A subgraph with vertex set <i>V</i>(<i>G</i>) is identified with its edge set, so “Eulerian subgraph” and “even edge set” (Definition 2.5) mean the same thing.
+    </p>
+    <div class="env def">
+      <div class="hd">Definition 3.1</div>
+      <p>A graph is <em>Eulerian</em> if every vertex has even degree. A <em>cycle</em> is a connected 2-regular subgraph; a loop and a pair of parallel edges are cycles. A <em>cycle double cover</em> (CDC) of <i>G</i> is a list of cycles such that every edge of <i>G</i> lies in exactly two of them. A <em><i>k</i>-cycle double cover</em> (<i>k</i>-CDC) is a list of at most <i>k</i> Eulerian subgraphs such that every edge lies in exactly two of them.</p>
+    </div>
+    <p>The two definitions are compatible because Eulerian subgraphs are unions of cycles.</p>
+    <div class="env thm">
+      <div class="hd">Lemma 3.2</div>
+      <p>Every nonempty even edge set is a union of pairwise edge-disjoint cycles.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Induction on |<i>F</i>|. If <i>F</i> contains a loop or two parallel edges, that is a cycle <i>C</i>. Otherwise every vertex meeting <i>F</i> has degree at least 2 in <i>F</i>; take a longest path in (<i>V</i>, <i>F</i>), whose last vertex has a second <i>F</i>-neighbour, necessarily on the path, closing a cycle <i>C</i>. In either case <i>F</i> △ <i>C</i> = <i>F</i> ∖ <i>C</i> is even by Lemma 2.6 and smaller, so it is a disjoint union of cycles by induction. <span class="qed">□</span></div>
+    <div class="env thm">
+      <div class="hd">Corollary 3.3</div>
+      <p>A graph has a cycle double cover if and only if it has a list of Eulerian subgraphs covering every edge exactly twice. In particular a <i>k</i>-CDC yields a CDC.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Cycles are Eulerian, and Lemma 3.2 splits each Eulerian subgraph into cycles without changing how often any edge is covered. <span class="qed">□</span></div>
+    <div class="env def">
+      <div class="hd">Definition 3.4</div>
+      <p>A <em>bridge</em> is an edge whose deletion increases the number of components. A graph is <em>bridgeless</em> if it has none.</p>
+    </div>
+    <div class="env thm">
+      <div class="hd">Lemma 3.5</div>
+      <p>A bridge lies in no cycle. Hence a graph with a cycle double cover is bridgeless.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> If <i>e</i> = <i>uv</i> lay on a cycle, the rest of the cycle would be a <i>u</i>–<i>v</i> path avoiding <i>e</i>, so deleting <i>e</i> would not separate <i>u</i> from <i>v</i> or increase the number of components. <span class="qed">□</span></div>
+    <p>The theorem says that this necessary condition is sufficient.</p>
+    <div class="env thm">
+      <div class="hd">Theorem 3.6 <span class="who">cycle double cover theorem</span><span class="src">OpenAI 2026; Oum, Thm 1</span></div>
+      <p>Every bridgeless graph has a cycle double cover.</p>
+    </div>
+    <p>
+      The statement was conjectured independently by Szekeres (1973) for cubic graphs and by Seymour (1979) for all bridgeless graphs;
+      an equivalent form is due to Itai and Rodeh (1978), and Tutte is also credited. It is trivially true for Eulerian graphs (take the graph
+      twice) and was known early for planar graphs, by taking the facial cycles of each block, and for 3-edge-colourable cubic graphs, by the following observation of Szekeres.
+    </p>
+    <div class="env thm">
+      <div class="hd">Proposition 3.7 <span class="who">Szekeres</span></div>
+      <p>A 3-edge-colourable cubic graph has a 3-cycle double cover.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Let <i>M</i>₁, <i>M</i>₂, <i>M</i>₃ be the colour classes; each is a perfect matching and they partition <i>E</i>(<i>G</i>). Each of <i>M</i>₁ ∪ <i>M</i>₂, <i>M</i>₂ ∪ <i>M</i>₃, <i>M</i>₁ ∪ <i>M</i>₃ is 2-regular, hence Eulerian, and an edge of <i>M<sub>i</sub></i> lies in exactly the two unions that contain <i>M<sub>i</sub></i>. <span class="qed">□</span></div>
+    <p>
+      The Petersen graph is cubic, bridgeless, and not 3-edge-colourable, so any general proof must handle graphs for which Proposition 3.7 fails.
+      The proof of Theorem 3.6 does so by producing what the original note calls a <em>relaxed</em> 3-edge-colouring (Remark 6.2). Chapter 8 shows,
+      conversely, that a 3-CDC or a 4-CDC of a cubic graph forces 3-edge-colourability, so the eight layers the proof produces cannot in general be reduced to four.
+    </p>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>Find a cycle double cover of <i>K</i>₄ with three cycles, and show that no two cycles can cover its six edges twice.</li>
+      <li>Show that a graph with a cycle double cover in which every cycle has length at most 2 is a disjoint union of loops and parallel pairs, and find its cover.</li>
+      <li>Let <i>G</i> be planar and 2-connected. Show that the boundaries of its faces form a cycle double cover. Where does 2-connectivity enter?
+        <details><summary>Hint</summary><p>In a 2-connected plane graph every face boundary is a cycle and every edge borders exactly two faces.</p></details></li>
+    </ol>
+  </div>
+
+  <div class="ch-label">Chapter 4</div>
+  <h2 id="ch4">Reducing to cubic 3-edge-connected graphs</h2>
+  <div class="col">
+    <p>
+      The first domain transfer, <span class="step">hop 1</span>, replaces an arbitrary bridgeless graph by one in which every vertex has exactly three edges and every edge cut has at least three edges. Both properties are obtained by looking at a smallest counterexample and showing it cannot have a small cut or a large degree. One cited lemma does the degree part.
+    </p>
+    <div class="env def">
+      <div class="hd">Definition 4.1</div>
+      <p>For an integer <i>k</i>, a graph <i>G</i> with at least two vertices is <em><i>k</i>-edge-connected</em> if for every <i>X</i> ⊆ <i>V</i>(<i>G</i>) with ∅ ≠ <i>X</i> ≠ <i>V</i>(<i>G</i>) there are at least <i>k</i> edges with one end in <i>X</i> and the other outside. A graph is <em>cubic</em> if every vertex has degree 3.</p>
+    </div>
+    <p>A connected graph is bridgeless if and only if it is 2-edge-connected.</p>
+    <div class="env thm">
+      <div class="hd">Lemma 4.2 <span class="who">Fleischner's splitting lemma</span><span class="src">Fleischner 1990, III.26; Oum, Lemma 3</span></div>
+      <p>Let <i>G</i> be 2-edge-connected, let <i>v</i> be a vertex of degree at least four, and let <i>e</i>₁, <i>e</i>₂, <i>e</i>₃ be distinct edges at <i>v</i> with other ends <i>v</i>₁, <i>v</i>₂, <i>v</i>₃. If <i>G</i> − {<i>e</i>₁, <i>e</i>₂, <i>e</i>₃} is connected, then at least one of</p>
+      <p class="eq">(<i>G</i> − {<i>e</i>₁, <i>e</i>₂}) + <i>v</i>₁<i>v</i>₂&emsp;and&emsp;(<i>G</i> − {<i>e</i>₂, <i>e</i>₃}) + <i>v</i>₂<i>v</i>₃</p>
+      <p>is 2-edge-connected.</p>
+    </div>
+    <p>
+      The operation detaches two edges from <i>v</i> and joins their far ends by a new edge, so it reduces the degree of <i>v</i> by two and the number of edges by one. We take the lemma on faith; its proof is a case analysis on edge cuts.
+    </p>
+    <div class="env rem">
+      <div class="hd">Remark 4.3 <span class="who">choosing the three edges</span></div>
+      <p>If <i>G</i> is 3-edge-connected and <i>d</i>(<i>v</i>) ≥ 4, three edges as in Lemma 4.2 always exist. If <i>G</i> − <i>v</i> is connected, a spanning tree of <i>G</i> − <i>v</i> plus one edge at <i>v</i> is a spanning tree of <i>G</i> that omits at least three edges at <i>v</i>. If <i>G</i> − <i>v</i> is disconnected, each component sends at least three edges to <i>v</i> (since <i>G</i> is 3-edge-connected); a spanning tree of each component plus one edge from it to <i>v</i> again gives a spanning tree omitting at least three edges at <i>v</i>. Removing three omitted edges leaves the tree, so the graph stays connected.</p>
+    </div>
+    <div class="env thm">
+      <div class="hd">Proposition 4.4 <span class="who">reduction</span><span class="src">Zhang; Oum, Prop. 4</span></div>
+      <p>Theorem 3.6 holds if and only if it holds for cubic 3-edge-connected graphs.</p>
+    </div>
+    <div class="proof">
+      <p><span class="pf">Proof.</span> Suppose the theorem fails and let <i>G</i> be a counterexample with |<i>E</i>(<i>G</i>)| minimum. Then <i>G</i> is loopless, since a loop could be deleted, the smaller graph covered, and the loop added twice as a cycle. And <i>G</i> is connected, since otherwise each component is smaller, bridgeless, and hence covered.</p>
+      <p><em>G is 3-edge-connected.</em> Otherwise <i>G</i> has a 2-edge-cut {<i>e</i>₁, <i>e</i>₂}. Contract <i>e</i>₁ and call the merged vertex <i>w</i>. Contraction cannot create a bridge, so <i>G</i>/<i>e</i>₁ is a smaller bridgeless graph and has a cycle double cover 𝒞 by minimality. Consider the two shores of <i>G</i> − {<i>e</i>₁, <i>e</i>₂}. If <i>e</i>₂ is not a loop of <i>G</i>/<i>e</i>₁, then a cycle of 𝒞 containing <i>e</i>₂ passes through <i>w</i> from one shore to the other, and a cycle not containing <i>e</i>₂ cannot do so, since <i>e</i>₁ and <i>e</i>₂ were the only edges between the shores. Split <i>w</i> back into the two ends of <i>e</i>₁ and insert <i>e</i>₁ into the two cycles that contain <i>e</i>₂; all other cycles lift unchanged. If <i>e</i>₂ is a loop of <i>G</i>/<i>e</i>₁, replace its two occurrences by two copies of the 2-cycle {<i>e</i>₁, <i>e</i>₂}. Either way <i>G</i> has a cycle double cover, a contradiction.</p>
+      <p><em>G is cubic.</em> Suppose <i>d</i>(<i>v</i>) ≥ 4 for some <i>v</i>. Choose <i>e</i>₁, <i>e</i>₂, <i>e</i>₃ by Remark 4.3 and apply Lemma 4.2 to get a 2-edge-connected graph <i>H</i> with fewer edges. By minimality <i>H</i> has a cycle double cover. Replace each occurrence of the new edge <i>v<sub>i</sub>v<sub>j</sub></i> by the path <i>v<sub>i</sub> v v<sub>j</sub></i> through the two detached edges. The result is a list of closed trails covering each edge of <i>G</i> twice; decompose each into cycles by Lemma 3.2. This is a cycle double cover of <i>G</i>, a contradiction. Vertices of degree 1 do not occur in a bridgeless graph and degree 2 cannot occur in a 3-edge-connected graph with at least two vertices, so every vertex has degree exactly 3. <span class="qed">□</span></p>
+    </div>
+    <p>
+      From now on <i>G</i> is cubic and 3-edge-connected. Note that such a graph is loopless as soon as it has two vertices: a loop at <i>v</i> would leave a single edge as a cut. The payoff of cubicity is that every local identity in the rest of the proof has three terms, and the flow value on one edge at a vertex is the sum of the values on the other two.
+    </p>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>Prove that contracting an edge of a bridgeless graph yields a bridgeless graph.
+        <details><summary>Hint</summary><p>A bridge of <i>G</i>/<i>e</i> would be a bridge of <i>G</i>, since contracting <i>e</i> does not change which edge sets separate the remaining vertices.</p></details></li>
+      <li>In the proof of Proposition 4.4, explain why a cycle of 𝒞 that avoids <i>e</i>₂ cannot cross between the two shores at <i>w</i>.</li>
+      <li>Show that a cubic graph is 2-edge-connected if and only if it is 2-connected, and give a cubic 2-edge-connected graph that is not 3-edge-connected.</li>
+    </ol>
+  </div>
+
+  <div class="ch-label">Chapter 5</div>
+  <h2 id="ch5">Three trees and a nowhere-zero flow</h2>
+  <div class="col">
+    <p>
+      The middle lane begins here. Connectivity, a statement about all edge cuts, is exchanged for three concrete spanning trees
+      (<span class="step">hop 2</span>), and the trees are exchanged for a single function on edges with values in Γ = 𝔽<sub>2</sub><sup>3</sup> that is nonzero everywhere and conserved at every vertex (<span class="step">hop 3</span>). The second cited theorem does the first exchange.
+    </p>
+    <div class="env thm">
+      <div class="hd">Theorem 5.1 <span class="who">Tutte 1961, Nash-Williams 1961</span><span class="src">Oum, Thm 5</span></div>
+      <p>A graph <i>G</i> has <i>t</i> edge-disjoint spanning trees if and only if for every partition of <i>V</i>(<i>G</i>) into <i>m</i> nonempty parts there are at least <i>t</i>(<i>m</i> − 1) edges joining distinct parts.</p>
+    </div>
+    <p>The necessity is clear: each spanning tree needs <i>m</i> − 1 edges across any <i>m</i>-part partition. We take the sufficiency on faith; short proofs exist via the matroid union theorem or directly (Kaiser 2012).</p>
+    <div class="env thm">
+      <div class="hd">Corollary 5.2 <span class="who">Kundu 1974</span><span class="src">Oum, Cor. 6</span></div>
+      <p>A 2<i>k</i>-edge-connected graph has <i>k</i> edge-disjoint spanning trees.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Let <i>V</i>₁, …, <i>V<sub>m</sub></i> be a partition into nonempty parts. Each <i>V<sub>i</sub></i> has at least 2<i>k</i> edges leaving it. Summing over <i>i</i> counts each crossing edge twice, so there are at least <i>km</i> ≥ <i>k</i>(<i>m</i> − 1) crossing edges. Apply Theorem 5.1. <span class="qed">□</span></div>
+    <div class="env thm">
+      <div class="hd">Lemma 5.3 <span class="who">three trees with no common edge</span><span class="src">Jaeger; Oum, Lemma 7</span></div>
+      <p>A 3-edge-connected graph <i>G</i> has spanning trees <i>T</i>₁, <i>T</i>₂, <i>T</i>₃ with <i>E</i>(<i>T</i>₁) ∩ <i>E</i>(<i>T</i>₂) ∩ <i>E</i>(<i>T</i>₃) = ∅.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Let <i>G</i>′ be obtained from <i>G</i> by adding a parallel copy of every edge. Every cut of <i>G</i>′ has twice as many edges as the corresponding cut of <i>G</i>, so <i>G</i>′ is 6-edge-connected, and Corollary 5.2 gives three edge-disjoint spanning trees of <i>G</i>′. Replacing each copy by its original edge yields spanning trees <i>T</i>₁, <i>T</i>₂, <i>T</i>₃ of <i>G</i>. An edge of <i>G</i> has only two copies in <i>G</i>′, so it cannot lie in all three trees. <span class="qed">□</span></div>
+    <p>Each tree now produces an even edge set covering the tree's complement. This is where the cycle space of Section 2.2 is used.</p>
+    <div class="env thm">
+      <div class="hd">Lemma 5.4 <span class="src">Oum, Lemma 8</span></div>
+      <p>Let <i>T</i> be a spanning tree of <i>G</i>. There is an even edge set <i>F</i> with <i>E</i>(<i>G</i>) ∖ <i>E</i>(<i>T</i>) ⊆ <i>F</i>.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> For each non-tree edge <i>e</i> let <i>C<sub>e</sub></i> be the unique cycle in <i>T</i> + <i>e</i>, the fundamental cycle of <i>e</i>. Let <i>F</i> be the symmetric difference of all the <i>C<sub>e</sub></i>, that is, the set of edges lying in an odd number of them. It is even by Lemma 2.6. Each non-tree edge <i>e</i> lies in <i>C<sub>e</sub></i> and in no other fundamental cycle, so it lies in <i>F</i>. <span class="qed">□</span></div>
+    <div class="env def">
+      <div class="hd">Definition 5.5</div>
+      <p>Let Γ be an abelian group in which <i>x</i> = −<i>x</i> for all <i>x</i>, such as 𝔽<sub>2</sub><sup>3</sup>. A <em>nowhere-zero Γ-flow</em> of <i>G</i> is a function φ : <i>E</i>(<i>G</i>) → Γ with φ(<i>e</i>) ≠ 0 for every edge and Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> φ(<i>e</i>) = 0 for every vertex <i>v</i>.</p>
+    </div>
+    <div class="env rem">
+      <div class="hd">Remark 5.6 <span class="who">orientation</span></div>
+      <p>For a general abelian group a flow is defined on an oriented graph, with inflow equal to outflow at each vertex. Reversing an edge negates its value. When <i>x</i> = −<i>x</i> the orientation is invisible, which is why Definition 5.5 needs none. This is the first place where characteristic 2 pays.</p>
+    </div>
+    <div class="env thm">
+      <div class="hd">Lemma 5.7 <span class="who">nowhere-zero 𝔽<sub>2</sub><sup>3</sup>-flow</span><span class="src">Jaeger, Kilpatrick; Oum, Lemma 10</span></div>
+      <p>Every 3-edge-connected graph has a nowhere-zero Γ-flow, Γ = 𝔽<sub>2</sub><sup>3</sup>. If the graph is cubic, then at every vertex the three flow values are nonzero, pairwise distinct, sum to zero, and form the nonzero part of a two-dimensional subspace of Γ.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Take <i>T</i>₁, <i>T</i>₂, <i>T</i>₃ from Lemma 5.3 and, for each <i>i</i>, an even set <i>F<sub>i</sub></i> ⊇ <i>E</i>(<i>G</i>) ∖ <i>E</i>(<i>T<sub>i</sub></i>) from Lemma 5.4. Define φ(<i>e</i>) to be the 3-bit string whose <i>i</i>-th bit is 1 exactly when <i>e</i> ∈ <i>F<sub>i</sub></i>. Each coordinate sums to zero at every vertex because each <i>F<sub>i</sub></i> is even. Every edge is omitted by some <i>T<sub>i</sub></i> and therefore lies in <i>F<sub>i</sub></i>, so φ(<i>e</i>) ≠ 0. At a cubic vertex with edges <i>e</i>₁, <i>e</i>₂, <i>e</i>₃, the sum is zero and each value is nonzero, so φ(<i>e</i>₁) = φ(<i>e</i>₂) would force φ(<i>e</i>₃) = 0; hence the three values are distinct, and Lemma 2.9 makes them the nonzero part of a plane. <span class="qed">□</span></div>
+    <div class="env rem">
+      <div class="hd">Remark 5.8 <span class="who">the other road to the flow</span></div>
+      <p>Jaeger and Kilpatrick proved independently in the 1970s that every 2-edge-connected graph has a nowhere-zero 𝔽<sub>2</sub><sup>3</sup>-flow, using Theorem 5.1 in essentially this way. By Tutte's theorem that a graph has a nowhere-zero flow in one abelian group of order <i>k</i> if and only if it has one in every abelian group of order <i>k</i>, if and only if it has a nowhere-zero integer <i>k</i>-flow, this is the “8-flow theorem”. The original note cites the 8-flow theorem and Tutte's result; Oum's construction above avoids integer flows entirely, and only needs the 3-edge-connected case that Chapter 4 provides. Seymour's 6-flow theorem is stronger but not needed.</p>
+    </div>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>Prove directly that adding a parallel copy of every edge of a <i>k</i>-edge-connected graph gives a 2<i>k</i>-edge-connected graph.</li>
+      <li>Let <i>T</i> be a spanning tree. Show that the set <i>F</i> of Lemma 5.4 is the <em>unique</em> even edge set containing exactly the non-tree edges outside <i>T</i>, in the sense that <i>F</i> ∩ (<i>E</i>(<i>G</i>) ∖ <i>E</i>(<i>T</i>)) = <i>E</i>(<i>G</i>) ∖ <i>E</i>(<i>T</i>) determines <i>F</i>.
+        <details><summary>Hint</summary><p>The symmetric difference of two such sets is an even set contained in a tree, hence empty.</p></details></li>
+      <li>Show that a graph has a nowhere-zero 𝔽<sub>2</sub>-flow if and only if it is Eulerian, and a nowhere-zero 𝔽<sub>2</sub><sup>2</sup>-flow if and only if its edge set is the union of two even edge sets. Find a cubic graph with no nowhere-zero 𝔽<sub>2</sub><sup>2</sup>-flow.
+        <details><summary>Hint</summary><p>For cubic graphs a nowhere-zero 𝔽<sub>2</sub><sup>2</sup>-flow is a 3-edge-colouring in disguise: the three nonzero values are the colours.</p></details></li>
+      <li>Compute a nowhere-zero 𝔽<sub>2</sub><sup>3</sup>-flow on the Petersen graph, or on <i>K</i>₄, by following the proof of Lemma 5.7.</li>
+    </ol>
+  </div>
+
+  <div class="ch-label">Chapter 6</div>
+  <h2 id="ch6">From two-element labels to a cover</h2>
+  <div class="col">
+    <p>
+      This chapter proves the two lifting lemmas at the right-hand end of the route, <span class="step">hop 9</span> and <span class="step">hop 8</span>. Both are short. The first turns a labelling of edges by pairs into a cover; the second turns a flow together with one vector per vertex into such a labelling, and isolates the single condition that the vertex vectors must satisfy. Chapter 7 then shows the condition can be met.
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 6.1 <span class="who">two-element edge labels</span><span class="src">OpenAI, Lemma 2.1; Oum, Lemma 11</span></div>
+      <p>Let <i>G</i> be a loopless graph and Γ a finite set. Suppose every edge <i>e</i> is assigned a two-element set <i>P<sub>e</sub></i> ⊆ Γ such that, for every vertex <i>v</i> and every <i>s</i> ∈ Γ, the number of edges <i>e</i> ∈ δ(<i>v</i>) with <i>s</i> ∈ <i>P<sub>e</sub></i> is even. Then <i>G</i> has a cycle double cover with at most |Γ| Eulerian subgraphs.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> For <i>s</i> ∈ Γ let <i>H<sub>s</sub></i> = {<i>e</i> : <i>s</i> ∈ <i>P<sub>e</sub></i>}. The hypothesis says every vertex has even degree in <i>H<sub>s</sub></i>, so <i>H<sub>s</sub></i> is Eulerian. Each edge <i>e</i> lies in exactly two of the <i>H<sub>s</sub></i>, namely those with <i>s</i> ∈ <i>P<sub>e</sub></i>, since |<i>P<sub>e</sub></i>| = 2. Apply Corollary 3.3. <span class="qed">□</span></div>
+    <div class="env rem">
+      <div class="hd">Remark 6.2 <span class="who">a relaxed 3-edge-colouring</span></div>
+      <p>A proper 3-edge-colouring of a cubic graph is a labelling of this kind. Take distinct nonzero <i>a</i>, <i>b</i> ∈ Γ and assign {0, <i>a</i>}, {0, <i>b</i>}, {<i>a</i>, <i>b</i>} to the three colour classes; at each vertex each of 0, <i>a</i>, <i>b</i> appears exactly twice. Lemma 6.1 asks only for the local evenness that a colouring provides, without asking the same three sets to be used everywhere. That relaxation is what lets the proof pass through snarks.</p>
+    </div>
+    <p>
+      In a cubic graph with a nowhere-zero Γ-flow, local labels satisfying the evenness condition at a single vertex come for free. Fix a vertex <i>v</i> with edges <i>e</i>, <i>f</i>, <i>g</i> and any <i>t</i> ∈ Γ, and consider the three sets
+    </p>
+    <p class="eq">{<i>t</i> + φ(<i>f</i>), <i>t</i> + φ(<i>g</i>)},&emsp;{<i>t</i> + φ(<i>e</i>), <i>t</i> + φ(<i>g</i>)},&emsp;{<i>t</i> + φ(<i>e</i>), <i>t</i> + φ(<i>f</i>)},</p>
+    <p>
+      assigned to <i>e</i>, <i>f</i>, <i>g</i> respectively. Each of the three values <i>t</i> + φ(<i>e</i>), <i>t</i> + φ(<i>f</i>), <i>t</i> + φ(<i>g</i>) appears in exactly two of the sets, and by Lemma 5.7 these three values are distinct, so no other value appears at all. The set assigned to <i>e</i> is the coset <i>t</i> + φ(<i>f</i>) + ⟨φ(<i>e</i>)⟩, because φ(<i>g</i>) = φ(<i>f</i>) + φ(<i>e</i>). The difficulty is that the other end of <i>e</i> builds its own set, from its own <i>t</i> and its own other edges, and the two sets must coincide. The next lemma says that this is the only difficulty.
+    </p>
+    <div class="env thm">
+      <div class="hd">Lemma 6.3 <span class="who">flow lifting</span><span class="src">Oum, Lemma 12</span></div>
+      <p>Let <i>G</i> be a cubic loopless graph, Γ = 𝔽<sub>2</sub><sup>3</sup>, and φ a nowhere-zero Γ-flow. Suppose there are <i>t<sub>v</sub></i> ∈ Γ for all vertices <i>v</i> such that, for every edge <i>e</i> = <i>uv</i> and all <i>f<sub>u</sub></i> ∈ δ(<i>u</i>) ∖ {<i>e</i>} and <i>f<sub>v</sub></i> ∈ δ(<i>v</i>) ∖ {<i>e</i>},</p>
+      <p class="eq"><i>t<sub>u</sub></i> + <i>t<sub>v</sub></i> ∈ (φ(<i>f<sub>u</sub></i>) + φ(<i>f<sub>v</sub></i>)) + ⟨φ(<i>e</i>)⟩.</p>
+      <p>Then <i>G</i> has an 8-cycle double cover.</p>
+    </div>
+    <div class="proof">
+      <p><span class="pf">Proof.</span> First, the condition does not depend on the choices of <i>f<sub>u</sub></i> and <i>f<sub>v</sub></i>: if <i>e</i>, <i>f</i>, <i>g</i> are the edges at a vertex then φ(<i>e</i>) + φ(<i>f</i>) + φ(<i>g</i>) = 0, so φ(<i>f</i>) + ⟨φ(<i>e</i>)⟩ = φ(<i>g</i>) + ⟨φ(<i>e</i>)⟩ by Lemma 2.8.</p>
+      <p>For each edge <i>e</i> = <i>uv</i> define <i>P<sub>e</sub></i> = <i>t<sub>u</sub></i> + φ(<i>f<sub>u</sub></i>) + ⟨φ(<i>e</i>)⟩. By hypothesis <i>t<sub>u</sub></i> + φ(<i>f<sub>u</sub></i>) and <i>t<sub>v</sub></i> + φ(<i>f<sub>v</sub></i>) differ by an element of ⟨φ(<i>e</i>)⟩, so they lie in the same coset and <i>P<sub>e</sub></i> = <i>t<sub>v</sub></i> + φ(<i>f<sub>v</sub></i>) + ⟨φ(<i>e</i>)⟩ as well. Thus <i>P<sub>e</sub></i> is well defined from either end, and |<i>P<sub>e</sub></i>| = 2 by Lemma 2.8 since φ(<i>e</i>) ≠ 0.</p>
+      <p>At a vertex <i>v</i> with edges <i>e</i>, <i>f</i>, <i>g</i>, computing each coset from the end <i>v</i> gives exactly the three sets displayed above with <i>t</i> = <i>t<sub>v</sub></i>. So every element of Γ appears in 0 or 2 of them, and Lemma 6.1 applies with |Γ| = 8. <span class="qed">□</span></p>
+    </div>
+    <p>
+      The hypothesis of Lemma 6.3 is one condition per edge, on unknowns indexed by vertices, and by Lemma 2.8 each condition is a coset membership in Γ. That is a linear system over 𝔽<sub>2</sub>. Everything that remains is to solve it.
+    </p>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>Check that the three sets displayed before Lemma 6.3 are the cosets <i>t</i> + φ(<i>f</i>) + ⟨φ(<i>e</i>)⟩, <i>t</i> + φ(<i>e</i>) + ⟨φ(<i>f</i>)⟩, <i>t</i> + φ(<i>e</i>) + ⟨φ(<i>g</i>)⟩.</li>
+      <li>Show that if all <i>t<sub>v</sub></i> are equal and the sets <i>P<sub>e</sub></i> of Lemma 6.3 are well defined, then the labelling is one of the colouring labellings of Remark 6.2 up to a translation of Γ, and deduce that the graph is 3-edge-colourable.
+        <details><summary>Hint</summary><p>With <i>t<sub>v</sub></i> = <i>t</i> for all <i>v</i>, the condition says φ(<i>f<sub>u</sub></i>) + φ(<i>f<sub>v</sub></i>) ∈ ⟨φ(<i>e</i>)⟩, so the plane spanned by the flow values is the same at both ends of every edge; hence the same plane everywhere, and φ is a nowhere-zero flow into a copy of 𝔽<sub>2</sub><sup>2</sup>, which is a 3-edge-colouring by Exercise 5.3.</p></details></li>
+      <li>How many of the eight layers <i>H<sub>s</sub></i> in Lemma 6.1 can be empty? Give an example where one is.</li>
+    </ol>
+  </div>
+
+  <div class="ch-label">Chapter 7</div>
+  <h2 id="ch7">The linear system and the parity count</h2>
+  <div class="col">
+    <p>
+      This is the blue lane, hops 4 to 7, and it is where the proof is decided. The system from Lemma 6.3 is written in the form of Proposition 2.15, the proposition converts solvability into a statement about certificates, and a computation at a single cubic vertex shows that every certificate contributes a parity that the two ends of each edge cancel.
+    </p>
+
+    <h3><span class="no">7.1</span>Setting up the system</h3>
+    <p>
+      Let <i>G</i> be cubic and 3-edge-connected, Γ = 𝔽<sub>2</sub><sup>3</sup>, and φ a nowhere-zero Γ-flow from Lemma 5.7. If <i>v</i> is an end of <i>e</i>, choose either edge <i>f</i> ∈ δ(<i>v</i>) ∖ {<i>e</i>} and set
+    </p>
+    <p class="eq"><i>c</i><sub><i>v</i>,<i>e</i></sub> = φ(<i>f</i>).</p>
+    <p>
+      The two possible choices differ by φ(<i>e</i>), so the coset <i>c</i><sub><i>v</i>,<i>e</i></sub> + ⟨φ(<i>e</i>)⟩ is independent of the choice. For each edge <i>e</i> = <i>uv</i> set <i>d<sub>e</sub></i> = <i>c</i><sub><i>u</i>,<i>e</i></sub> + <i>c</i><sub><i>v</i>,<i>e</i></sub>. By Lemma 6.3 it suffices to find <i>t<sub>v</sub></i> ∈ Γ with
+    </p>
+    <p class="eq"><span class="tag">(★)</span><i>t<sub>u</sub></i> + <i>t<sub>v</sub></i> ∈ <i>d<sub>e</sub></i> + ⟨φ(<i>e</i>)⟩&emsp;for every edge <i>e</i> = <i>uv</i>.</p>
+    <p>
+      This is condition (i) of Proposition 2.15 with 𝔽 = 𝔽<sub>2</sub>, <i>n</i> = 3, <i>W</i> = Γ and <i>p<sub>e</sub></i> = φ(<i>e</i>), which is nonzero as required. So (★) is solvable if and only if condition (ii) holds: for every family (<i>h<sub>e</sub></i>) of vectors in Γ with
+    </p>
+    <p class="eq"><span class="tag">(†)</span><i>h<sub>e</sub></i> · φ(<i>e</i>) = 0 for all <i>e</i>&emsp;and&emsp;Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>h<sub>e</sub></i> = 0 for all <i>v</i>,</p>
+    <p>one has Σ<sub><i>e</i></sub> <i>h<sub>e</sub></i> · <i>d<sub>e</sub></i> = 0. That is <span class="step">hop 5</span>. Fix such a family for the rest of the chapter.</p>
+    <div class="env rem">
+      <div class="hd">Remark 7.1 <span class="who">the matrix, for the record</span></div>
+      <p>Unwinding Proposition 2.15, the unknown vector <i>t</i> has 3|<i>V</i>| bits, and each edge contributes the two rows <i>R<sub>e</sub></i>, a basis of ⟨φ(<i>e</i>)⟩<sup>⊥</sup>, in the two block columns of its ends. In a cubic graph 2|<i>E</i>| = 3|<i>V</i>|, so the matrix is square. The proof never uses that, and the solution is never unique: adding one fixed vector to every <i>t<sub>v</sub></i> preserves (★), exactly as the all-ones vector did in Example 2.13.</p>
+    </div>
+
+    <h3><span class="no">7.2</span>One vertex, one bit</h3>
+    <p>
+      Fix a vertex <i>v</i> and write δ(<i>v</i>) = {<i>e</i>₁, <i>e</i>₂, <i>e</i>₃}, with <i>h<sub>i</sub></i> = <i>h</i><sub><i>e<sub>i</sub></i></sub> and φ<sub><i>i</i></sub> = φ(<i>e<sub>i</sub></i>) for short. By Lemma 5.7 the φ<sub><i>i</i></sub> are nonzero, distinct, and
+    </p>
+    <p class="eq">φ₁ + φ₂ + φ₃ = 0,&emsp;<i>h</i>₁ + <i>h</i>₂ + <i>h</i>₃ = 0,&emsp;<i>h<sub>i</sub></i> · φ<sub><i>i</i></sub> = 0.</p>
+    <div class="env thm">
+      <div class="hd">Lemma 7.2 <span class="who">the six cross products agree</span><span class="src">Oum, proof of Prop. 15; OpenAI, eq. (7)–(9)</span></div>
+      <p>Put λ = <i>h</i>₂ · φ₁. Then</p>
+      <p class="eq">λ = <i>h</i>₂ · φ₁ = <i>h</i>₂ · φ₃ = <i>h</i>₁ · φ₃ = <i>h</i>₁ · φ₂ = <i>h</i>₃ · φ₂ = <i>h</i>₃ · φ₁,</p>
+      <p>and λ is the parity of the number of nonzero vectors among <i>h</i>₁, <i>h</i>₂, <i>h</i>₃.</p>
+    </div>
+    <div class="proof">
+      <p><span class="pf">Proof.</span> Dot each <i>h<sub>i</sub></i> with φ₁ + φ₂ + φ₃ = 0 and use <i>h<sub>i</sub></i> · φ<sub><i>i</i></sub> = 0; dot <i>h</i>₁ + <i>h</i>₂ + <i>h</i>₃ = 0 with each φ<sub><i>j</i></sub> and use the same fact:</p>
+      <p class="eq"><i>h</i>₁·φ₂ + <i>h</i>₁·φ₃ = 0,&emsp;<i>h</i>₂·φ₁ + <i>h</i>₂·φ₃ = 0,&emsp;<i>h</i>₃·φ₁ + <i>h</i>₃·φ₂ = 0,</p>
+      <p class="eq"><i>h</i>₂·φ₁ + <i>h</i>₃·φ₁ = 0,&emsp;<i>h</i>₁·φ₂ + <i>h</i>₃·φ₂ = 0,&emsp;<i>h</i>₁·φ₃ + <i>h</i>₂·φ₃ = 0.</p>
+      <p>In 𝔽<sub>2</sub> each equation says its two terms are equal, and the six equalities chain the six cross products together: <i>h</i>₂·φ₁ = <i>h</i>₂·φ₃ = <i>h</i>₁·φ₃ = <i>h</i>₁·φ₂ = <i>h</i>₃·φ₂ = <i>h</i>₃·φ₁.</p>
+      <p>If λ = 1, each <i>h<sub>i</sub></i> has a nonzero dot product with something, so all three are nonzero: the count is 3, parity 1. If λ = 0, each <i>h<sub>i</sub></i> is orthogonal to φ₁, φ₂ and φ₃, which span a plane <i>U</i> by Lemma 5.7; so <i>h<sub>i</sub></i> ∈ <i>U</i><sup>⊥</sup>, which has dimension 1 by Lemma 2.11 and hence is {0, <i>w</i>} for a single nonzero <i>w</i>. The three <i>h<sub>i</sub></i> are each 0 or <i>w</i> and sum to 0, so an even number equal <i>w</i>: parity 0. <span class="qed">□</span></p>
+    </div>
+    <p>
+      Now compute the vertex's share of the certificate sum. Choose <i>c</i><sub><i>v</i>,<i>e</i>₁</sub> = φ₂, <i>c</i><sub><i>v</i>,<i>e</i>₂</sub> = φ₁, <i>c</i><sub><i>v</i>,<i>e</i>₃</sub> = φ₁. Any other choice changes <i>c</i><sub><i>v</i>,<i>e<sub>i</sub></i></sub> by φ<sub><i>i</i></sub>, and <i>h<sub>i</sub></i> · φ<sub><i>i</i></sub> = 0, so the dot products below do not depend on the choice. By Lemma 7.2,
+    </p>
+    <p class="eq"><span class="tag">(‡)</span>Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>h<sub>e</sub></i> · <i>c</i><sub><i>v</i>,<i>e</i></sub> = <i>h</i>₁·φ₂ + <i>h</i>₂·φ₁ + <i>h</i>₃·φ₁ = λ + λ + λ = λ = Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> 𝟙[<i>h<sub>e</sub></i> ≠ 0],</p>
+    <p>where 𝟙[<i>h<sub>e</sub></i> ≠ 0] is 1 if <i>h<sub>e</sub></i> ≠ 0 and 0 otherwise, and the last sum is taken in 𝔽<sub>2</sub>. This is <span class="step">hop 6</span>: a computation in a three-dimensional space has become a count of nonzero edges at a vertex.</p>
+
+    <div class="two">
+      <div class="ex">
+        <span class="k">Example 7.3 · λ = 1, all three nonzero</span>
+        <p>Flow values φ₁ = 100, φ₂ = 010, φ₃ = 110, the solid line of the Fano figure. Take <i>h</i>₁ = 011, <i>h</i>₂ = 101, <i>h</i>₃ = 110. Sum: 011 + 101 = 110, and 110 + 110 = 000. Each is orthogonal to its own flow value: 011·100 = 0, 101·010 = 0, 110·110 = 0.</p>
+        <p>Cross products: <i>h</i>₂·φ₁ = 101·100 = 1, <i>h</i>₁·φ₂ = 011·010 = 1, <i>h</i>₃·φ₁ = 110·100 = 1. So λ = 1, and three nonzero vectors have parity 1.</p>
+      </div>
+      <div class="ex">
+        <span class="k">Example 7.4 · λ = 0, exactly two nonzero</span>
+        <p>Same flow values. Take <i>h</i>₁ = 001, <i>h</i>₂ = 001, <i>h</i>₃ = 000. Sum: 001 + 001 = 000. Orthogonality: 001·100 = 0, 001·010 = 0, and <i>h</i>₃ = 0.</p>
+        <p>Cross products: 001·100 = 0, 001·010 = 0, 000·100 = 0. So λ = 0, and two nonzero vectors have parity 0. Here <i>U</i><sup>⊥</sup> = ⟨100, 010⟩<sup>⊥</sup> = {000, 001}, and both nonzero <i>h<sub>i</sub></i> equal its one nonzero element, as the proof of Lemma 7.2 predicts.</p>
+      </div>
+    </div>
+
+    <h3><span class="no">7.3</span>Every edge has two ends</h3>
+    <div class="env thm">
+      <div class="hd">Theorem 7.5 <span class="src">OpenAI, Lemma 2.2; Oum, Prop. 15</span></div>
+      <p>Every cubic 3-edge-connected graph has an 8-cycle double cover.</p>
+    </div>
+    <div class="proof">
+      <p><span class="pf">Proof.</span> With φ, <i>c</i><sub><i>v</i>,<i>e</i></sub>, <i>d<sub>e</sub></i> as in Section 7.1, it suffices by Lemma 6.3 to solve (★), and by Proposition 2.15 it suffices to show Σ<sub><i>e</i></sub> <i>h<sub>e</sub></i> · <i>d<sub>e</sub></i> = 0 for every family (<i>h<sub>e</sub></i>) satisfying (†). Since <i>d<sub>e</sub></i> = <i>c</i><sub><i>u</i>,<i>e</i></sub> + <i>c</i><sub><i>v</i>,<i>e</i></sub> for <i>e</i> = <i>uv</i>, the sum regroups by vertex, and (‡) applies at each:</p>
+      <p class="eq">Σ<sub><i>e</i> ∈ <i>E</i>(<i>G</i>)</sub> <i>h<sub>e</sub></i> · <i>d<sub>e</sub></i> = Σ<sub><i>v</i></sub> Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> <i>h<sub>e</sub></i> · <i>c</i><sub><i>v</i>,<i>e</i></sub> = Σ<sub><i>v</i></sub> Σ<sub><i>e</i> ∈ δ(<i>v</i>)</sub> 𝟙[<i>h<sub>e</sub></i> ≠ 0] = 2 · Σ<sub><i>e</i></sub> 𝟙[<i>h<sub>e</sub></i> ≠ 0] = 0.</p>
+      <p>The third equality holds because every edge with <i>h<sub>e</sub></i> ≠ 0 is counted once at each of its two ends, and the last because 2 = 0 in 𝔽<sub>2</sub> (Lemma 2.2). So (★) has a solution, Lemma 6.3 yields the labels <i>P<sub>e</sub></i>, and Lemma 6.1 yields the eight Eulerian layers <i>H<sub>s</sub></i>, <i>s</i> ∈ Γ. <span class="qed">□</span></p>
+    </div>
+    <p>This is <span class="step">hop 7</span>, and the moment where the three twos of Section 1.3 coincide. Assembling the chapters:</p>
+    <div class="env thm">
+      <div class="hd">Theorem 7.6 <span class="who">= Theorem 3.6</span></div>
+      <p>Every bridgeless graph has a cycle double cover.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> By Proposition 4.4 it is enough to treat cubic 3-edge-connected graphs, and Theorem 7.5 does. <span class="qed">□</span></div>
+    <div class="env thm">
+      <div class="hd">Theorem 7.7 <span class="src">Oum, Thm 18</span></div>
+      <p>Every bridgeless graph has an 8-cycle double cover.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Run the reduction of Proposition 4.4 with “8-cycle double cover” in place of “cycle double cover”. Each lifting step there (adding a loop twice, re-inserting <i>e</i>₁, replacing the new edge by a path) maps Eulerian subgraphs to Eulerian subgraphs without increasing their number; adding a loop twice can be done inside two existing layers, or as two new layers if the graph is a single loop. Theorem 7.5 provides the base case. <span class="qed">□</span></div>
+
+    <h3><span class="no">7.4</span>The same computation in the original note</h3>
+    <div class="env rem">
+      <div class="hd">Remark 7.8</div>
+      <p>The original note fixes at each vertex a local order <i>a</i>, <i>b</i>, <i>c</i> of the edges and sets <i>g</i><sub><i>v</i>,<i>a</i></sub> = 0, <i>g</i><sub><i>v</i>,<i>b</i></sub> = φ(<i>a</i>), <i>g</i><sub><i>v</i>,<i>c</i></sub> = 0, so that only the edge <i>b</i> contributes at <i>v</i>. The agreement condition then reads <i>t<sub>u</sub></i> + <i>t<sub>v</sub></i> + ε<sub><i>e</i></sub> φ(<i>e</i>) = <i>d<sub>e</sub></i> with an extra unknown bit ε<sub><i>e</i></sub> per edge recording which of the two shifts occurs; Oum's coset absorbs that bit. Solvability is argued through the dual space Γ*: a vector lies in the image of a linear map if every functional vanishing on the image vanishes on it, which is Lemma 2.14 without the matrix. The vertex computation is then the same as Lemma 7.2, with the functionals η<sub><i>e</i></sub> in place of the vectors <i>h<sub>e</sub></i>, and ends with the same sentence: “each edge with η<sub><i>e</i></sub> ≠ 0 occurs twice in the last sum, once at each endpoint.”</p>
+    </div>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>Verify the six equalities in Lemma 7.2 for Example 7.3 by direct computation of all six cross products.</li>
+      <li>Show that if (<i>t<sub>v</sub></i>) solves (★) then so does (<i>t<sub>v</sub></i> + <i>s</i>) for any fixed <i>s</i> ∈ Γ, and that the resulting labels <i>P<sub>e</sub></i> are translated by <i>s</i>, so the layers <i>H<sub>s</sub></i> are merely permuted.</li>
+      <li>Let <i>h<sub>e</sub></i> = φ(<i>e</i>) for every edge. Check that this family satisfies (†) whenever every φ(<i>e</i>) has even weight, and compute its λ at a vertex. Why does this not contradict Theorem 7.5?
+        <details><summary>Hint</summary><p>Every edge has <i>h<sub>e</sub></i> ≠ 0, so λ = 1 at every vertex, and the certificate sum is |<i>V</i>| mod 2. A cubic graph has an even number of vertices.</p></details></li>
+      <li>Carry out the whole construction on <i>K</i>₄: find three trees, the flow, a solution (<i>t<sub>v</sub></i>) of (★), the labels <i>P<sub>e</sub></i>, and the eight layers. How many layers are empty?</li>
+    </ol>
+  </div>
+
+  <!-- ============================ PART IV ============================ -->
+  <div class="part-label">Part IV · The landscape</div>
+  <div class="ch-label">Chapter 8</div>
+  <h2 id="ch8">Neighbouring domains and open conjectures</h2>
+  <div class="col">
+    <p>
+      The theorem sits among several other formulations of the same question, some equivalent, some stronger, some weaker.
+      Each is another domain into which the cycle double cover problem can be moved. None was needed for the proof, but together
+      they explain what the proof does and does not settle. The figure collects them; the sections that follow prove what is short and state what is not.
+    </p>
+  </div>
+
+  <figure>
+    <div class="scroll small">
+      <svg viewBox="0 0 900 420" role="img" aria-label="Cycle double covers sit at the centre; surface embeddings map to them by face boundaries, binary matroids are equivalent by Jamshy and Tarsi, 3-edge-colourings are equivalent to 3- or 4-cycle double covers, perfect matchings are equivalent to 6-cycle 4-covers by complements, and nowhere-zero flows exchange with covers in both directions.">
+        <defs>
+          <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <!-- centre -->
+        <g class="node end">
+          <rect x="340" y="175" width="220" height="80" rx="4"/>
+          <text class="t" x="450" y="209" text-anchor="middle">Cycle double covers</text>
+          <text class="d" x="450" y="231" text-anchor="middle">of bridgeless graphs</text>
+        </g>
+
+        <!-- satellites -->
+        <g class="node">
+          <rect x="40" y="40" width="200" height="70" rx="4"/>
+          <text class="t" x="52" y="68">Surface embeddings</text>
+          <text class="d" x="52" y="90">strong embeddings; planar case</text>
+        </g>
+        <g class="node">
+          <rect x="660" y="40" width="200" height="70" rx="4"/>
+          <text class="t" x="672" y="68">Binary matroids</text>
+          <text class="d" x="672" y="90">no coloops, no F₇* minor</text>
+        </g>
+        <g class="node">
+          <rect x="40" y="180" width="200" height="70" rx="4"/>
+          <text class="t" x="52" y="208">3-edge-colourings</text>
+          <text class="d" x="52" y="230">of cubic graphs</text>
+        </g>
+        <g class="node">
+          <rect x="660" y="180" width="200" height="70" rx="4"/>
+          <text class="t" x="672" y="208">Perfect matchings</text>
+          <text class="d" x="672" y="230">6 of them, each edge twice</text>
+        </g>
+        <g class="node">
+          <rect x="340" y="330" width="220" height="70" rx="4"/>
+          <text class="t" x="450" y="358" text-anchor="middle">Nowhere-zero flows</text>
+          <text class="d" x="450" y="380" text-anchor="middle">ℤ<tspan baseline-shift="sub" font-size="8.5">k</tspan>-flows, 𝔽₂³-flows</text>
+        </g>
+
+        <!-- embeddings -> CDC -->
+        <line class="edge" x1="230" y1="110" x2="360" y2="173" marker-end="url(#ah2)"/>
+        <text class="lbl" x="330" y="128" text-anchor="middle">face boundaries ⇒</text>
+
+        <!-- matroids <-> CDC -->
+        <line class="edge" x1="540" y1="173" x2="670" y2="110" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <text class="lbl" x="570" y="128" text-anchor="middle">⇔ Jamshy–Tarsi</text>
+
+        <!-- colourings <-> CDC -->
+        <line class="edge" x1="240" y1="215" x2="340" y2="215" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <text class="lbl" x="290" y="206" text-anchor="middle">⇔ 3- or 4-CDC</text>
+        <text class="lbl small" x="290" y="233" text-anchor="middle">Jaeger</text>
+
+        <!-- matchings <-> CDC -->
+        <line class="edge" x1="560" y1="215" x2="660" y2="215" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <text class="lbl" x="610" y="206" text-anchor="middle">complements</text>
+        <text class="lbl small" x="610" y="233" text-anchor="middle">⇔ 6-cycle 4-cover</text>
+
+        <!-- flows <-> CDC, two directions -->
+        <line class="edge" x1="430" y1="255" x2="430" y2="328" marker-end="url(#ah2)"/>
+        <text class="lbl" x="418" y="288" text-anchor="end">orientable k-CDC ⇒</text>
+        <text class="lbl small" x="418" y="303" text-anchor="end">nowhere-zero ℤ<tspan baseline-shift="sub" font-size="8.5">k</tspan>-flow</text>
+        <line class="edge" x1="470" y1="330" x2="470" y2="257" marker-end="url(#ah2)"/>
+        <text class="lbl" x="482" y="288">𝔽₂³-flow ⇒</text>
+        <text class="lbl small" x="482" y="303">7-cycle 4-cover</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Five neighbouring domains.</b> Double-headed arrows are equivalences; single arrows only go one way.
+    </figcaption>
+  </figure>
+
+  <div class="col">
+    <h3><span class="no">8.1</span>Colourings and small covers</h3>
+    <div class="env thm">
+      <div class="hd">Theorem 8.1 <span class="who">Jaeger</span><span class="src">Oum, Thm 19</span></div>
+      <p>For a loopless cubic graph <i>G</i> the following are equivalent: (i) <i>G</i> is 3-edge-colourable; (ii) <i>G</i> has a 3-cycle double cover; (iii) <i>G</i> has a 4-cycle double cover.</p>
+    </div>
+    <div class="proof">
+      <p><span class="pf">Proof.</span> (i) ⇒ (iii): Proposition 3.7 gives a 3-CDC, which is also a 4-CDC.</p>
+      <p>(iii) ⇒ (ii): If <i>C</i>₁, …, <i>C</i>₄ is a 4-CDC, then <i>C</i>₁ △ <i>C</i>₂, <i>C</i>₁ △ <i>C</i>₃, <i>C</i>₁ △ <i>C</i>₄ are Eulerian by Lemma 2.6, and an edge lies in exactly two of them: an edge in <i>C</i>₁ and <i>C<sub>j</sub></i> lies in the two differences not involving <i>C<sub>j</sub></i>, and an edge in <i>C<sub>i</sub></i> and <i>C<sub>j</sub></i> with <i>i</i>, <i>j</i> ≠ 1 lies in exactly those two.</p>
+      <p>(ii) ⇒ (i): Let <i>C</i>₁, <i>C</i>₂, <i>C</i>₃ be a 3-CDC. At a vertex the three degrees are even and sum to 6, and each is at most 3, so each is exactly 2: every <i>C<sub>i</sub></i> omits exactly one edge at each vertex. Every edge is omitted by exactly one <i>C<sub>i</sub></i>, since it lies in two of three. Colour each edge by the index of the layer omitting it; at each vertex the three edges are omitted by three different layers, so the colouring is proper. <span class="qed">□</span></p>
+    </div>
+    <p>
+      The Petersen graph is not 3-edge-colourable, so it has no 4-cycle double cover, and eight layers cannot always be reduced to four. The gap between four and eight is the subject of one of the main open problems.
+    </p>
+    <div class="env thm">
+      <div class="hd">Conjecture 8.2 <span class="who">Celmins 1985, Preissmann 1981</span><span class="src">Oum, Conj. 20</span></div>
+      <p>Every bridgeless graph has a 5-cycle double cover.</p>
+    </div>
+    <p>
+      A different notion of smallness counts cycles rather than layers. Bondy conjectured in 1990 that every simple 2-edge-connected graph on <i>n</i> vertices has a cycle double cover with at most <i>n</i> − 1 cycles, which would be tight for <i>K<sub>n</sub></i>; the method of this course does not address it. His companion conjecture for cubic graphs is now a theorem: Lai, Yu and Zhang showed in 1994 that a simple 2-connected cubic graph on <i>n</i> vertices other than <i>K</i>₄ with <em>some</em> cycle double cover has one with at most <i>n</i>/2 cycles, and Theorem 3.6 supplies the hypothesis.
+    </p>
+
+    <h3><span class="no">8.2</span>Orientable covers and integer flows</h3>
+    <div class="env def">
+      <div class="hd">Definition 8.3</div>
+      <p>An <em>orientable</em> cycle double cover is a list of Eulerian subgraphs, each given an orientation in which every vertex has equal in- and out-degree, such that every edge of <i>G</i> is used exactly once in each direction. An orientable <i>k</i>-CDC has at most <i>k</i> members.</p>
+    </div>
+    <div class="env thm">
+      <div class="hd">Conjecture 8.4 <span class="who">Archdeacon 1984, Jaeger 1988</span><span class="src">Oum, Conj. 21</span></div>
+      <p>Every bridgeless graph has an orientable 5-cycle double cover.</p>
+    </div>
+    <p>This would imply Tutte's 5-flow conjecture, because orientable covers produce integer flows.</p>
+    <div class="env thm">
+      <div class="hd">Lemma 8.5 <span class="src">Zhang 2012, Lemma 13.1.5; Oum, Lemma 22</span></div>
+      <p>If <i>G</i> has an orientable <i>k</i>-cycle double cover, then <i>G</i> has a nowhere-zero ℤ<sub><i>k</i></sub>-flow.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Pad the list to exactly <i>k</i> members <i>C</i>₁, …, <i>C<sub>k</sub></i> with empty subgraphs. Fix a reference orientation of <i>G</i> and let χ<sub><i>i</i></sub>(<i>e</i>) be +1, −1 or 0 according as <i>C<sub>i</sub></i> uses <i>e</i> forwards, backwards, or not at all. Each χ<sub><i>i</i></sub> is an integer flow because <i>C<sub>i</sub></i> is Eulerian as an oriented graph. Hence φ = Σ<sub><i>i</i></sub> <i>i</i> χ<sub><i>i</i></sub> mod <i>k</i> is a ℤ<sub><i>k</i></sub>-flow. For each edge <i>e</i> there are <i>i</i> ≠ <i>j</i> with <i>C<sub>i</sub></i> and <i>C<sub>j</sub></i> using <i>e</i> in opposite directions and no other member using it, so φ(<i>e</i>) = ±(<i>i</i> − <i>j</i>) ≠ 0 in ℤ<sub><i>k</i></sub>. <span class="qed">□</span></div>
+
+    <h3><span class="no">8.3</span>Covering more than twice</h3>
+    <div class="env def">
+      <div class="hd">Definition 8.6</div>
+      <p>An <em><i>m</i>-cycle <i>k</i>-cover</em> is a list of <i>m</i> Eulerian subgraphs such that every edge lies in exactly <i>k</i> of them.</p>
+    </div>
+    <p>The 𝔽<sub>2</sub><sup>3</sup>-flow of Chapter 5 gives such a cover directly, by the dot-product counting of Section 2.4.</p>
+    <div class="env thm">
+      <div class="hd">Theorem 8.7 <span class="who">Bermond, Jackson, Jaeger 1983</span><span class="src">Oum, Thm 23</span></div>
+      <p>Every bridgeless graph has a 7-cycle 4-cover.</p>
+    </div>
+    <div class="proof"><span class="pf">Proof.</span> Treat components separately and cover loops twice within two layers, so assume <i>G</i> is 2-edge-connected. By Jaeger's theorem (Remark 5.8) let φ be a nowhere-zero 𝔽<sub>2</sub><sup>3</sup>-flow and let <i>C</i>₁, <i>C</i>₂, <i>C</i>₃ be the supports of its three coordinates, each Eulerian. For each nonzero <i>s</i> ∈ 𝔽<sub>2</sub><sup>3</sup> let <i>C<sub>s</sub></i> be the symmetric difference of the <i>C<sub>i</sub></i> with <i>s<sub>i</sub></i> = 1; it is Eulerian by Lemma 2.6, and an edge <i>e</i> lies in <i>C<sub>s</sub></i> exactly when <i>s</i> · φ(<i>e</i>) = 1. Since φ(<i>e</i>) ≠ 0, the vectors <i>s</i> with <i>s</i> · φ(<i>e</i>) = 0 form ⟨φ(<i>e</i>)⟩<sup>⊥</sup>, which has 4 elements, 3 of them nonzero, by Lemmas 2.9 and 2.11. So <i>e</i> lies in exactly 7 − 3 = 4 of the seven <i>C<sub>s</sub></i>. <span class="qed">□</span></div>
+    <p>
+      Fan showed in 1992, using Seymour's 6-flow theorem, that every bridgeless graph has a 10-cycle 6-cover. The conjecture in this family is the following.
+    </p>
+    <div class="env thm">
+      <div class="hd">Conjecture 8.8 <span class="who">Berge, Fulkerson 1971</span><span class="src">Oum, Conj. 25, 26</span></div>
+      <p>Every bridgeless cubic graph has six perfect matchings such that every edge lies in exactly two of them. Equivalently, taking complements, every bridgeless cubic graph has a 6-cycle 4-cover.</p>
+    </div>
+    <p>The equivalence holds because the complement of a perfect matching in a cubic graph is 2-regular, and an edge lies in exactly two of six matchings if and only if it lies in exactly four of the six complements.</p>
+
+    <h3><span class="no">8.4</span>Matroids and surfaces</h3>
+    <p>
+      The proof is carried out with edge sets and 𝔽<sub>2</sub>-linear algebra, so it is natural to ask whether it lives in the larger world of binary matroids, where “cycle” means a disjoint union of circuits and the graph is forgotten. Jamshy and Tarsi showed in 1989 that the cycle double cover conjecture is equivalent to the following apparently stronger statement, which is now a theorem.
+    </p>
+    <div class="env thm">
+      <div class="hd">Theorem 8.9 <span class="who">Jamshy, Tarsi 1989, with Theorem 3.6</span><span class="src">Oum, Thm 27</span></div>
+      <p>Every binary matroid without coloops and without an <i>F</i>₇* minor has a cycle double cover.</p>
+    </div>
+    <p>
+      Here <i>F</i>₇* is the dual of the Fano matroid, whose seven points are the seven nonzero vectors of Γ in the figure of Section 2.3. Every regular matroid is binary without an <i>F</i>₇* minor, so the theorem covers all regular matroids without coloops. The bounded versions do not transfer: Linial, Meshulam and Tarsi showed that the cographic matroid of <i>K<sub>n</sub></i> needs <i>n</i> cycles in any cycle double cover, so no analogue of Conjecture 8.2 with a fixed number of cycles can hold for regular matroids.
+    </p>
+    <p>
+      Finally, the original motivation. A strong embedding of a graph on a surface is a 2-cell embedding in which every face boundary is a cycle. The strong embedding conjecture, that every 2-connected graph has one, would imply Theorem 3.6 by taking face boundaries; it remains open in general, and Theorem 3.6 is known to settle it for cubic graphs.
+    </p>
+
+    <div class="exs-hd">Exercises</div>
+    <ol class="exs">
+      <li>In the proof of Theorem 8.1, (iii) ⇒ (ii), check the claim that each edge lies in exactly two of <i>C</i>₁ △ <i>C</i>₂, <i>C</i>₁ △ <i>C</i>₃, <i>C</i>₁ △ <i>C</i>₄ by considering the two cases separately.</li>
+      <li>Show that the eight layers of Theorem 7.5 can be reduced to a 7-cycle double cover by removing the layer <i>H</i>₀ if it is empty, and that <i>H</i>₀ can be made empty by a translation as in Exercise 7.2 whenever some element of Γ lies in no <i>P<sub>e</sub></i>. Why does this not give a 7-CDC in general?</li>
+      <li>Prove the equivalence claimed after Conjecture 8.8 in detail.</li>
+      <li>Deduce Tutte's 5-flow conjecture from Conjecture 8.4 using Lemma 8.5.</li>
+    </ol>
+  </div>
+
+  <div class="ch-label">Epilogue</div>
+  <h2 id="epilogue">What the pattern teaches</h2>
+  <div class="col">
+    <p>
+      Every hop of the proof trades an existence question for a more rigid object. Bridgelessness becomes cubic vertices,
+      cubic vertices become three trees, trees become a flow, a flow becomes coset conditions, cosets become a linear system,
+      and the system becomes a duality check. None of these hops is deep on its own, and each is a lemma of a few lines.
+    </p>
+    <p>
+      The payoff is the last step. Once the question is “does this vector lie in a column space?”, it can be attacked by showing every
+      certificate against it vanishes, and the certificate sum turns out to count each edge at both of its ends. The cover is a
+      <em>double</em> cover, the field has characteristic 2, and a graph edge has exactly two ends. The proof works because those three twos are the same two.
+    </p>
+    <p>
+      For a reader who came for the linear algebra: everything used from Chapter 2 was elementary, and everything that was different
+      from the real case was a simplification. Lines have two points, elimination needs no fractions, and a sum over both ends of every edge is zero.
+      The difficulty of the conjecture lay not in the algebra but in finding the sequence of domains that made the algebra this easy.
+    </p>
+  </div>
+
+  <div class="ch-label">References</div>
+  <h2 id="bib">Bibliography</h2>
+  <div class="col">
+    <ul class="bib">
+      <li><span class="key">[OpenAI]</span><b>OpenAI.</b> A proof of the cycle double cover conjecture. July 2026. Proof by GPT 5.6 Sol Ultra; writeup with Codex.</li>
+      <li><span class="key">[Oum]</span><b>S. Oum.</b> A proof of the cycle double cover conjecture by OpenAI: an exposition. arXiv 2607.16356v3, August 2026.</li>
+      <li><span class="key">[Arc84]</span><b>D. Archdeacon.</b> Face colorings of embedded graphs. J. Graph Theory 8 (1984), 387–398.</li>
+      <li><span class="key">[BJJ83]</span><b>J.-C. Bermond, B. Jackson, F. Jaeger.</b> Shortest coverings of graphs with cycles. J. Combin. Theory Ser. B 35 (1983), 297–308.</li>
+      <li><span class="key">[Bon90]</span><b>J. A. Bondy.</b> Small cycle double covers of graphs. In: Cycles and Rays, Kluwer, 1990, 21–40.</li>
+      <li><span class="key">[Cel85]</span><b>U. A. Celmins.</b> On cubic graphs that do not have an edge-3-colouring. Ph.D. thesis, University of Waterloo, 1985.</li>
+      <li><span class="key">[Fan92]</span><b>G. Fan.</b> Covering graphs by cycles. SIAM J. Discrete Math. 5 (1992), 491–496.</li>
+      <li><span class="key">[Fle90]</span><b>H. Fleischner.</b> Eulerian graphs and related topics, Part 1, Vol. 1. Annals of Discrete Mathematics 45, North-Holland, 1990.</li>
+      <li><span class="key">[Ful71]</span><b>D. R. Fulkerson.</b> Blocking and anti-blocking pairs of polyhedra. Math. Programming 1 (1971), 168–194.</li>
+      <li><span class="key">[IR78]</span><b>A. Itai, M. Rodeh.</b> Covering a graph by circuits. ICALP 1978, LNCS 62, 289–299.</li>
+      <li><span class="key">[Jae76]</span><b>F. Jaeger.</b> On nowhere-zero flows in multigraphs. Proc. Fifth British Combinatorial Conference, 1976, 373–378.</li>
+      <li><span class="key">[Jae79]</span><b>F. Jaeger.</b> Flows and generalized coloring theorems in graphs. J. Combin. Theory Ser. B 26 (1979), 205–216.</li>
+      <li><span class="key">[Jae85]</span><b>F. Jaeger.</b> A survey of the cycle double cover conjecture. In: Cycles in Graphs, North-Holland Math. Stud. 115, 1985, 1–12.</li>
+      <li><span class="key">[Jae88]</span><b>F. Jaeger.</b> Nowhere-zero flow problems. In: Selected Topics in Graph Theory 3, Academic Press, 1988, 71–95.</li>
+      <li><span class="key">[JT89]</span><b>U. Jamshy, M. Tarsi.</b> Cycle covering of binary matroids. J. Combin. Theory Ser. B 46 (1989), 154–161.</li>
+      <li><span class="key">[Kai12]</span><b>T. Kaiser.</b> A short proof of the tree-packing theorem. Discrete Math. 312 (2012), 1689–1691.</li>
+      <li><span class="key">[Kil75]</span><b>P. A. Kilpatrick.</b> Tutte's first colour-cycle conjecture. Thesis, University of Cape Town, 1975.</li>
+      <li><span class="key">[Kun74]</span><b>S. Kundu.</b> Bounds on the number of disjoint spanning trees. J. Combin. Theory Ser. B 17 (1974), 199–203.</li>
+      <li><span class="key">[LYZ94]</span><b>H.-J. Lai, X. Yu, C.-Q. Zhang.</b> Small circuit double covers of cubic multigraphs. J. Combin. Theory Ser. B 60 (1994), 177–194.</li>
+      <li><span class="key">[LMT88]</span><b>N. Linial, R. Meshulam, M. Tarsi.</b> Matroidal bijections between graphs. J. Combin. Theory Ser. B 45 (1988), 31–44.</li>
+      <li><span class="key">[NW61]</span><b>C. St. J. A. Nash-Williams.</b> Edge-disjoint spanning trees of finite graphs. J. London Math. Soc. 36 (1961), 445–450.</li>
+      <li><span class="key">[Pre81]</span><b>M. Preissmann.</b> Sur les colorations des arêtes des graphes cubiques. Thèse, Université de Grenoble, 1981.</li>
+      <li><span class="key">[Sey79]</span><b>P. D. Seymour.</b> Sums of circuits. In: Graph Theory and Related Topics, Academic Press, 1979, 341–355.</li>
+      <li><span class="key">[Sey81]</span><b>P. D. Seymour.</b> Nowhere-zero 6-flows. J. Combin. Theory Ser. B 30 (1981), 130–135.</li>
+      <li><span class="key">[Sze73]</span><b>G. Szekeres.</b> Polyhedral decompositions of cubic graphs. Bull. Austral. Math. Soc. 8 (1973), 367–387.</li>
+      <li><span class="key">[Tut54]</span><b>W. T. Tutte.</b> A contribution to the theory of chromatic polynomials. Canad. J. Math. 6 (1954), 80–91.</li>
+      <li><span class="key">[Tut61]</span><b>W. T. Tutte.</b> On the problem of decomposing a graph into <i>n</i> connected factors. J. London Math. Soc. 36 (1961), 221–230.</li>
+      <li><span class="key">[Zha97]</span><b>C.-Q. Zhang.</b> Integer flows and cycle covers of graphs. Marcel Dekker, 1997.</li>
+      <li><span class="key">[Zha12]</span><b>C.-Q. Zhang.</b> Circuit double cover of graphs. LMS Lecture Note Series 399, Cambridge University Press, 2012.</li>
+    </ul>
+  </div>
+</div>

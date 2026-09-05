@@ -10,13 +10,14 @@ into linear algebra over the two-element field, and settled there by a parity co
 | --- | --- |
 | `cdc_proof.pdf` | OpenAI, "A proof of the cycle double cover conjecture" (July 2026). Three pages. |
 | `2607.16356v3.pdf` | Sang-il Oum, "A proof of the cycle double cover conjecture by OpenAI: an exposition" (arXiv 2607.16356v3, August 2026). |
+| `cdc-textbook.html` | A short course on the theorem, in the manner of Oum's exposition: the domain-transfer technique first (with the route diagram), then a chapter teaching linear algebra over F₂ from scratch, then the full proof in five chapters with exercises, then the neighbouring conjectures (with the second diagram) and a bibliography. Assumes graph theory and real linear algebra only. |
 | `cdc-domain-map.html` | The case-study document: a diagram of every domain the proof passes through and the mapping between each pair, a table explaining each mapping, a comparison of where the two writeups differ, a second diagram of neighbouring domains, and an appendix that is a tutorial on linear algebra over F₂. |
 
-Open `cdc-domain-map.html` in a browser. It is a single self-contained page with inline SVG diagrams and no build step.
+Open `cdc-domain-map.html` or `cdc-textbook.html` in a browser. It is a single self-contained page with inline SVG diagrams and no build step.
 
 The document is also published in two places:
 
-- GitHub Pages: https://geneweng.github.io/cdc-case-study/
+- GitHub Pages: https://geneweng.github.io/cdc-case-study/ (domain map) and https://geneweng.github.io/cdc-case-study/textbook (short course)
 - Claude artifact: https://claude.ai/code/artifact/72388a03-ca59-450f-94fc-1327c731c4f5
 
 ## The route
