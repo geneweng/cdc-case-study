@@ -19,7 +19,7 @@ Open `cdc-domain-map.html`, `cdc-textbook.html`, or `cdc-history.html` in a brow
 The document is also published in two places:
 
 - GitHub Pages: https://geneweng.github.io/cdc-case-study/ (domain map), https://geneweng.github.io/cdc-case-study/textbook (short course), and https://geneweng.github.io/cdc-case-study/history (brief history)
-- Claude artifacts: https://claude.ai/code/artifact/72388a03-ca59-450f-94fc-1327c731c4f5 (domain map) and https://claude.ai/code/artifact/d6c2d9a0-336f-4abb-82cf-4d72bd481f89 (short course)
+- Claude artifacts: https://claude.ai/code/artifact/72388a03-ca59-450f-94fc-1327c731c4f5 (domain map), https://claude.ai/code/artifact/d6c2d9a0-336f-4abb-82cf-4d72bd481f89 (short course), and https://claude.ai/code/artifact/1317c5d4-7a38-4cf2-9aa1-99adf9e3cd28 (brief history)
 
 ## The route
 
