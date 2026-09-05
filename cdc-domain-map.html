@@ -1,0 +1,537 @@
+<title>Cycle Double Cover Domain Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --paper: #F3F4F7;
+    --surface: #FFFFFF;
+    --ink: #1B1F2A;
+    --muted: #5C6275;
+    --rule: #C7CBD6;
+    --rule-soft: #E2E5EC;
+    --accent: #1F5FBF;
+    --accent-ink: #164A96;
+    --accent-soft: rgba(31, 95, 191, 0.09);
+    --lane-a: rgba(27, 31, 42, 0.025);
+    --lane-b: rgba(27, 31, 42, 0.055);
+    --serif: "STIX Two Text", "Times New Roman", Georgia, serif;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #14161C;
+      --surface: #1B1E26;
+      --ink: #E7E9EF;
+      --muted: #9CA3B6;
+      --rule: #3A3F4E;
+      --rule-soft: #2A2E3A;
+      --accent: #7BA5F2;
+      --accent-ink: #A9C4F7;
+      --accent-soft: rgba(123, 165, 242, 0.14);
+      --lane-a: rgba(231, 233, 239, 0.03);
+      --lane-b: rgba(231, 233, 239, 0.06);
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #14161C;
+    --surface: #1B1E26;
+    --ink: #E7E9EF;
+    --muted: #9CA3B6;
+    --rule: #3A3F4E;
+    --rule-soft: #2A2E3A;
+    --accent: #7BA5F2;
+    --accent-ink: #A9C4F7;
+    --accent-soft: rgba(123, 165, 242, 0.14);
+    --lane-a: rgba(231, 233, 239, 0.03);
+    --lane-b: rgba(231, 233, 239, 0.06);
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page { max-width: 1160px; margin: 0 auto; padding: 48px 28px 96px; }
+  .col { max-width: 68ch; }
+
+  .eyebrow {
+    font-family: var(--sans); font-size: 12px; font-weight: 500;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
+  }
+  h1 {
+    font-family: var(--serif); font-weight: 600; font-size: 40px; line-height: 1.1;
+    letter-spacing: -0.01em; margin: 10px 0 18px; text-wrap: balance;
+  }
+  h2 {
+    font-family: var(--sans); font-weight: 600; font-size: 15px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink); margin: 56px 0 14px;
+    padding-top: 14px; border-top: 1px solid var(--rule);
+  }
+  p { margin: 0 0 14px; }
+  .lede { font-size: 20px; line-height: 1.45; color: var(--ink); }
+  .sources {
+    display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px;
+    font-family: var(--sans); font-size: 14px; color: var(--muted); margin: 22px 0 0;
+  }
+  .sources dt { font-family: var(--mono); font-size: 12.5px; color: var(--ink); padding-top: 2px; }
+  .sources dd { margin: 0; }
+  .sources dd b { color: var(--ink); font-weight: 500; }
+
+  .m { font-family: var(--serif); font-style: italic; }
+  .m .up { font-style: normal; }
+  sub, sup { font-size: 0.72em; line-height: 0; }
+  code { font-family: var(--mono); font-size: 0.85em; }
+
+  figure { margin: 26px 0 0; }
+  .scroll { overflow-x: auto; padding-bottom: 6px; }
+  .scroll svg { display: block; min-width: 980px; max-width: 100%; height: auto; font-family: var(--sans); }
+  .scroll.small svg { min-width: 720px; }
+  figcaption {
+    font-family: var(--sans); font-size: 14px; line-height: 1.5; color: var(--muted);
+    max-width: 78ch; margin: 12px 0 0;
+  }
+  figcaption b { color: var(--ink); font-weight: 500; }
+
+  /* Diagram styles */
+  .lane { fill: var(--lane-a); }
+  .lane.b { fill: var(--lane-b); }
+  .lane.c { fill: var(--accent-soft); }
+  .lane-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; fill: var(--muted); }
+  .lane-label tspan.sub { font-weight: 400; letter-spacing: 0; }
+  .node rect { fill: var(--surface); stroke: var(--ink); stroke-width: 1.2; }
+  .node.acc rect { stroke: var(--accent); stroke-width: 1.4; }
+  .node.end rect { stroke-width: 2; }
+  .node .t { font-size: 13px; font-weight: 600; fill: var(--ink); }
+  .node .d { font-size: 11.5px; fill: var(--muted); }
+  .node .tag { font-size: 9.5px; font-weight: 600; letter-spacing: 0.1em; fill: var(--accent-ink); }
+  .edge { stroke: var(--ink); stroke-width: 1.3; fill: none; }
+  .edge.acc { stroke: var(--accent); }
+  .edge.dep { stroke-dasharray: 5 4; }
+  .lbl { font-size: 11px; fill: var(--ink); }
+  .lbl.acc { fill: var(--accent-ink); }
+  .lbl tspan.n { font-weight: 600; }
+  .lbl.small { font-size: 10.5px; fill: var(--muted); }
+
+  /* Table */
+  .tbl { overflow-x: auto; margin-top: 18px; }
+  table { border-collapse: collapse; width: 100%; min-width: 860px; font-family: var(--sans); font-size: 14px; line-height: 1.45; }
+  th { text-align: left; font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 14px 10px 0; border-bottom: 1px solid var(--rule); vertical-align: bottom; }
+  td { padding: 12px 14px 12px 0; border-bottom: 1px solid var(--rule-soft); vertical-align: top; }
+  td.n { font-family: var(--mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; width: 2ch; }
+  td.dom { width: 24%; }
+  td.dom .from { color: var(--muted); }
+  td.dom .to { color: var(--ink); font-weight: 500; }
+  td.src { font-family: var(--mono); font-size: 12px; color: var(--muted); width: 17%; white-space: nowrap; }
+  tr.acc td.n, tr.acc td.dom .to { color: var(--accent-ink); }
+  td .m { font-size: 15px; }
+
+  /* Comparison */
+  .cmp { display: grid; grid-template-columns: 1fr 1fr; gap: 0 32px; font-family: var(--sans); font-size: 14.5px; line-height: 1.5; margin-top: 6px; }
+  .cmp h3 { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; margin: 0 0 6px; color: var(--ink); }
+  .cmp h3 span { font-family: var(--mono); font-weight: 400; color: var(--muted); font-size: 12px; margin-left: 8px; }
+  .cmp .row { display: contents; }
+  .cmp .cell { padding: 12px 0; border-top: 1px solid var(--rule-soft); }
+  .cmp .cell:first-child { font-family: var(--serif); font-size: 15.5px; color: var(--ink); }
+  .cmp .cell .k { font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: 4px; }
+  .cmp .cell .m { font-size: 15px; }
+  @media (max-width: 720px) {
+    .cmp { grid-template-columns: 1fr; }
+    h1 { font-size: 32px; }
+  }
+
+  ul.list { padding-left: 1.1em; margin: 0; }
+  ul.list li { margin-bottom: 10px; padding-left: 0.3em; }
+  ul.list li b { font-family: var(--sans); font-weight: 600; font-size: 15px; }
+  .note { font-family: var(--sans); font-size: 14px; color: var(--muted); }
+</style>
+
+<div class="page">
+  <div class="col">
+    <div class="eyebrow">Two papers, one route</div>
+    <h1>Cycle Double Cover Domain Map</h1>
+    <p class="lede">
+      The 2026 proof of the cycle double cover conjecture never attacks cycles directly. It carries the
+      question out of graphs, through flows and edge labels, into linear algebra over
+      <span class="m"><span class="up">𝔽</span><sub>2</sub></span>, and settles it there with a parity count.
+      This page maps every domain the two papers pass through and the mapping that connects each pair.
+    </p>
+    <dl class="sources">
+      <dt>cdc_proof.pdf</dt>
+      <dd><b>OpenAI, “A proof of the cycle double cover conjecture.”</b> Three pages. Proof by GPT 5.6 Sol Ultra, July 2026. Cites the 8-flow theorem and Tutte, then does the reduction by dual vector spaces.</dd>
+      <dt>2607.16356v3.pdf</dt>
+      <dd><b>Sang-il Oum, “A proof of the cycle double cover conjecture by OpenAI: an exposition.”</b> arXiv, August 2026. Same route, made self-contained: derives the flow from tree packing, symmetrises the edge labels, and replaces dual spaces with column space = (left nullspace)<sup>⊥</sup>.</dd>
+    </dl>
+  </div>
+
+  <h2>The route</h2>
+  <div class="col">
+    <p>
+      Read the figure left to right and top to bottom. Each box is a domain, a kind of object the proof works with.
+      Each arrow is a mapping that turns a problem about the source into a problem about the target.
+      The top lane is where the question lives, the middle lane where the structure lives, and the bottom lane,
+      in blue, where the only real computation happens.
+    </p>
+  </div>
+
+  <figure>
+    <div class="scroll">
+      <svg viewBox="0 0 1280 540" role="img" aria-label="The proof moves from bridgeless graphs to cubic graphs, to spanning trees, to a nowhere-zero flow over the field with eight elements, then drops into a linear system over the two-element field, dualises it to an orthogonality check, resolves that by a parity count at each vertex, lifts the solution back to two-element edge labels, and reads off a cycle double cover.">
+        <defs>
+          <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+          <marker id="ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" style="fill: var(--accent)"/>
+          </marker>
+        </defs>
+
+        <!-- lanes -->
+        <rect class="lane" x="24" y="28" width="1232" height="146" rx="6"/>
+        <rect class="lane b" x="24" y="194" width="1232" height="146" rx="6"/>
+        <rect class="lane c" x="24" y="360" width="1232" height="146" rx="6"/>
+        <text class="lane-label" x="36" y="50">GRAPHS <tspan class="sub">· where the question is asked</tspan></text>
+        <text class="lane-label" x="36" y="216">FLOWS AND EDGE LABELS <tspan class="sub">· where the structure lives</tspan></text>
+        <text class="lane-label" x="36" y="382">LINEAR ALGEBRA OVER 𝔽₂ <tspan class="sub">· where it is actually solved</tspan></text>
+
+        <!-- lane A nodes -->
+        <g class="node end">
+          <rect x="40" y="66" width="168" height="88" rx="4"/>
+          <text class="tag" x="52" y="83">START · HARD</text>
+          <text class="t" x="52" y="103">Bridgeless graph</text>
+          <text class="d" x="52" y="123">any finite graph, no bridge</text>
+          <text class="d" x="52" y="141">does it have a CDC?</text>
+        </g>
+        <g class="node">
+          <rect x="292" y="66" width="168" height="88" rx="4"/>
+          <text class="t" x="304" y="98">Cubic, 3-edge-connected</text>
+          <text class="d" x="304" y="120">every vertex has 3 edges</text>
+          <text class="d" x="304" y="138">a minimum counterexample</text>
+        </g>
+        <g class="node end">
+          <rect x="1048" y="66" width="168" height="88" rx="4"/>
+          <text class="tag" x="1060" y="83">FINISH · ANSWER</text>
+          <text class="t" x="1060" y="103">Cycle double cover</text>
+          <text class="d" x="1060" y="123">8 Eulerian subgraphs H<tspan baseline-shift="sub" font-size="8.5">s</tspan></text>
+          <text class="d" x="1060" y="141">each edge in exactly two</text>
+        </g>
+
+        <!-- lane B nodes -->
+        <g class="node">
+          <rect x="292" y="232" width="168" height="88" rx="4"/>
+          <text class="t" x="304" y="264">Three spanning trees</text>
+          <text class="d" x="304" y="286">T₁, T₂, T₃ with no edge</text>
+          <text class="d" x="304" y="304">common to all three</text>
+        </g>
+        <g class="node">
+          <rect x="544" y="232" width="168" height="88" rx="4"/>
+          <text class="t" x="556" y="264">Nowhere-zero 𝔽₂³-flow</text>
+          <text class="d" x="556" y="286">φ(e) ≠ 0 on every edge,</text>
+          <text class="d" x="556" y="304">Σ φ = 0 at every vertex</text>
+        </g>
+        <g class="node">
+          <rect x="1048" y="232" width="168" height="88" rx="4"/>
+          <text class="t" x="1060" y="264">Two-element edge labels</text>
+          <text class="d" x="1060" y="286">P<tspan baseline-shift="sub" font-size="8.5">e</tspan> ⊆ 𝔽₂³ with |P<tspan baseline-shift="sub" font-size="8.5">e</tspan>| = 2;</text>
+          <text class="d" x="1060" y="304">each value 0 or 2× per vertex</text>
+        </g>
+
+        <!-- lane C nodes -->
+        <g class="node acc">
+          <rect x="544" y="398" width="168" height="88" rx="4"/>
+          <text class="t" x="556" y="430">Linear system over 𝔽₂</text>
+          <text class="d" x="556" y="452">t<tspan baseline-shift="sub" font-size="8.5">u</tspan> + t<tspan baseline-shift="sub" font-size="8.5">v</tspan> ∈ d<tspan baseline-shift="sub" font-size="8.5">e</tspan> + ⟨φ(e)⟩</text>
+          <text class="d" x="556" y="470">i.e. A t = b, unknowns t<tspan baseline-shift="sub" font-size="8.5">v</tspan></text>
+        </g>
+        <g class="node acc">
+          <rect x="796" y="398" width="168" height="88" rx="4"/>
+          <text class="t" x="808" y="430">Orthogonality check</text>
+          <text class="d" x="808" y="452">b ∈ C(A)  ⇔  b ⊥ ker(Aᵀ)</text>
+          <text class="d" x="808" y="470">certificates: one h<tspan baseline-shift="sub" font-size="8.5">e</tspan> per edge</text>
+        </g>
+        <g class="node acc end">
+          <rect x="1048" y="398" width="168" height="88" rx="4"/>
+          <text class="tag" x="1060" y="415">SOLVED HERE · EASY</text>
+          <text class="t" x="1060" y="435">Parity at one vertex</text>
+          <text class="d" x="1060" y="455">λ = #{ h<tspan baseline-shift="sub" font-size="8.5">e</tspan> ≠ 0 at v } mod 2;</text>
+          <text class="d" x="1060" y="473">every edge has two ends ⇒ 0</text>
+        </g>
+
+        <!-- 1: A1 -> A2 -->
+        <line class="edge" x1="208" y1="110" x2="290" y2="110" marker-end="url(#ah)"/>
+        <text class="lbl" x="250" y="101" text-anchor="middle"><tspan class="n">1</tspan>  reduce</text>
+
+        <!-- 2: A2 -> B1 (down) -->
+        <line class="edge" x1="376" y1="154" x2="376" y2="230" marker-end="url(#ah)"/>
+        <text class="lbl" x="388" y="190"><tspan class="n">2</tspan>  double every edge,</text>
+        <text class="lbl" x="388" y="205">pack 3 spanning trees</text>
+
+        <!-- 3: B1 -> B2 -->
+        <line class="edge" x1="460" y1="276" x2="542" y2="276" marker-end="url(#ah)"/>
+        <text class="lbl" x="502" y="267" text-anchor="middle"><tspan class="n">3</tspan>  cycle space</text>
+
+        <!-- 4: B2 -> C1 (down, accent) -->
+        <line class="edge acc" x1="628" y1="320" x2="628" y2="396" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="640" y="356"><tspan class="n">4</tspan>  local labels must</text>
+        <text class="lbl acc" x="640" y="371">agree on each edge</text>
+
+        <!-- 5: C1 -> C2 -->
+        <line class="edge acc" x1="712" y1="442" x2="794" y2="442" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="754" y="433" text-anchor="middle"><tspan class="n">5</tspan>  dualise</text>
+
+        <!-- 6: C2 -> C3 -->
+        <line class="edge acc" x1="964" y1="442" x2="1046" y2="442" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="1006" y="433" text-anchor="middle"><tspan class="n">6</tspan>  one vertex</text>
+
+        <!-- 7: C3 -> B3 (up, accent) -->
+        <line class="edge acc" x1="1132" y1="398" x2="1132" y2="322" marker-end="url(#ah-acc)"/>
+        <text class="lbl acc" x="1120" y="356" text-anchor="end"><tspan class="n">7</tspan>  the t<tspan baseline-shift="sub" font-size="8.5">v</tspan> exist</text>
+        <text class="lbl acc small" x="1120" y="371" text-anchor="end">OpenAI Lemma 2.2 · Oum Prop. 14</text>
+
+        <!-- 8: B2 -> B3 (long, dashed: depends on 7) -->
+        <line class="edge dep" x1="712" y1="276" x2="1046" y2="276" marker-end="url(#ah)"/>
+        <text class="lbl" x="880" y="265" text-anchor="middle"><tspan class="n">8</tspan>  P<tspan baseline-shift="sub" font-size="8.5">e</tspan> = t<tspan baseline-shift="sub" font-size="8.5">v</tspan> + φ(f) + ⟨φ(e)⟩,  f another edge at v</text>
+        <text class="lbl small" x="880" y="293" text-anchor="middle">well defined only once 4 – 7 succeed</text>
+
+        <!-- 9: B3 -> A3 (up) -->
+        <line class="edge" x1="1132" y1="232" x2="1132" y2="156" marker-end="url(#ah)"/>
+        <text class="lbl" x="1120" y="190" text-anchor="end"><tspan class="n">9</tspan>  layer H<tspan baseline-shift="sub" font-size="8.5">s</tspan> = { e : s ∈ P<tspan baseline-shift="sub" font-size="8.5">e</tspan> }</text>
+        <text class="lbl small" x="1120" y="205" text-anchor="end">one Eulerian subgraph per s ∈ 𝔽₂³</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>The nine mappings of the proof.</b> Solid arrows are constructions that always go through. The dashed arrow 8 is the
+      definition that only makes sense after the blue loop 4 to 7 has produced the vertex vectors
+      <span class="m">t<sub>v</sub></span>. Numbers match the table below.
+    </figcaption>
+  </figure>
+
+  <h2>Each mapping in one line</h2>
+  <div class="col">
+    <p>
+      For every hop: what object you hold before, what you hold after, how the papers build it, and why the new domain
+      is easier to work in. Blue rows are the algebraic loop.
+    </p>
+  </div>
+  <div class="tbl">
+    <table>
+      <thead>
+        <tr><th>#</th><th>From → To</th><th>Mapping</th><th>Why the target is easier</th><th>Where</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="n">1</td>
+          <td class="dom"><span class="from">Bridgeless graph</span> → <span class="to">Cubic 3-edge-connected graph</span></td>
+          <td>Take a counterexample with fewest edges. A 2-edge-cut is removed by contracting one of its edges and lifting the smaller cover back. A vertex of degree 4 or more is split with Fleischner's splitting lemma, which detaches two of its edges into one new edge while keeping the graph 2-edge-connected.</td>
+          <td>Every vertex now meets exactly three edges, so every later local identity has three terms and the flow value on one edge is the sum of the other two.</td>
+          <td class="src">Oum Prop. 4, Lemma 3<br>OpenAI cites Jaeger [3]</td>
+        </tr>
+        <tr>
+          <td class="n">2</td>
+          <td class="dom"><span class="from">Cubic 3-edge-connected graph</span> → <span class="to">Three spanning trees, no common edge</span></td>
+          <td>Add a parallel copy of every edge; the result is 6-edge-connected. Kundu's corollary of the Tutte and Nash-Williams tree-packing theorem gives three edge-disjoint spanning trees there. Projected back, no edge lies in all three.</td>
+          <td>Connectivity, a statement about all cuts, becomes three concrete rigid objects whose complements generate the cycle space.</td>
+          <td class="src">Oum Thm 5, Cor. 6, Lemma 7</td>
+        </tr>
+        <tr>
+          <td class="n">3</td>
+          <td class="dom"><span class="from">Three spanning trees</span> → <span class="to">Nowhere-zero <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>3</sup></span>-flow</span></td>
+          <td>For each tree <span class="m">T<sub>i</sub></span>, take the symmetric difference of the fundamental cycles of all edges outside <span class="m">T<sub>i</sub></span>. The result <span class="m">F<sub>i</sub></span> has even degree everywhere and contains every non-tree edge. The three indicator vectors form <span class="m">φ</span>. OpenAI reaches the same object by citing the 8-flow theorem and Tutte's group-flow theorem instead.</td>
+          <td>A packing fact becomes an algebraic object that satisfies a linear conservation law at every vertex, and nonzero-ness is guaranteed edge by edge.</td>
+          <td class="src">Oum Lemma 8, Lemma 10<br>OpenAI §2 (Kilpatrick, Jaeger, Tutte)</td>
+        </tr>
+        <tr class="acc">
+          <td class="n">4</td>
+          <td class="dom"><span class="from">Flow</span> → <span class="to">Linear system over <span class="m"><span class="up">𝔽</span><sub>2</sub></span></span></td>
+          <td>At a vertex the three flow values are nonzero, distinct, and sum to zero, so the sets <span class="m">{t + φ(f), t + φ(g)}</span> already use every value 0 or 2 times locally. The only obstacle is that the two ends of an edge must build the same set. That is the condition <span class="m">t<sub>u</sub> + t<sub>v</sub> ∈ d<sub>e</sub> + ⟨φ(e)⟩</span> (Oum), or <span class="m">t<sub>u</sub> + t<sub>v</sub> + ε<sub>e</sub> f(e) = d<sub>e</sub></span> with an extra bit per edge (OpenAI).</td>
+          <td>"Does a global labelling exist?" becomes "is this linear system solvable?", with unknowns indexed by vertices and equations by edges.</td>
+          <td class="src">OpenAI eq. (2)–(4)<br>Oum Lemma 12, eq. (1)</td>
+        </tr>
+        <tr class="acc">
+          <td class="n">5</td>
+          <td class="dom"><span class="from">Linear system</span> → <span class="to">Orthogonality check</span></td>
+          <td>Oum: build the block matrix <span class="m">A</span> and use column space = (left nullspace)<sup>⊥</sup>, so <span class="m">A t = b</span> is solvable iff <span class="m">b</span> is orthogonal to every <span class="m">y</span> with <span class="m">Aᵀy = 0</span>. OpenAI: <span class="m">d ∈ im L</span> iff every dual family <span class="m">η</span> that vanishes on <span class="m">im L</span> also kills <span class="m">d</span>. Either way the certificate is one vector <span class="m">h<sub>e</sub></span> per edge with <span class="m">h<sub>e</sub> · φ(e) = 0</span> and zero sum at each vertex.</td>
+          <td>Finding a solution is replaced by showing every would-be certificate of infeasibility vanishes, and certificates are local: a vertex condition and an edge condition.</td>
+          <td class="src">OpenAI eq. (5)–(6)<br>Oum Lemma 13, Prop. 14, eq. (2)</td>
+        </tr>
+        <tr class="acc">
+          <td class="n">6</td>
+          <td class="dom"><span class="from">Orthogonality check</span> → <span class="to">Parity at one vertex</span></td>
+          <td>Fix a cubic vertex. The six pairings of the three <span class="m">h<sub>e</sub></span> with the three <span class="m">φ(e)</span> collapse to a single bit <span class="m">λ</span>, and <span class="m">λ</span> equals the number of nonzero <span class="m">h<sub>e</sub></span> at that vertex, mod 2. The vertex's contribution to <span class="m">Σ h<sub>e</sub> · d<sub>e</sub></span> is exactly <span class="m">λ</span>.</td>
+          <td>A computation in a 3-dimensional vector space becomes a count of nonzero edges at a vertex.</td>
+          <td class="src">OpenAI eq. (7)–(9)<br>Oum eq. (3)</td>
+        </tr>
+        <tr class="acc">
+          <td class="n">7</td>
+          <td class="dom"><span class="from">Parity</span> → <span class="to">The <span class="m">t<sub>v</sub></span> exist</span></td>
+          <td>Summing the vertex contributions counts each edge with <span class="m">h<sub>e</sub> ≠ 0</span> twice, once at each end. Twice anything is 0 in <span class="m"><span class="up">𝔽</span><sub>2</sub></span>, so every certificate vanishes and the system is solvable.</td>
+          <td>Double counting closes the argument. The fact that an edge has two ends is precisely what characteristic 2 erases.</td>
+          <td class="src">OpenAI Lemma 2.2<br>Oum Prop. 15</td>
+        </tr>
+        <tr>
+          <td class="n">8</td>
+          <td class="dom"><span class="from">Flow + <span class="m">t<sub>v</sub></span></span> → <span class="to">Two-element edge labels</span></td>
+          <td>Set <span class="m">P<sub>e</sub> = t<sub>v</sub> + φ(f) + ⟨φ(e)⟩</span> for either endpoint <span class="m">v</span> and either other edge <span class="m">f</span> at <span class="m">v</span>. Step 7 makes it independent of the endpoint; <span class="m">φ(e) ≠ 0</span> makes it a genuine pair. At every vertex each value of <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>3</sup></span> appears in 0 or 2 of the three sets. A proper 3-edge-colouring is the special case <span class="m">{0, e₁}, {0, e₂}, {e₁, e₂}</span>.</td>
+          <td>A relaxed 3-edge-colouring: exactly the local evenness that a cover needs, without asking the graph to be 3-edge-colourable.</td>
+          <td class="src">OpenAI eq. (3), Lemma 2.1 remark<br>Oum Lemma 12</td>
+        </tr>
+        <tr>
+          <td class="n">9</td>
+          <td class="dom"><span class="from">Two-element edge labels</span> → <span class="to">Cycle double cover</span></td>
+          <td>For each value <span class="m">s</span>, the edge set <span class="m">H<sub>s</sub> = {e : s ∈ P<sub>e</sub>}</span> has even degree at every vertex, so it is Eulerian and splits into cycles. Each edge lies in exactly |<span class="m">P<sub>e</sub></span>| = 2 of the eight layers.</td>
+          <td>The cover is read off layer by layer. Eight values give an 8-cycle double cover, which is also the bound Oum records as Theorem 18.</td>
+          <td class="src">OpenAI Lemma 2.1<br>Oum Lemma 11, Thm 18</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Where the two writeups take different roads</h2>
+  <div class="col">
+    <p>
+      The route is the same in both papers. Four legs are travelled with different vehicles, and each difference is a
+      choice of domain: Oum swaps a cited theorem for a self-contained construction, and an abstract object for a
+      concrete one.
+    </p>
+  </div>
+  <div class="cmp">
+    <div class="row">
+      <div class="cell"><span class="k">Leg</span>Reaching cubic graphs (1)</div>
+      <div class="cell"><h3>OpenAI <span>§2</span></h3>Cites Jaeger's Proposition 4 and notes a minimum counterexample must be a snark.</div>
+      <div class="cell"><h3>Oum <span>§2–3</span></h3>Proves the reduction from scratch with Fleischner's splitting lemma and 2-edge-cut contraction.</div>
+    </div>
+    <div class="row">
+      <div class="cell"><span class="k">Leg</span>Reaching the flow (2–3)</div>
+      <div class="cell"><h3>OpenAI</h3>Nowhere-zero 8-flow theorem (Kilpatrick, Jaeger), converted to an <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>3</sup></span>-flow by Tutte's group-flow theorem. Domain: integer flows ⇔ group flows.</div>
+      <div class="cell"><h3>Oum <span>§4</span></h3>Tree packing (Tutte, Nash-Williams, Kundu) and fundamental cycles. Never mentions integer 8-flows. Domain: spanning trees ⇒ cycle space.</div>
+    </div>
+    <div class="row">
+      <div class="cell"><span class="k">Leg</span>Local labels (4, 8)</div>
+      <div class="cell"><h3>OpenAI <span>eq. (2)–(4)</span></h3>Asymmetric: at each vertex one edge <span class="m">b</span> is singled out, <span class="m">g<sub>v,a</sub> = 0, g<sub>v,b</sub> = x, g<sub>v,c</sub> = 0</span>, and an extra unknown bit <span class="m">ε<sub>e</sub></span> per edge records which of the two agreeing shifts occurs.</div>
+      <div class="cell"><h3>Oum <span>Lemma 12</span></h3>Symmetric: the coset <span class="m">c<sub>v,e</sub> + ⟨φ(e)⟩</span> does not depend on which other edge is chosen, so no edge is distinguished and the bit <span class="m">ε<sub>e</sub></span> is absorbed into the coset.</div>
+    </div>
+    <div class="row">
+      <div class="cell"><span class="k">Leg</span>Solvability (5)</div>
+      <div class="cell"><h3>OpenAI <span>Lemma 2.2</span></h3>Dual vector space <span class="m">Γ*</span>; <span class="m">d ∈ im L</span> iff every dual family annihilating <span class="m">im L</span> annihilates <span class="m">d</span>.</div>
+      <div class="cell"><h3>Oum <span>§6</span></h3>An explicit block matrix <span class="m">A</span> with rows <span class="m">R<sub>e</sub></span> spanning <span class="m">⟨φ(e)⟩<sup>⊥</sup></span>, and the fact <span class="m">C(A) = ker(Aᵀ)<sup>⊥</sup></span>. Pitched at advanced undergraduates.</div>
+    </div>
+    <div class="row">
+      <div class="cell"><span class="k">Leg</span>The parity count (6–7)</div>
+      <div class="cell"><h3>Both</h3>Identical: <span class="m">λ</span> is the parity of nonzero certificate vectors at a vertex; the global sum counts every edge twice.</div>
+      <div class="cell"><h3>Both</h3>This is the one leg neither paper could simplify further, which suggests it is the true content of the proof.</div>
+    </div>
+  </div>
+
+  <h2>Neighbouring domains the papers point to</h2>
+  <div class="col">
+    <p>
+      Oum's closing section and the OpenAI introduction mention several other translations of the same problem.
+      None is needed for the proof, but each is another domain the cycle double cover question can be moved into,
+      sometimes gaining strength and sometimes losing it.
+    </p>
+  </div>
+
+  <figure>
+    <div class="scroll small">
+      <svg viewBox="0 0 900 420" role="img" aria-label="Cycle double covers sit at the centre; surface embeddings map to them by face boundaries, binary matroids are equivalent by Jamshy and Tarsi, 3-edge-colourings are equivalent to 3- or 4-cycle double covers, perfect matchings are equivalent to 6-cycle 4-covers by complements, and nowhere-zero flows exchange with covers in both directions.">
+        <defs>
+          <marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+          </marker>
+        </defs>
+
+        <!-- centre -->
+        <g class="node end">
+          <rect x="340" y="175" width="220" height="80" rx="4"/>
+          <text class="t" x="450" y="209" text-anchor="middle">Cycle double covers</text>
+          <text class="d" x="450" y="231" text-anchor="middle">of bridgeless graphs</text>
+        </g>
+
+        <!-- satellites -->
+        <g class="node">
+          <rect x="40" y="40" width="200" height="70" rx="4"/>
+          <text class="t" x="52" y="68">Surface embeddings</text>
+          <text class="d" x="52" y="90">strong embeddings; planar case</text>
+        </g>
+        <g class="node">
+          <rect x="660" y="40" width="200" height="70" rx="4"/>
+          <text class="t" x="672" y="68">Binary matroids</text>
+          <text class="d" x="672" y="90">no coloops, no F₇* minor</text>
+        </g>
+        <g class="node">
+          <rect x="40" y="180" width="200" height="70" rx="4"/>
+          <text class="t" x="52" y="208">3-edge-colourings</text>
+          <text class="d" x="52" y="230">of cubic graphs</text>
+        </g>
+        <g class="node">
+          <rect x="660" y="180" width="200" height="70" rx="4"/>
+          <text class="t" x="672" y="208">Perfect matchings</text>
+          <text class="d" x="672" y="230">6 of them, each edge twice</text>
+        </g>
+        <g class="node">
+          <rect x="340" y="330" width="220" height="70" rx="4"/>
+          <text class="t" x="450" y="358" text-anchor="middle">Nowhere-zero flows</text>
+          <text class="d" x="450" y="380" text-anchor="middle">ℤ<tspan baseline-shift="sub" font-size="8.5">k</tspan>-flows, 𝔽₂³-flows</text>
+        </g>
+
+        <!-- embeddings -> CDC -->
+        <line class="edge" x1="230" y1="110" x2="360" y2="173" marker-end="url(#ah2)"/>
+        <text class="lbl" x="330" y="128" text-anchor="middle">face boundaries ⇒</text>
+
+        <!-- matroids <-> CDC -->
+        <line class="edge" x1="540" y1="173" x2="670" y2="110" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <text class="lbl" x="570" y="128" text-anchor="middle">⇔ Jamshy–Tarsi</text>
+
+        <!-- colourings <-> CDC -->
+        <line class="edge" x1="240" y1="215" x2="340" y2="215" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <text class="lbl" x="290" y="206" text-anchor="middle">⇔ 3- or 4-CDC</text>
+        <text class="lbl small" x="290" y="233" text-anchor="middle">Jaeger</text>
+
+        <!-- matchings <-> CDC -->
+        <line class="edge" x1="560" y1="215" x2="660" y2="215" marker-start="url(#ah2)" marker-end="url(#ah2)"/>
+        <text class="lbl" x="610" y="206" text-anchor="middle">complements</text>
+        <text class="lbl small" x="610" y="233" text-anchor="middle">⇔ 6-cycle 4-cover</text>
+
+        <!-- flows <-> CDC, two directions -->
+        <line class="edge" x1="430" y1="255" x2="430" y2="328" marker-end="url(#ah2)"/>
+        <text class="lbl" x="418" y="288" text-anchor="end">orientable k-CDC ⇒</text>
+        <text class="lbl small" x="418" y="303" text-anchor="end">nowhere-zero ℤ<tspan baseline-shift="sub" font-size="8.5">k</tspan>-flow</text>
+        <line class="edge" x1="470" y1="330" x2="470" y2="257" marker-end="url(#ah2)"/>
+        <text class="lbl" x="482" y="288">𝔽₂³-flow ⇒</text>
+        <text class="lbl small" x="482" y="303">7-cycle 4-cover</text>
+      </svg>
+    </div>
+    <figcaption>
+      <b>Five neighbouring domains.</b> Double-headed arrows are equivalences; single arrows only go one way.
+    </figcaption>
+  </figure>
+
+  <div class="col">
+    <ul class="list">
+      <li><b>Surfaces → cycles.</b> A strong embedding has every face boundary a cycle, and the face boundaries of a 2-cell embedding cover every edge twice. The strong embedding conjecture would imply the theorem; the theorem now settles it for cubic graphs. Planar graphs were the first known case, by facial cycles of blocks. <span class="note">Oum Conj. 2; OpenAI §1.</span></li>
+      <li><b>Colourings ⇔ covers.</b> For loopless cubic graphs, 3-edge-colourable, having a 3-cycle double cover, and having a 4-cycle double cover are equivalent. The Petersen graph shows 4 layers are not always enough; the proof gives 8; the open conjecture asks for 5. <span class="note">Oum Thm 19, Conj. 20; OpenAI §1 (Szekeres).</span></li>
+      <li><b>Covers → flows.</b> An orientable <span class="m">k</span>-cycle double cover yields a nowhere-zero <span class="m">ℤ<sub>k</sub></span>-flow, so the orientable 5-cover conjecture would imply Tutte's 5-flow conjecture. <span class="note">Oum Lemma 22, Conj. 21.</span></li>
+      <li><b>Flows → covers.</b> The seven nonzero linear combinations of the three coordinate subgraphs of an <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>3</sup></span>-flow form a 7-cycle 4-cover; Seymour's 6-flow gives a 10-cycle 6-cover. <span class="note">Oum Thm 23 (Bermond, Jackson, Jaeger), Thm 24 (Fan).</span></li>
+      <li><b>Matchings ⇔ covers.</b> Complementing each of six perfect matchings that cover every edge twice gives a 6-cycle 4-cover, so the Berge–Fulkerson conjecture is a cover statement in disguise. <span class="note">Oum Conj. 25, 26.</span></li>
+      <li><b>Graphs → binary matroids.</b> The conjecture is equivalent to the same statement for binary matroids without coloops and without an <span class="m">F<sub>7</sub>*</span> minor, so the theorem covers all regular matroids. The bounded-size versions do not transfer: the cographic matroid of <span class="m">K<sub>n</sub></span> needs <span class="m">n</span> cycles. <span class="note">Oum Thm 27 (Jamshy, Tarsi), §9.5.</span></li>
+      <li><b>Integer flows ⇔ group flows.</b> Tutte's group-flow theorem lets OpenAI trade a nowhere-zero 8-flow for an <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>3</sup></span>-flow, the domain where characteristic 2 makes orientation irrelevant. <span class="note">OpenAI §2 (Tutte [9]).</span></li>
+    </ul>
+  </div>
+
+  <h2>What the pattern teaches</h2>
+  <div class="col">
+    <p>
+      Every hop trades an existence question for a more rigid object. Bridgelessness becomes cubic vertices, cubic vertices
+      become three trees, trees become a flow, a flow becomes coset conditions, cosets become a linear system, and the system
+      becomes a duality check. None of these hops is deep on its own.
+    </p>
+    <p>
+      The payoff is the last step. Once the question is "does this vector lie in a column space?", it can be attacked by
+      showing every certificate against it vanishes, and the certificate sum turns out to count each edge at both of its ends.
+      The cover is a <em>double</em> cover, the field has characteristic 2, and a graph edge has exactly two ends. The proof works
+      because those three twos are the same two.
+    </p>
+  </div>
+</div>
