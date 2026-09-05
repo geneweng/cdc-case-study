@@ -14,7 +14,10 @@ into linear algebra over the two-element field, and settled there by a parity co
 
 Open `cdc-domain-map.html` in a browser. It is a single self-contained page with inline SVG diagrams and no build step.
 
-A published copy is available as a Claude artifact: https://claude.ai/code/artifact/72388a03-ca59-450f-94fc-1327c731c4f5
+The document is also published in two places:
+
+- GitHub Pages: https://geneweng.github.io/cdc-case-study/
+- Claude artifact: https://claude.ai/code/artifact/72388a03-ca59-450f-94fc-1327c731c4f5
 
 ## The route
 
