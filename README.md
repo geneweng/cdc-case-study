@@ -10,7 +10,7 @@ into linear algebra over the two-element field, and settled there by a parity co
 | --- | --- |
 | `cdc_proof.pdf` | OpenAI, "A proof of the cycle double cover conjecture" (July 2026). Three pages. |
 | `2607.16356v3.pdf` | Sang-il Oum, "A proof of the cycle double cover conjecture by OpenAI: an exposition" (arXiv 2607.16356v3, August 2026). |
-| `cdc-domain-map.html` | The case-study document: a diagram of every domain the proof passes through and the mapping between each pair, a table explaining each mapping, a comparison of where the two writeups differ, and a second diagram of neighbouring domains. |
+| `cdc-domain-map.html` | The case-study document: a diagram of every domain the proof passes through and the mapping between each pair, a table explaining each mapping, a comparison of where the two writeups differ, a second diagram of neighbouring domains, and an appendix that is a tutorial on linear algebra over F₂. |
 
 Open `cdc-domain-map.html` in a browser. It is a single self-contained page with inline SVG diagrams and no build step.
 
@@ -30,6 +30,15 @@ The document is also published in two places:
 7. Parity → solvability (each edge is counted at both ends, and 2 = 0 in F₂).
 8. Solution → two-element edge labels (a relaxed 3-edge-colouring).
 9. Edge labels → cycle double cover (one Eulerian layer per value of F₂³, giving an 8-cycle double cover).
+
+## Appendix: linear algebra over F₂
+
+The document ends with a self-contained tutorial on the linear algebra the blue lane of the route uses,
+pitched at a reader who has seen linear algebra over the reals. It covers the two-element field, vectors as
+bit strings and as sets, spans and cosets, the dot product and its self-orthogonal vectors, elimination
+without fractions, the identity column space = (left nullspace)⊥, and how the proof's system is assembled,
+with worked examples on a triangle and at one cubic vertex. A closing table lists what carries over from the
+reals, what changes, and which mapping uses each fact.
 
 ## Where the two papers differ
 

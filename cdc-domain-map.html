@@ -146,6 +146,59 @@
   ul.list li { margin-bottom: 10px; padding-left: 0.3em; }
   ul.list li b { font-family: var(--sans); font-weight: 600; font-size: 15px; }
   .note { font-family: var(--sans); font-size: 14px; color: var(--muted); }
+
+  /* Appendix */
+  a { color: var(--accent-ink); text-decoration-color: var(--rule); text-underline-offset: 2px; }
+  .ax h3 {
+    font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.25;
+    letter-spacing: -0.005em; margin: 40px 0 10px; text-wrap: balance;
+  }
+  .ax h3 .no { font-family: var(--mono); font-weight: 400; font-size: 13px; color: var(--muted); margin-right: 12px; vertical-align: 0.18em; }
+  .step {
+    display: inline-block; font-family: var(--mono); font-size: 11px; font-weight: 500; line-height: 1.5;
+    color: var(--accent-ink); background: var(--accent-soft); border-radius: 3px; padding: 0 6px;
+    vertical-align: 0.12em; white-space: nowrap;
+  }
+  .eq { font-family: var(--serif); text-align: center; margin: 10px 0 16px; font-size: 18px; }
+  .ops { display: flex; gap: 36px; flex-wrap: wrap; margin: 4px 0 16px; }
+  .ops table { width: auto; min-width: 0; font-family: var(--mono); font-size: 14px; text-align: center; font-variant-numeric: tabular-nums; }
+  .ops th, .ops td { padding: 5px 13px; border: none; text-transform: none; letter-spacing: 0; font-size: 14px; }
+  .ops th { color: var(--muted); font-weight: 500; }
+  .ops thead th { border-bottom: 1px solid var(--rule); }
+  .ops thead th.op { color: var(--ink); font-family: var(--serif); font-size: 17px; border-right: 1px solid var(--rule); }
+  .ops tbody th { border-right: 1px solid var(--rule); }
+  .ops td { color: var(--ink); }
+  .ops .name { font-family: var(--sans); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 0 0 8px; text-align: left; }
+  .ex {
+    background: var(--surface); border: 1px solid var(--rule-soft); border-radius: 4px;
+    padding: 18px 22px 8px; margin: 18px 0 22px; font-size: 16px; line-height: 1.5;
+  }
+  .ex .k { display: block; font-family: var(--sans); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-ink); margin-bottom: 8px; }
+  .ex p { margin-bottom: 10px; }
+  .mat {
+    font-family: var(--mono); font-size: 13.5px; line-height: 1.55; font-variant-numeric: tabular-nums;
+    white-space: pre; overflow-x: auto; margin: 6px 0 12px; color: var(--ink);
+  }
+  .mat .c { color: var(--muted); }
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+  .two .ex { margin-top: 12px; }
+  .fano-wrap { display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 28px; align-items: center; margin: 20px 0 8px; }
+  .fano svg { width: 100%; height: auto; display: block; font-family: var(--mono); }
+  .fano .ln { stroke: var(--ink); stroke-width: 1.1; fill: none; opacity: 0.55; }
+  .fano .ln.acc { stroke: var(--accent); stroke-width: 2.6; opacity: 1; }
+  .fano .ln.dual { stroke: var(--accent); stroke-width: 2.2; stroke-dasharray: 6 4; opacity: 1; }
+  .fano .pt { fill: var(--surface); stroke: var(--ink); stroke-width: 1.3; }
+  .fano .pt.acc { fill: var(--accent); stroke: var(--accent); }
+  .fano .pl { font-size: 12px; fill: var(--ink); }
+  .fano-notes { font-family: var(--sans); font-size: 14.5px; line-height: 1.5; color: var(--muted); }
+  .fano-notes b { color: var(--ink); font-weight: 500; }
+  .fano-notes p { margin-bottom: 10px; }
+  .tbl.cheat table { min-width: 720px; }
+  .tbl.cheat td.stmt { font-family: var(--serif); font-size: 15.5px; color: var(--ink); width: 26%; }
+  .tbl.cheat td.at { white-space: nowrap; }
+  @media (max-width: 720px) {
+    .two, .fano-wrap { grid-template-columns: 1fr; }
+  }
 </style>
 
 <div class="page">
@@ -157,6 +210,8 @@
       question out of graphs, through flows and edge labels, into linear algebra over
       <span class="m"><span class="up">𝔽</span><sub>2</sub></span>, and settles it there with a parity count.
       This page maps every domain the two papers pass through and the mapping that connects each pair.
+      An <a href="#appendix">appendix</a> at the end is a short tutorial on the linear algebra over
+      <span class="m"><span class="up">𝔽</span><sub>2</sub></span> that the blue lane uses.
     </p>
     <dl class="sources">
       <dt>cdc_proof.pdf</dt>
@@ -533,5 +588,251 @@
       The cover is a <em>double</em> cover, the field has characteristic 2, and a graph edge has exactly two ends. The proof works
       because those three twos are the same two.
     </p>
+  </div>
+
+  <h2 id="appendix">Appendix · Linear algebra over 𝔽₂</h2>
+  <div class="col ax">
+    <p class="lede">
+      Everything in the blue lane is linear algebra over the field with two elements. This appendix teaches
+      exactly that much: what changes when the only scalars are 0 and 1, and where the proof leans on each change.
+      It assumes a first course in linear algebra over the reals. Chips such as <span class="step">step 7</span>
+      point to the rows of the mapping table above.
+    </p>
+
+    <h3><span class="no">A.1</span>Two scalars</h3>
+    <p>
+      <span class="m"><span class="up">𝔽</span><sub>2</sub></span> is the set {0, 1} with addition and multiplication
+      taken mod 2. Addition is exclusive-or, multiplication is "and". It is a field because the one nonzero element, 1,
+      is its own inverse. Every theorem of linear algebra that is proved for an arbitrary field, which is most of them,
+      holds here without change.
+    </p>
+    <div class="ops">
+      <table>
+        <thead><tr><th class="op">+</th><th>0</th><th>1</th></tr></thead>
+        <tbody>
+          <tr><th>0</th><td>0</td><td>1</td></tr>
+          <tr><th>1</th><td>1</td><td>0</td></tr>
+        </tbody>
+      </table>
+      <table>
+        <thead><tr><th class="op">×</th><th>0</th><th>1</th></tr></thead>
+        <tbody>
+          <tr><th>0</th><td>0</td><td>0</td></tr>
+          <tr><th>1</th><td>0</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Three consequences of the top-left table do most of the work in the proof.</p>
+    <ul class="list">
+      <li><b>Minus is plus.</b> Since 1 + 1 = 0, the additive inverse of 1 is 1, so <span class="m">−x = x</span> for every scalar and every vector. Oum can write <span class="m">t<sub>u</sub> + t<sub>v</sub> − d<sub>e</sub></span> and <span class="m">t<sub>u</sub> + t<sub>v</sub> + d<sub>e</sub></span> interchangeably, and orientation of edges never matters. <span class="step">step 4</span></li>
+      <li><b>Twice anything is zero.</b> <span class="m">x + x = 0</span> for every vector <span class="m">x</span>. This single line is the whole of the double-counting finish. <span class="step">step 7</span></li>
+      <li><b>Sums are parities.</b> Adding <span class="m">n</span> copies of 1 gives <span class="m">n</span> mod 2. Any count taken in <span class="m"><span class="up">𝔽</span><sub>2</sub></span> is a parity, which is why the certificate sum collapses to "how many are nonzero, mod 2". <span class="step">step 6</span></li>
+    </ul>
+
+    <h3><span class="no">A.2</span>Vectors are bit strings, and bit strings are sets</h3>
+    <p>
+      A vector in <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>n</sup></span> is a string of <span class="m">n</span> bits, added position by position.
+      There are <span class="m">2<sup>n</sup></span> of them. Read the bits as membership in a set: a subset
+      <span class="m">S</span> of an <span class="m">n</span>-element ground set becomes its indicator vector, and the sum of two indicator vectors
+      is the indicator of the <em>symmetric difference</em> <span class="m">S △ T</span>, the elements in exactly one of the two sets.
+      Linear algebra over <span class="m"><span class="up">𝔽</span><sub>2</sub></span> is therefore set algebra under symmetric difference,
+      and a subspace is a family of sets closed under it.
+    </p>
+    <p>
+      The proof uses this with the ground set <span class="m">E(G)</span>. Edge sets in which every vertex has even degree
+      are closed under symmetric difference, since degrees add mod 2, so they form a subspace, the cycle space. Oum builds each
+      layer <span class="m">F<sub>i</sub></span> as a symmetric difference of fundamental cycles, and it is automatically even. <span class="step">step 3</span>
+    </p>
+    <p>
+      The proof's small space is <span class="m">Γ = <span class="up">𝔽</span><sub>2</sub><sup>3</sup></span>: eight vectors, seven of them nonzero. A function
+      <span class="m">φ : E(G) → Γ</span> is three even edge sets read at once. Bit <span class="m">i</span> of <span class="m">φ(e)</span> says whether
+      <span class="m">e ∈ F<sub>i</sub></span>, so "nowhere-zero" means every edge lies in at least one of the three layers, and
+      "sums to zero at every vertex" says each layer has even degree there.
+    </p>
+
+    <h3><span class="no">A.3</span>Spans and cosets: why every label has two elements</h3>
+    <p>
+      Over the reals the span of a nonzero vector is a whole line. Over <span class="m"><span class="up">𝔽</span><sub>2</sub></span> it has two points:
+    </p>
+    <p class="eq"><span class="m">⟨p⟩ = {0, p}</span>,&emsp;<span class="m">x + ⟨p⟩ = {x, x + p}</span>.</p>
+    <p>
+      A coset of a one-dimensional subspace is a pair, the vector and its shift by <span class="m">p</span>. That is the entire reason the edge
+      labels <span class="m">P<sub>e</sub> = t<sub>v</sub> + φ(f) + ⟨φ(e)⟩</span> are two-element sets. <span class="step">step 8</span>
+      Membership in a coset is easy to test: <span class="m">y ∈ x + ⟨p⟩</span> exactly when <span class="m">x + y ∈ {0, p}</span>.
+      So the edge condition <span class="m">t<sub>u</sub> + t<sub>v</sub> ∈ d<sub>e</sub> + ⟨φ(e)⟩</span> says nothing more than:
+      <span class="m">t<sub>u</sub> + t<sub>v</sub> + d<sub>e</sub></span> is either 0 or <span class="m">φ(e)</span>. <span class="step">step 4</span>
+    </p>
+    <p>
+      A two-dimensional subspace has four elements: 0 and three nonzero vectors <span class="m">x, y, x + y</span>, which sum to zero.
+      The converse holds too. Three distinct nonzero vectors with <span class="m">x + y + z = 0</span> satisfy <span class="m">z = x + y</span>,
+      so they are precisely the nonzero part of a two-dimensional subspace. At a cubic vertex the three flow values are such a triple, and
+      this is what makes <span class="m">φ(f) + ⟨φ(e)⟩ = φ(g) + ⟨φ(e)⟩</span> for the two other edges <span class="m">f, g</span>. <span class="step">step 4</span>
+    </p>
+    <p>
+      Bases, dimension, and rank behave exactly as over the reals, because their proofs use only field axioms. One bonus is counting:
+      a <span class="m">k</span>-dimensional subspace of <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>n</sup></span> has exactly <span class="m">2<sup>k</sup></span> elements.
+    </p>
+
+    <div class="fano-wrap">
+      <figure class="fano" style="margin:0">
+        <svg viewBox="0 0 340 318" role="img" aria-label="The Fano plane: seven points labelled by the nonzero vectors of F2 cubed, and seven lines, six straight and one circle, each through three points that sum to zero. The bottom side, through 100, 110 and 010, is highlighted as a possible set of flow values at a vertex. The vertical median, through 001, 111 and 110, is dashed and is the orthogonal complement of 110.">
+          <!-- sides -->
+          <line class="ln" x1="170" y1="45" x2="40" y2="270"/>
+          <line class="ln" x1="170" y1="45" x2="300" y2="270"/>
+          <line class="ln acc" x1="40" y1="270" x2="300" y2="270"/>
+          <!-- medians -->
+          <line class="ln" x1="40" y1="270" x2="235" y2="157.5"/>
+          <line class="ln" x1="300" y1="270" x2="105" y2="157.5"/>
+          <line class="ln dual" x1="170" y1="45" x2="170" y2="270"/>
+          <!-- incircle -->
+          <circle class="ln" cx="170" cy="195" r="75"/>
+          <!-- points -->
+          <circle class="pt" cx="170" cy="45" r="5"/>
+          <circle class="pt acc" cx="40" cy="270" r="5"/>
+          <circle class="pt acc" cx="300" cy="270" r="5"/>
+          <circle class="pt acc" cx="170" cy="270" r="5"/>
+          <circle class="pt" cx="105" cy="157.5" r="5"/>
+          <circle class="pt" cx="235" cy="157.5" r="5"/>
+          <circle class="pt" cx="170" cy="195" r="5"/>
+          <!-- labels -->
+          <text class="pl" x="170" y="31" text-anchor="middle">001</text>
+          <text class="pl" x="40" y="293" text-anchor="middle">100</text>
+          <text class="pl" x="300" y="293" text-anchor="middle">010</text>
+          <text class="pl" x="170" y="293" text-anchor="middle">110</text>
+          <text class="pl" x="92" y="161" text-anchor="end">101</text>
+          <text class="pl" x="248" y="161" text-anchor="start">011</text>
+          <text class="pl" x="182" y="214" text-anchor="start">111</text>
+        </svg>
+      </figure>
+      <div class="fano-notes">
+        <p><b>The seven nonzero vectors of <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>3</sup></span> and their seven two-dimensional subspaces.</b>
+        Each line, including the circle, passes through three points that sum to zero, and every pair of points lies on exactly one line. This is the Fano plane.</p>
+        <p><b>Solid blue line.</b> A triple that could be the flow values at a cubic vertex: 100 + 010 = 110. The third value is forced by the other two.</p>
+        <p><b>Dashed line.</b> The nonzero vectors orthogonal to 110, that is <span class="m">⟨110⟩<sup>⊥</sup></span> without 0. It passes through 110 itself, because 110 · 110 = 1 + 1 = 0. Over the reals no nonzero vector is orthogonal to itself. Here, any vector with an even number of ones is. See A.4.</p>
+      </div>
+    </div>
+
+    <h3><span class="no">A.4</span>The dot product: parity of overlap</h3>
+    <p>
+      The standard dot product <span class="m">h · p = Σ h<sub>i</sub> p<sub>i</sub></span> is computed in <span class="m"><span class="up">𝔽</span><sub>2</sub></span>, so it equals
+      the number of positions where both vectors have a 1, mod 2. In set language it is the parity of <span class="m">|H ∩ P|</span>.
+      The orthogonal complement <span class="m">W<sup>⊥</sup></span> of a subspace <span class="m">W</span> is defined as usual, and two facts survive intact:
+    </p>
+    <p class="eq"><span class="m">dim W<sup>⊥</sup> = n − dim W</span>,&emsp;<span class="m">(W<sup>⊥</sup>)<sup>⊥</sup> = W</span>.</p>
+    <p>
+      Both hold because the form is non-degenerate: the only vector orthogonal to everything is 0, since a vector with a 1 in position
+      <span class="m">i</span> has dot product 1 with the <span class="m">i</span>-th standard basis vector. Oum uses both facts in Proposition 14.
+      The first says <span class="m">⟨p<sub>e</sub>⟩<sup>⊥</sup></span> has dimension <span class="m">n − 1</span>, so two basis vectors suffice when <span class="m">n = 3</span>.
+      The second turns "<span class="m">x ∈ ⟨p<sub>e</sub>⟩</span>" into "<span class="m">r · x = 0</span> for every <span class="m">r</span> in a basis of <span class="m">⟨p<sub>e</sub>⟩<sup>⊥</sup></span>", which is a list of linear equations. <span class="step">step 5</span>
+    </p>
+    <p>
+      What does not survive is geometry. A nonzero vector can be orthogonal to itself, so <span class="m">W</span> and <span class="m">W<sup>⊥</sup></span> may overlap,
+      <span class="m"><span class="up">𝔽</span><sub>2</sub><sup>n</sup></span> is not in general <span class="m">W ⊕ W<sup>⊥</sup></span>, and there are no lengths, angles, or
+      orthogonal projections. The proof never asks for any of these. It does quietly rely on the oddity once: the certificate condition
+      <span class="m">h<sub>e</sub> · φ(e) = 0</span> allows <span class="m">h<sub>e</sub> = φ(e)</span> whenever <span class="m">φ(e)</span> has even weight.
+    </p>
+
+    <h3><span class="no">A.5</span>Solving a system: elimination without fractions</h3>
+    <p>
+      Gaussian elimination works over any field. Over <span class="m"><span class="up">𝔽</span><sub>2</sub></span> every nonzero pivot is 1, so no row is ever scaled,
+      and the only row operation is "add one row to another", which is a bitwise exclusive-or. The smallest example that matters
+      for this proof is a triangle.
+    </p>
+    <div class="ex">
+      <span class="k">Worked example · one bit per vertex on a triangle</span>
+      <p>Vertices <span class="m">u, v, w</span>, edges <span class="m">e₁ = uv, e₂ = vw, e₃ = wu</span>. Find bits <span class="m">x<sub>u</sub>, x<sub>v</sub>, x<sub>w</sub></span> with <span class="m">x<sub>u</sub> + x<sub>v</sub> = b₁</span>, <span class="m">x<sub>v</sub> + x<sub>w</sub> = b₂</span>, <span class="m">x<sub>w</sub> + x<sub>u</sub> = b₃</span>. Rows are edges, columns are vertices.</p>
+<div class="mat">        u  v  w │
+   e₁   1  1  0 │ b₁
+   e₂   0  1  1 │ b₂
+   e₃   1  0  1 │ b₃
+
+   r₃ ← r₃ + r₁      0  1  1 │ b₁ + b₃
+   r₃ ← r₃ + r₂      0  0  0 │ b₁ + b₂ + b₃   <span class="c">← consistent only if this is 0</span></div>
+      <p>If <span class="m">b₁ + b₂ + b₃ = 0</span>, back-substitute: <span class="m">x<sub>w</sub></span> is free, <span class="m">x<sub>v</sub> = b₂ + x<sub>w</sub></span>, <span class="m">x<sub>u</sub> = b₁ + b₂ + x<sub>w</sub></span>. Two solutions, differing by the all-ones vector, which is the kernel: adding the same bit to every vertex changes no edge sum.</p>
+      <p>If <span class="m">b₁ + b₂ + b₃ = 1</span>, there is no solution, and the vector <span class="m">y = (1, 1, 1)</span> that added the three rows together is the proof. Note why the rows cancelled: every column has exactly two 1s, because every edge has exactly two ends. This is the whole proof in miniature.</p>
+    </div>
+
+    <h3><span class="no">A.6</span>Column space equals the orthogonal complement of the left nullspace</h3>
+    <p>
+      For an <span class="m">m × n</span> matrix <span class="m">A</span>, the column space <span class="m">C(A) = {Ax}</span> is the set of right-hand sides <span class="m">b</span> for which <span class="m">Ax = b</span> is solvable.
+      The left nullspace <span class="m">ker(Aᵀ) = {y : yᵀA = 0}</span> is the set of ways to combine rows so that the left-hand sides cancel. Oum's Lemma 13 says
+    </p>
+    <p class="eq"><span class="m">C(A) = ker(Aᵀ)<sup>⊥</sup></span>.</p>
+    <p>
+      The proof is three lines. If <span class="m">Aᵀy = 0</span> then <span class="m">y · Ax = (Aᵀy) · x = 0</span>, so <span class="m">C(A) ⊆ ker(Aᵀ)<sup>⊥</sup></span>.
+      Both sides have dimension <span class="m">rank A</span>: the left by definition, the right because <span class="m">dim ker(Aᵀ) = m − rank A</span> and A.4 subtracts that from <span class="m">m</span>.
+      A subspace contained in another of the same dimension equals it.
+    </p>
+    <p>
+      Read as a recipe: <span class="m">Ax = b</span> has a solution unless some <span class="m">y</span> cancels every left-hand side while <span class="m">y · b = 1</span>. Such a
+      <span class="m">y</span> is a <em>certificate of infeasibility</em>, and to prove solvability you show that every candidate certificate has <span class="m">y · b = 0</span>.
+      In the triangle example the only nonzero candidate is <span class="m">(1, 1, 1)</span>, and <span class="m">y · b = b₁ + b₂ + b₃</span>. <span class="step">step 5</span>
+    </p>
+
+    <h3><span class="no">A.7</span>Assembling the proof's system</h3>
+    <p>
+      Now the real thing, with <span class="m">n = 3</span>. Each unknown <span class="m">t<sub>v</sub></span> is three bits, so there are <span class="m">3|V|</span> scalar unknowns.
+      An edge condition <span class="m">t<sub>u</sub> + t<sub>v</sub> ∈ d<sub>e</sub> + ⟨φ(e)⟩</span> is a coset condition, not an equation, but A.4 converts it:
+      it holds exactly when <span class="m">r · (t<sub>u</sub> + t<sub>v</sub>) = r · d<sub>e</sub></span> for both vectors <span class="m">r</span> of a basis of
+      <span class="m">⟨φ(e)⟩<sup>⊥</sup></span>. Stack those two rows as a <span class="m">2 × 3</span> block <span class="m">R<sub>e</sub></span>.
+    </p>
+<div class="mat">                 t_u      t_v      t_w    …
+   edge e = uv [  R_e      R_e       0     … ]  =  R_e d_e        <span class="c">2 rows per edge, R_e = basis of ⟨φ(e)⟩⊥</span>
+   edge f = vw [   0       R_f      R_f    … ]  =  R_f d_f</div>
+    <p>
+      In a cubic graph <span class="m">2|E| = 3|V|</span>, so <span class="m">A</span> happens to be square. The proof never uses that, and the system is never uniquely solvable:
+      adding one fixed vector to every <span class="m">t<sub>v</sub></span> preserves every equation, just as in the triangle.
+    </p>
+    <p>
+      A certificate is <span class="m">y ∈ ker(Aᵀ)</span>, two bits <span class="m">y<sub>e</sub></span> per edge. Set <span class="m">h<sub>e</sub> = R<sub>e</sub>ᵀ y<sub>e</sub></span>, a combination of the two rows for <span class="m">e</span>, so
+      <span class="m">h<sub>e</sub> · φ(e) = 0</span>. The block of <span class="m">Aᵀy</span> at vertex <span class="m">v</span> is <span class="m">Σ<sub>e ∋ v</sub> h<sub>e</sub></span>, so "<span class="m">Aᵀy = 0</span>" says the
+      <span class="m">h<sub>e</sub></span> sum to zero at every vertex. And <span class="m">y · b = Σ<sub>e</sub> h<sub>e</sub> · d<sub>e</sub></span>. Lemma 13 therefore says: the <span class="m">t<sub>v</sub></span> exist if and only if
+      every family <span class="m">(h<sub>e</sub>)</span> with <span class="m">h<sub>e</sub> · φ(e) = 0</span> and zero sum at each vertex has <span class="m">Σ h<sub>e</sub> · d<sub>e</sub> = 0</span>. That is Proposition 14. <span class="step">step 5</span>
+    </p>
+    <p>
+      The last move is local. Fix a vertex with edges <span class="m">e₁, e₂, e₃</span>. Oum shows all six cross products <span class="m">h<sub>e<sub>i</sub></sub> · φ(e<sub>j</sub>)</span>, <span class="m">i ≠ j</span>,
+      equal one bit <span class="m">λ</span>, and that <span class="m">λ</span> is the parity of the number of nonzero <span class="m">h<sub>e<sub>i</sub></sub></span>. Two instances, with flow values
+      <span class="m">φ(e₁) = 100, φ(e₂) = 010, φ(e₃) = 110</span> from the figure: <span class="step">step 6</span>
+    </p>
+    <div class="two">
+      <div class="ex">
+        <span class="k">λ = 1 · all three nonzero</span>
+        <p><span class="m">h₁ = 011, h₂ = 101, h₃ = 110</span>. Sum: 011 + 101 = 110, and 110 + 110 = 000. Each is orthogonal to its own flow value: 011·100 = 0, 101·010 = 0, 110·110 = 0.</p>
+        <p>Cross products: <span class="m">h₂ · φ(e₁)</span> = 101·100 = 1, <span class="m">h₁ · φ(e₂)</span> = 011·010 = 1, <span class="m">h₃ · φ(e₁)</span> = 110·100 = 1. So <span class="m">λ = 1</span>, and three nonzero vectors give parity 1.</p>
+      </div>
+      <div class="ex">
+        <span class="k">λ = 0 · exactly two nonzero</span>
+        <p><span class="m">h₁ = 001, h₂ = 001, h₃ = 000</span>. Sum: 001 + 001 = 000. Orthogonality: 001·100 = 0, 001·010 = 0, and <span class="m">h₃ = 0</span>.</p>
+        <p>Cross products: 001·100 = 0, 001·010 = 0, 000·100 = 0. So <span class="m">λ = 0</span>, and two nonzero vectors give parity 0. All three <span class="m">h<sub>e</sub></span> lie in <span class="m">⟨100, 010⟩<sup>⊥</sup> = {000, 001}</span>, a line with one nonzero point.</p>
+      </div>
+    </div>
+    <p>
+      The vertex's share of <span class="m">Σ h<sub>e</sub> · d<sub>e</sub></span> is <span class="m">Σ<sub>e ∋ v</sub> h<sub>e</sub> · c<sub>v,e</sub></span>, which is a sum of three cross products and hence <span class="m">λ</span>.
+      Adding over all vertices adds, for every edge with <span class="m">h<sub>e</sub> ≠ 0</span>, the bit 1 once at each end. By A.1, twice anything is zero, so the total is 0, every
+      certificate vanishes, and the <span class="m">t<sub>v</sub></span> exist. <span class="step">step 7</span>
+    </p>
+
+    <h3><span class="no">A.8</span>What carries over and what changes</h3>
+    <p class="note">The right-hand column names the mapping in the table above where the fact is used.</p>
+  </div>
+  <div class="tbl cheat">
+    <table>
+      <thead>
+        <tr><th>Statement</th><th>Over the reals</th><th>Over 𝔽₂</th><th>Used at</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="stmt">Subtraction</td><td>−x is a different vector from x</td><td>−x = x. Every minus sign is a plus; edge orientation is irrelevant.</td><td class="at">4</td></tr>
+        <tr><td class="stmt">x + x</td><td>2x, nonzero unless x is</td><td>Always 0. Anything counted at both ends of an edge disappears.</td><td class="at">7</td></tr>
+        <tr><td class="stmt">Counting mod the field</td><td>No meaning</td><td>A sum of 1s is a parity.</td><td class="at">6</td></tr>
+        <tr><td class="stmt">Vectors as sets</td><td>No natural reading</td><td>Bit strings are subsets; addition is symmetric difference; even subgraphs form a subspace.</td><td class="at">3, 9</td></tr>
+        <tr><td class="stmt">Span of one nonzero vector</td><td>An infinite line</td><td>Two points, {0, p}. A coset of it is a pair.</td><td class="at">4, 8</td></tr>
+        <tr><td class="stmt">Size of a k-dimensional subspace</td><td>Infinite</td><td>Exactly 2<sup>k</sup> vectors; three nonzero vectors summing to 0 span a plane.</td><td class="at">4</td></tr>
+        <tr><td class="stmt">Bases, dimension, rank, elimination</td><td>Standard</td><td>Identical, and no pivot is ever scaled: row operations are exclusive-or.</td><td class="at">5</td></tr>
+        <tr><td class="stmt">dim W<sup>⊥</sup> = n − dim W, (W<sup>⊥</sup>)<sup>⊥</sup> = W</td><td>True</td><td>True; the form is non-degenerate.</td><td class="at">5</td></tr>
+        <tr><td class="stmt">C(A) = ker(Aᵀ)<sup>⊥</sup></td><td>True</td><td>True; a system is solvable unless a row combination cancels the left side and not the right.</td><td class="at">5</td></tr>
+        <tr><td class="stmt">v · v = 0</td><td>Only for v = 0</td><td>For every v with an even number of ones; W and W<sup>⊥</sup> can overlap.</td><td class="at">4</td></tr>
+        <tr><td class="stmt">Lengths, angles, projections</td><td>Available</td><td>Absent. Nothing in the proof needs them.</td><td class="at">—</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
