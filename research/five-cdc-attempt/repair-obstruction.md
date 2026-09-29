@@ -2,6 +2,8 @@
 
 **29 September 2026. The lexicographic repair lemma proposed in the earlier notes is false. The 5-cycle double cover conjecture is not refuted or proved by this work.**
 
+**Later continuation:** [Neutral repair and parallel-edge reductions](neutral-repair.md) completes the order-16 census, verifies a neutral escape for every strict local minimum, and proves a parallel-pair normalization lemma while identifying a separate lifting obstruction. The strict-descent counterexample below remains valid.
+
 The counterexample has 16 vertices. Every allowed single-circuit move leaves the potential unchanged or increases it. A neutral move followed by a second move produces a verified five-layer cover. This supplies the missing counterexample to the earlier proof strategy and shows why a repair argument must allow neutral steps, change its potential, or restrict its domain.
 
 There is also a general structural result: a flow on a triangle can be normalized and the triangle contracted without increasing any of the seven defect counts. The proof below explains how neutral steps can be useful. The elementary deductions are supplied without a claim of novelty over the full literature.

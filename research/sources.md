@@ -32,6 +32,7 @@ This report uses the supplied CDC result as its starting point, consistent with 
 | LL26 | Jiaao Li and Xinyuan Li, *Nowhere-zero 3-flows in graphs with forbidden edge-cuts*, [arXiv:2609.08377v1](https://arxiv.org/abs/2609.08377v1), September 8, 2026 | Tutte 3-flow formulation and current partial-results context. |
 | HG19 | Jakob Hansen and Robert Ghrist, *Toward a spectral theory of cellular sheaves*, Journal of Applied and Computational Topology 3 (2019), 315–358, [DOI](https://doi.org/10.1007/s41468-019-00038-7); [arXiv](https://arxiv.org/abs/1808.01513) | Standard language of local vector spaces, restriction maps, global sections, and sheaf cohomology. Our CDC specialization is an explanatory deduction. |
 | P26 | Bryce Putman, *A 112-Vertex Counterexample to the Petersen Coloring Conjecture*, [arXiv:2608.10012](https://arxiv.org/abs/2608.10012), August 2026 | Prevents incorrectly recommending Petersen coloring as an open conjecture to prove. No claim here that the reported order is minimal. |
+| E26 | Louis Esperet, Kevin Hendrey, Aurélie Lagoutte, Margaux Marseloo, Sergey Norin and Raphael Steiner, *Nowhere-zero flow reconfiguration*, [arXiv:2512.17342v4](https://arxiv.org/html/2512.17342v4), July 3, 2026 | Theorems 3.2 and 6.15 distinguish availability of circuit moves from general connectivity in F₂⁸. Used in the neutral-repair continuation, without inferring potential-controlled connectivity in F₂³. |
 
 ## How to read the open-status claims
 

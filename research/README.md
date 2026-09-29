@@ -6,7 +6,9 @@ Follow-up: [A proof attempt for the 5-cycle double cover conjecture](five-cdc-at
 
 Continuation: [Exhaustive repair checks and alternating bilinear forms](five-cdc-attempt/continuation.md). An exact formulation makes the third flow coordinate a linear completion once the first two are chosen; the general existence step remains open.
 
-Latest result: [A counterexample to strict repair, and a proved triangle reduction](five-cdc-attempt/repair-obstruction.md). The proposed strictly decreasing repair rule fails on an explicit 16-vertex graph, despite all the earlier positive checks. Neutral moves escape the example and yield a verified five-layer cover. The original conjecture remains unresolved by this work.
+Earlier result: [A counterexample to strict repair, and a proved triangle reduction](five-cdc-attempt/repair-obstruction.md). The proposed strictly decreasing repair rule fails on an explicit 16-vertex graph, despite all the earlier positive checks. Neutral moves escape the example and yield a verified five-layer cover. The original conjecture remains unresolved by this work.
+
+Latest result: [Neutral repair and parallel-edge reductions](five-cdc-attempt/neutral-repair.md). The completed 16-vertex census verifies nonincreasing repair for 91,351,392 flow classes; exactly four need a neutral first step. A parallel-pair normalization lemma is proved, and an explicit example identifies a limitation of lifting repair moves through that reduction. The general existence gap remains.
 
 Graphs are finite. The local lifting discussion uses loopless cubic graphs; the quantitative counting conjecture below is stated for simple graphs, as in the cited counting papers.
 

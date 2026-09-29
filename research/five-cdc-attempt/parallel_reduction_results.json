@@ -1,0 +1,160 @@
+{
+  "parallel_normalization": {
+    "base_flow_edge_pairs": 2283,
+    "unordered_parallel_color_pairs_tested": 6849,
+    "normalization_to_both_endpoints_verified": true,
+    "number_of_exact_choices_histogram": {
+      "1": 797,
+      "2": 1212,
+      "3": 274
+    }
+  },
+  "lift_obstruction_verification": {
+    "both_orders_verified": [
+      [
+        [
+          2,
+          16
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          0,
+          14
+        ]
+      ],
+      [
+        [
+          2,
+          16
+        ],
+        [
+          2,
+          18
+        ],
+        [
+          0,
+          14
+        ]
+      ]
+    ],
+    "alternative_improving_move_verified": true,
+    "alternative_five_layer_cover": {
+      "system": {
+        "equations": 22,
+        "variables": 18,
+        "rank": 18,
+        "consistent": true,
+        "affine_dimension": 0
+      },
+      "new_binary_coordinate": [
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        0
+      ],
+      "four_bit_flow": [
+        13,
+        7,
+        10,
+        14,
+        7,
+        9,
+        2,
+        12,
+        14,
+        11,
+        9,
+        2,
+        3,
+        14,
+        12,
+        14,
+        12,
+        2
+      ],
+      "cover": {
+        "0": [
+          6,
+          7,
+          9,
+          11,
+          14,
+          16,
+          17
+        ],
+        "1": [
+          0,
+          2,
+          12
+        ],
+        "2": [
+          3,
+          5,
+          6,
+          8,
+          10,
+          11,
+          12,
+          13,
+          15,
+          17
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5,
+          9,
+          10
+        ],
+        "4": [
+          0,
+          1,
+          3,
+          4,
+          7,
+          8,
+          13,
+          14,
+          15,
+          16
+        ]
+      },
+      "exact_double_coverage_and_even_degrees_verified": true
+    }
+  },
+  "even_subgraph_move_check": {
+    "binary_even_subgraphs_including_empty": 512,
+    "allowed_move_counts": {
+      "circuit": 175,
+      "disconnected_even_subgraph": 242
+    },
+    "neighbor_potential_histogram": {
+      "(2, 18)": 85,
+      "(2, 20)": 112,
+      "(2, 22)": 64,
+      "(2, 24)": 84,
+      "(2, 26)": 64,
+      "(2, 28)": 4,
+      "(2, 30)": 4
+    },
+    "strict_improvements": 0
+  }
+}

@@ -178,4 +178,6 @@ struct Search {
     }
 };
 
+#ifndef CDC_REPAIR_LIBRARY
 int main() { Search search; search.read(); search.run(); search.write(); }
+#endif
