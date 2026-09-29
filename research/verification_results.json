@@ -1,0 +1,618 @@
+{
+  "scope": "Finite checks and examples, not proofs of open conjectures.",
+  "bit_convention": "Integers represent binary vectors; bit 2 is the first coordinate in the five-label test.",
+  "local_parity": [
+    {
+      "dimension": 3,
+      "valid_local_configurations": 336,
+      "identity_failures": 0,
+      "first_failure": null
+    },
+    {
+      "dimension": 4,
+      "valid_local_configurations": 6720,
+      "identity_failures": 1260,
+      "first_failure": {
+        "flow_triple": [
+          1,
+          2,
+          3
+        ],
+        "dual_triple": [
+          4,
+          8,
+          12
+        ],
+        "lambda": 0,
+        "nonzero_parity": 1
+      }
+    }
+  ],
+  "petersen_fixed_flow_five_label_test": {
+    "vertices": 10,
+    "edges_in_order": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "seed": 20260929,
+    "nowhere_zero_flows_checked_until_examples_found": 9,
+    "examples": {
+      "five_label_failure": {
+        "flow": [
+          3,
+          6,
+          2,
+          7,
+          4,
+          7,
+          5,
+          4,
+          5,
+          3,
+          3,
+          1,
+          7,
+          4,
+          4
+        ],
+        "ordinary_system": {
+          "equations": 45,
+          "variables": 45,
+          "rank": 41,
+          "consistent": true,
+          "affine_dimension": 4
+        },
+        "five_label_system": {
+          "equations": 75,
+          "variables": 45,
+          "rank": 45,
+          "consistent": false,
+          "contradiction_row_indices": [
+            0,
+            1,
+            45,
+            46,
+            48,
+            49
+          ],
+          "certificate_verified": true
+        },
+        "component_parity_test": [
+          {
+            "vertices": [
+              0,
+              1
+            ],
+            "marked_vertices": [
+              0
+            ],
+            "marked_parity": 1
+          },
+          {
+            "vertices": [
+              2,
+              3
+            ],
+            "marked_vertices": [
+              2
+            ],
+            "marked_parity": 1
+          },
+          {
+            "vertices": [
+              4,
+              9
+            ],
+            "marked_vertices": [
+              4,
+              9
+            ],
+            "marked_parity": 0
+          },
+          {
+            "vertices": [
+              5,
+              7
+            ],
+            "marked_vertices": [
+              5,
+              7
+            ],
+            "marked_parity": 0
+          },
+          {
+            "vertices": [
+              6,
+              8
+            ],
+            "marked_vertices": [
+              6,
+              8
+            ],
+            "marked_parity": 0
+          }
+        ],
+        "ordinary_cover": {
+          "vertex_translations": [
+            3,
+            1,
+            6,
+            5,
+            3,
+            4,
+            6,
+            7,
+            6,
+            0
+          ],
+          "edge_label_pairs": [
+            [
+              4,
+              7
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              7
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              7
+            ],
+            [
+              3,
+              7
+            ]
+          ],
+          "used_labels": [
+            0,
+            2,
+            3,
+            4,
+            7
+          ],
+          "exact_double_coverage_and_even_degrees_verified": true
+        }
+      },
+      "five_label_success": {
+        "flow": [
+          3,
+          2,
+          5,
+          7,
+          6,
+          5,
+          1,
+          7,
+          2,
+          1,
+          4,
+          3,
+          3,
+          1,
+          2
+        ],
+        "ordinary_system": {
+          "equations": 45,
+          "variables": 45,
+          "rank": 42,
+          "consistent": true,
+          "affine_dimension": 3
+        },
+        "five_label_system": {
+          "equations": 67,
+          "variables": 45,
+          "rank": 45,
+          "consistent": true,
+          "affine_dimension": 0
+        },
+        "component_parity_test": [
+          {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "marked_vertices": [
+              5,
+              7
+            ],
+            "marked_parity": 0
+          }
+        ],
+        "ordinary_cover": {
+          "vertex_translations": [
+            6,
+            1,
+            7,
+            7,
+            4,
+            4,
+            0,
+            6,
+            3,
+            0
+          ],
+          "edge_label_pairs": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              0,
+              5
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              5
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          "used_labels": [
+            0,
+            1,
+            2,
+            3,
+            5
+          ],
+          "exact_double_coverage_and_even_degrees_verified": true
+        },
+        "five_label_cover": {
+          "vertex_translations": [
+            7,
+            0,
+            6,
+            6,
+            5,
+            5,
+            1,
+            7,
+            2,
+            1
+          ],
+          "edge_label_pairs": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          "used_labels": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ],
+          "exact_double_coverage_and_even_degrees_verified": true
+        }
+      }
+    }
+  },
+  "k33_dimension_four_obstruction": {
+    "vertices": 6,
+    "edges_in_order": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "seed": 20260929,
+    "nowhere_zero_flows_checked_until_examples_found": 1,
+    "examples": {
+      "inconsistent_alignment": {
+        "flow": [
+          15,
+          2,
+          13,
+          5,
+          12,
+          9,
+          10,
+          14,
+          4
+        ],
+        "dual_flow": [
+          15,
+          13,
+          2,
+          15,
+          13,
+          2,
+          0,
+          0,
+          0
+        ],
+        "system": {
+          "equations": 36,
+          "variables": 33,
+          "rank": 29,
+          "consistent": false,
+          "contradiction_row_indices": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            12,
+            13,
+            14,
+            15,
+            16,
+            18,
+            19,
+            21
+          ],
+          "certificate_verified": true
+        }
+      }
+    }
+  },
+  "dual_fano_obstruction": {
+    "nonzero_cycle_weights": [
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "required_total_for_double_cover": 14,
+    "divisibility_obstruction_verified": true
+  },
+  "nonaffine_exact_two_example": {
+    "vectors": [
+      "1100",
+      "1010",
+      "1001"
+    ],
+    "xor": "1111",
+    "xor_weight": 4
+  }
+}
