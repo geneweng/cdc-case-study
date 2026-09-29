@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture is not proved here.**
 
+**Further result:** [Four component completion](four-component-completion.md) proves the previously experimental conclusion for admissible first coordinates with at most four complement components, without requiring entrywise balance. It uses independent circuit constants in addition to component rotations and shows that the bound is sharp for prescribed layers.
+
 This continuation replaces the requirement to repair every starting flow by a sufficient condition for constructing one successful flow. A three-state parity argument proves that an admissible first coordinate can be completed whenever its boundary colors balance separately on every circuit and every component of its complement. In particular, the balance condition is automatic for a first coordinate consisting of one circuit.
 
 The restriction to one circuit cannot settle all graphs directly: an explicit 32-vertex bridgeless simple cubic graph has no admissible single-circuit first coordinate, although it has a verified five-layer cover. The missing step concerns multiple circuits and the coupling between their boundary sums.

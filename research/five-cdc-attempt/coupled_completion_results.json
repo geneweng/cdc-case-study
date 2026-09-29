@@ -1,0 +1,2077 @@
+{
+  "graph_checks": {
+    "scope": "All flow classes and all normals on the 26 saved connected bridgeless simple cubic graphs through 10 vertices; complement size at most four; identical (F,q restricted to H) inputs deduplicated.",
+    "graphs": [
+      {
+        "vertices": 4,
+        "graph6": "C~",
+        "distinct_restrictions_checked": 13,
+        "case_counts": {
+          "entrywise_balanced": 8,
+          "full_offset_rank": 5
+        }
+      },
+      {
+        "vertices": 6,
+        "graph6": "EFz_",
+        "distinct_restrictions_checked": 54,
+        "case_counts": {
+          "entrywise_balanced": 34,
+          "full_offset_rank": 20
+        }
+      },
+      {
+        "vertices": 6,
+        "graph6": "EUxo",
+        "distinct_restrictions_checked": 45,
+        "case_counts": {
+          "entrywise_balanced": 35,
+          "full_offset_rank": 10
+        }
+      },
+      {
+        "vertices": 8,
+        "graph6": "G?zTb_",
+        "distinct_restrictions_checked": 238,
+        "case_counts": {
+          "entrywise_balanced": 184,
+          "four_collinear_rows": 32,
+          "full_offset_rank": 22
+        }
+      },
+      {
+        "vertices": 8,
+        "graph6": "GCrb`o",
+        "distinct_restrictions_checked": 235,
+        "case_counts": {
+          "entrywise_balanced": 168,
+          "four_collinear_rows": 20,
+          "full_offset_rank": 47
+        }
+      },
+      {
+        "vertices": 8,
+        "graph6": "GCZJd_",
+        "distinct_restrictions_checked": 190,
+        "case_counts": {
+          "entrywise_balanced": 164,
+          "full_offset_rank": 20,
+          "stable_direct_sum": 6
+        }
+      },
+      {
+        "vertices": 8,
+        "graph6": "GCXmd_",
+        "distinct_restrictions_checked": 214,
+        "case_counts": {
+          "stable_direct_sum": 32,
+          "entrywise_balanced": 160,
+          "full_offset_rank": 22
+        }
+      },
+      {
+        "vertices": 8,
+        "graph6": "GCY^B_",
+        "distinct_restrictions_checked": 228,
+        "case_counts": {
+          "entrywise_balanced": 178,
+          "full_offset_rank": 50
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?BeeOwM?",
+        "distinct_restrictions_checked": 620,
+        "case_counts": {
+          "full_offset_rank": 188,
+          "entrywise_balanced": 432
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?Bcu`gM?",
+        "distinct_restrictions_checked": 653,
+        "case_counts": {
+          "full_offset_rank": 129,
+          "entrywise_balanced": 495,
+          "stable_direct_sum": 29
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?bFB_wF?",
+        "distinct_restrictions_checked": 734,
+        "case_counts": {
+          "full_offset_rank": 60,
+          "entrywise_balanced": 645,
+          "stable_direct_sum": 29
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?bEHow[?",
+        "distinct_restrictions_checked": 733,
+        "case_counts": {
+          "full_offset_rank": 104,
+          "stable_direct_sum": 149,
+          "entrywise_balanced": 480
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`bfAWF?",
+        "distinct_restrictions_checked": 738,
+        "case_counts": {
+          "full_offset_rank": 99,
+          "entrywise_balanced": 594,
+          "stable_direct_sum": 45
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`cu`oJ?",
+        "distinct_restrictions_checked": 741,
+        "case_counts": {
+          "full_offset_rank": 47,
+          "stable_direct_sum": 58,
+          "entrywise_balanced": 636
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`bM_we?",
+        "distinct_restrictions_checked": 815,
+        "case_counts": {
+          "full_offset_rank": 56,
+          "entrywise_balanced": 501,
+          "stable_direct_sum": 258
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`cm`gM?",
+        "distinct_restrictions_checked": 801,
+        "case_counts": {
+          "full_offset_rank": 110,
+          "entrywise_balanced": 603,
+          "four_collinear_rows": 70,
+          "stable_direct_sum": 18
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`cmPoM?",
+        "distinct_restrictions_checked": 768,
+        "case_counts": {
+          "full_offset_rank": 100,
+          "entrywise_balanced": 633,
+          "stable_direct_sum": 8,
+          "four_collinear_rows": 27
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`amQoM?",
+        "distinct_restrictions_checked": 738,
+        "case_counts": {
+          "full_offset_rank": 84,
+          "stable_direct_sum": 30,
+          "entrywise_balanced": 624
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "I?`c]`oM?",
+        "distinct_restrictions_checked": 698,
+        "case_counts": {
+          "full_offset_rank": 50,
+          "entrywise_balanced": 573,
+          "stable_direct_sum": 38,
+          "four_collinear_rows": 37
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICOfBaKF?",
+        "distinct_restrictions_checked": 816,
+        "case_counts": {
+          "full_offset_rank": 122,
+          "entrywise_balanced": 636,
+          "four_collinear_rows": 52,
+          "stable_direct_sum": 6
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICOf@pSb?",
+        "distinct_restrictions_checked": 950,
+        "case_counts": {
+          "entrywise_balanced": 810,
+          "full_offset_rank": 140
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICOef?kF?",
+        "distinct_restrictions_checked": 744,
+        "case_counts": {
+          "full_offset_rank": 53,
+          "entrywise_balanced": 606,
+          "stable_direct_sum": 85
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICOedPKL?",
+        "distinct_restrictions_checked": 730,
+        "case_counts": {
+          "full_offset_rank": 50,
+          "entrywise_balanced": 621,
+          "stable_direct_sum": 59
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICOedO[X?",
+        "distinct_restrictions_checked": 806,
+        "case_counts": {
+          "full_offset_rank": 116,
+          "entrywise_balanced": 594,
+          "stable_direct_sum": 96
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICQRD_kQ_",
+        "distinct_restrictions_checked": 731,
+        "case_counts": {
+          "full_offset_rank": 42,
+          "stable_direct_sum": 277,
+          "entrywise_balanced": 412
+        }
+      },
+      {
+        "vertices": 10,
+        "graph6": "ICQRD_iR?",
+        "distinct_restrictions_checked": 834,
+        "case_counts": {
+          "full_offset_rank": 54,
+          "entrywise_balanced": 612,
+          "stable_direct_sum": 168
+        }
+      }
+    ],
+    "case_counts": {
+      "entrywise_balanced": 11438,
+      "full_offset_rank": 1800,
+      "four_collinear_rows": 238,
+      "stable_direct_sum": 1391
+    },
+    "examples": {
+      "entrywise_balanced": {
+        "vertices": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "starting_flow": [
+          6,
+          2,
+          4,
+          4,
+          2,
+          6
+        ],
+        "first_coordinate_mask": 45,
+        "boundary_table": [
+          [
+            0
+          ],
+          [
+            0
+          ]
+        ],
+        "proof_case": {
+          "case": "entrywise_balanced",
+          "binary_rank": 0
+        },
+        "search": {
+          "rotations_examined": 1,
+          "closure_assignments": 1,
+          "solvable_rotation_assignments": 1,
+          "successful_rotation_offset_pairs": 4,
+          "exhaustive": false,
+          "rank_outcome_histogram": {
+            "rank=0,solvable=True": 1
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 0,
+            "defect_before_offsets": [
+              0,
+              0
+            ],
+            "states": [
+              0,
+              0
+            ],
+            "offsets": [
+              0
+            ],
+            "circuit_colors": [
+              [
+                2,
+                0,
+                2,
+                0
+              ]
+            ],
+            "affine_dimension": 2
+          }
+        },
+        "repaired": {
+          "flow": [
+            6,
+            2,
+            4,
+            4,
+            2,
+            6
+          ],
+          "lift": {
+            "system": {
+              "equations": 8,
+              "variables": 6,
+              "rank": 6,
+              "consistent": true,
+              "affine_dimension": 0
+            },
+            "new_binary_coordinate": [
+              1,
+              0,
+              1,
+              1,
+              0,
+              1
+            ],
+            "four_bit_flow": [
+              14,
+              2,
+              12,
+              12,
+              2,
+              14
+            ],
+            "cover": {
+              "0": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "1": [],
+              "2": [
+                0,
+                1,
+                4,
+                5
+              ],
+              "3": [],
+              "4": [
+                0,
+                2,
+                3,
+                5
+              ]
+            },
+            "exact_double_coverage_and_even_degrees_verified": true
+          }
+        }
+      },
+      "full_offset_rank": {
+        "vertices": 4,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "starting_flow": [
+          3,
+          1,
+          2,
+          2,
+          1,
+          3
+        ],
+        "first_coordinate_mask": 0,
+        "boundary_table": [
+          []
+        ],
+        "proof_case": {
+          "case": "full_offset_rank",
+          "binary_rank": 0
+        },
+        "search": {
+          "rotations_examined": 1,
+          "closure_assignments": 1,
+          "solvable_rotation_assignments": 1,
+          "successful_rotation_offset_pairs": 1,
+          "exhaustive": false,
+          "rank_outcome_histogram": {
+            "rank=0,solvable=True": 1
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 0,
+            "defect_before_offsets": [
+              0
+            ],
+            "states": [
+              0
+            ],
+            "offsets": [],
+            "circuit_colors": [],
+            "affine_dimension": 0
+          }
+        },
+        "repaired": {
+          "flow": [
+            3,
+            1,
+            2,
+            2,
+            1,
+            3
+          ],
+          "lift": {
+            "system": {
+              "equations": 4,
+              "variables": 6,
+              "rank": 3,
+              "consistent": true,
+              "affine_dimension": 3
+            },
+            "new_binary_coordinate": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "four_bit_flow": [
+              3,
+              1,
+              2,
+              2,
+              1,
+              3
+            ],
+            "cover": {
+              "0": [
+                1,
+                2,
+                3,
+                4
+              ],
+              "1": [
+                0,
+                1,
+                4,
+                5
+              ],
+              "2": [
+                0,
+                2,
+                3,
+                5
+              ],
+              "3": [],
+              "4": []
+            },
+            "exact_double_coverage_and_even_degrees_verified": true
+          }
+        }
+      },
+      "four_collinear_rows": {
+        "vertices": 8,
+        "edges": [
+          [
+            0,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ]
+        ],
+        "starting_flow": [
+          4,
+          2,
+          6,
+          2,
+          6,
+          4,
+          6,
+          4,
+          2,
+          4,
+          2,
+          6
+        ],
+        "first_coordinate_mask": 2805,
+        "boundary_table": [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "proof_case": {
+          "case": "four_collinear_rows",
+          "binary_rank": 1
+        },
+        "search": {
+          "rotations_examined": 1,
+          "closure_assignments": 1,
+          "solvable_rotation_assignments": 1,
+          "successful_rotation_offset_pairs": 8,
+          "exhaustive": false,
+          "rank_outcome_histogram": {
+            "rank=1,solvable=True": 1
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 1,
+            "defect_before_offsets": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "states": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "offsets": [
+              0,
+              0
+            ],
+            "circuit_colors": [
+              [
+                2,
+                0,
+                2,
+                0
+              ],
+              [
+                2,
+                0,
+                2,
+                0
+              ]
+            ],
+            "affine_dimension": 3
+          }
+        },
+        "repaired": {
+          "flow": [
+            6,
+            2,
+            4,
+            2,
+            6,
+            4,
+            4,
+            6,
+            2,
+            4,
+            2,
+            6
+          ],
+          "lift": {
+            "system": {
+              "equations": 16,
+              "variables": 12,
+              "rank": 12,
+              "consistent": true,
+              "affine_dimension": 0
+            },
+            "new_binary_coordinate": [
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "four_bit_flow": [
+              14,
+              2,
+              12,
+              2,
+              14,
+              12,
+              12,
+              14,
+              2,
+              12,
+              2,
+              14
+            ],
+            "cover": {
+              "0": [
+                1,
+                2,
+                3,
+                5,
+                6,
+                8,
+                9,
+                10
+              ],
+              "1": [],
+              "2": [
+                0,
+                1,
+                3,
+                4,
+                7,
+                8,
+                10,
+                11
+              ],
+              "3": [],
+              "4": [
+                0,
+                2,
+                4,
+                5,
+                6,
+                7,
+                9,
+                11
+              ]
+            },
+            "exact_double_coverage_and_even_degrees_verified": true
+          }
+        }
+      },
+      "stable_direct_sum": {
+        "vertices": 8,
+        "edges": [
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "starting_flow": [
+          5,
+          3,
+          6,
+          2,
+          7,
+          5,
+          6,
+          4,
+          2,
+          1,
+          4,
+          4
+        ],
+        "first_coordinate_mask": 3317,
+        "boundary_table": [
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "proof_case": {
+          "case": "stable_direct_sum",
+          "binary_rank": 2,
+          "groups": [
+            [
+              1
+            ],
+            [
+              0,
+              2,
+              3
+            ]
+          ]
+        },
+        "search": {
+          "rotations_examined": 10,
+          "closure_assignments": 3,
+          "solvable_rotation_assignments": 1,
+          "successful_rotation_offset_pairs": 4,
+          "exhaustive": false,
+          "rank_outcome_histogram": {
+            "rank=2,solvable=False": 2,
+            "rank=2,solvable=True": 1
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 2,
+            "defect_before_offsets": [
+              0,
+              0,
+              1,
+              1
+            ],
+            "states": [
+              0,
+              1,
+              0,
+              0
+            ],
+            "offsets": [
+              3,
+              0
+            ],
+            "circuit_colors": [
+              [
+                0,
+                1,
+                3
+              ],
+              [
+                3,
+                0,
+                3,
+                1,
+                0
+              ]
+            ],
+            "affine_dimension": 2
+          }
+        },
+        "repaired": {
+          "flow": [
+            4,
+            3,
+            7,
+            3,
+            7,
+            4,
+            7,
+            5,
+            2,
+            1,
+            5,
+            4
+          ],
+          "lift": {
+            "system": {
+              "equations": 16,
+              "variables": 12,
+              "rank": 12,
+              "consistent": true,
+              "affine_dimension": 0
+            },
+            "new_binary_coordinate": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1,
+              0,
+              1,
+              1
+            ],
+            "four_bit_flow": [
+              12,
+              11,
+              7,
+              11,
+              7,
+              12,
+              7,
+              13,
+              10,
+              1,
+              13,
+              12
+            ],
+            "cover": {
+              "0": [
+                0,
+                1,
+                3,
+                5,
+                9,
+                11
+              ],
+              "1": [
+                7,
+                8,
+                9,
+                10
+              ],
+              "2": [],
+              "3": [
+                1,
+                2,
+                3,
+                4,
+                6,
+                8
+              ],
+              "4": [
+                0,
+                2,
+                4,
+                5,
+                6,
+                7,
+                10,
+                11
+              ]
+            },
+            "exact_double_coverage_and_even_degrees_verified": true
+          }
+        }
+      }
+    },
+    "every_repaired_flow_and_decoded_cover_verified": true
+  },
+  "abstract_word_checks": {
+    "seed": 20260930,
+    "systems_checked": 800,
+    "case_counts": {
+      "full_offset_rank": 609,
+      "entrywise_balanced": 129,
+      "stable_direct_sum": 55,
+      "four_collinear_rows": 7
+    },
+    "all_rotation_assignments_exhausted": true,
+    "all_offset_coefficients_verified_directly": true,
+    "examples": {
+      "full_offset_rank": {
+        "words": [
+          [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "boundary_table": [
+          [
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "proof_case": {
+          "case": "full_offset_rank",
+          "binary_rank": 0
+        },
+        "search": {
+          "rotations_examined": 3,
+          "closure_assignments": 3,
+          "solvable_rotation_assignments": 3,
+          "successful_rotation_offset_pairs": 768,
+          "exhaustive": true,
+          "rank_outcome_histogram": {
+            "rank=0,solvable=True": 3
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 0,
+            "defect_before_offsets": [
+              0
+            ],
+            "states": [
+              0
+            ],
+            "offsets": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "circuit_colors": [
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                3,
+                0
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            "affine_dimension": 8
+          }
+        }
+      },
+      "entrywise_balanced": {
+        "words": [
+          [
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ]
+          ]
+        ],
+        "boundary_table": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "proof_case": {
+          "case": "entrywise_balanced",
+          "binary_rank": 0
+        },
+        "search": {
+          "rotations_examined": 9,
+          "closure_assignments": 9,
+          "solvable_rotation_assignments": 3,
+          "successful_rotation_offset_pairs": 48,
+          "exhaustive": true,
+          "rank_outcome_histogram": {
+            "rank=0,solvable=False": 6,
+            "rank=0,solvable=True": 3
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 0,
+            "defect_before_offsets": [
+              0,
+              0
+            ],
+            "states": [
+              0,
+              2
+            ],
+            "offsets": [
+              0,
+              0
+            ],
+            "circuit_colors": [
+              [
+                2,
+                1,
+                2,
+                0
+              ],
+              [
+                3,
+                0,
+                3,
+                0
+              ]
+            ],
+            "affine_dimension": 4
+          }
+        }
+      },
+      "stable_direct_sum": {
+        "words": [
+          [
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        "boundary_table": [
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            0,
+            0
+          ]
+        ],
+        "proof_case": {
+          "case": "stable_direct_sum",
+          "binary_rank": 1,
+          "groups": [
+            [
+              0,
+              1
+            ],
+            [
+              2
+            ]
+          ]
+        },
+        "search": {
+          "rotations_examined": 27,
+          "closure_assignments": 9,
+          "solvable_rotation_assignments": 3,
+          "successful_rotation_offset_pairs": 24,
+          "exhaustive": true,
+          "rank_outcome_histogram": {
+            "rank=1,solvable=False": 6,
+            "rank=1,solvable=True": 3
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 1,
+            "defect_before_offsets": [
+              1,
+              1,
+              0
+            ],
+            "states": [
+              0,
+              0,
+              2
+            ],
+            "offsets": [
+              1,
+              0
+            ],
+            "circuit_colors": [
+              [
+                0,
+                2,
+                1,
+                0,
+                2,
+                3,
+                0,
+                1
+              ],
+              [
+                2,
+                0,
+                2,
+                1,
+                2,
+                0,
+                2,
+                0
+              ]
+            ],
+            "affine_dimension": 3
+          }
+        }
+      },
+      "four_collinear_rows": {
+        "words": [
+          [
+            [
+              2,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          [
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        "boundary_table": [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "proof_case": {
+          "case": "four_collinear_rows",
+          "binary_rank": 2
+        },
+        "search": {
+          "rotations_examined": 81,
+          "closure_assignments": 21,
+          "solvable_rotation_assignments": 21,
+          "successful_rotation_offset_pairs": 96,
+          "exhaustive": true,
+          "rank_outcome_histogram": {
+            "rank=1,solvable=True": 3,
+            "rank=2,solvable=True": 18
+          },
+          "witness": {
+            "consistent": true,
+            "rank": 2,
+            "defect_before_offsets": [
+              0,
+              1,
+              0,
+              1
+            ],
+            "states": [
+              0,
+              0,
+              0,
+              0
+            ],
+            "offsets": [
+              3,
+              0
+            ],
+            "circuit_colors": [
+              [
+                2,
+                0,
+                1,
+                3,
+                2,
+                3,
+                0,
+                1,
+                2,
+                0,
+                2,
+                3
+              ],
+              [
+                3,
+                1,
+                3,
+                1,
+                3,
+                0,
+                3,
+                2,
+                0,
+                1,
+                2,
+                0
+              ]
+            ],
+            "affine_dimension": 2
+          }
+        }
+      }
+    }
+  },
+  "sharp_five_component_failure": {
+    "vertices": 10,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "first_coordinate_mask": 31775,
+    "starting_flow": [
+      5,
+      4,
+      5,
+      7,
+      4,
+      1,
+      1,
+      1,
+      2,
+      3,
+      5,
+      6,
+      4,
+      4,
+      7
+    ],
+    "boundary_table": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "search": {
+      "rotations_examined": 243,
+      "closure_assignments": 60,
+      "solvable_rotation_assignments": 0,
+      "successful_rotation_offset_pairs": 0,
+      "exhaustive": true,
+      "rank_outcome_histogram": {
+        "rank=2,solvable=False": 60
+      },
+      "witness": null
+    },
+    "independent_offset_enumeration": {
+      "closure_assignments": 60,
+      "rotation_offset_pairs_checked": 960,
+      "successful_pairs": 0,
+      "successful_zero_offset_assignments": 0,
+      "defect_histogram": {
+        "2": 720,
+        "4": 240
+      }
+    },
+    "matching_component_rotations_cover_all_nonzero_colorings": true
+  },
+  "offsets_are_essential": {
+    "vertices": 16,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        10,
+        9
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        11,
+        8
+      ],
+      [
+        12,
+        0
+      ],
+      [
+        12,
+        4
+      ],
+      [
+        12,
+        8
+      ],
+      [
+        13,
+        1
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        13,
+        9
+      ],
+      [
+        14,
+        2
+      ],
+      [
+        14,
+        6
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        15,
+        7
+      ],
+      [
+        15,
+        11
+      ]
+    ],
+    "starting_flow": [
+      5,
+      4,
+      5,
+      4,
+      6,
+      4,
+      6,
+      4,
+      7,
+      4,
+      7,
+      4,
+      1,
+      2,
+      3,
+      1,
+      2,
+      3,
+      1,
+      2,
+      3,
+      1,
+      2,
+      3
+    ],
+    "first_coordinate_mask": 4095,
+    "complement_components": [
+      [
+        0,
+        4,
+        8,
+        12
+      ],
+      [
+        1,
+        5,
+        9,
+        13
+      ],
+      [
+        2,
+        6,
+        10,
+        14
+      ],
+      [
+        3,
+        7,
+        11,
+        15
+      ]
+    ],
+    "boundary_table": [
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ],
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "search": {
+      "rotations_examined": 81,
+      "closure_assignments": 21,
+      "solvable_rotation_assignments": 3,
+      "successful_rotation_offset_pairs": 96,
+      "exhaustive": true,
+      "rank_outcome_histogram": {
+        "rank=1,solvable=True": 3,
+        "rank=2,solvable=False": 18
+      },
+      "witness": {
+        "consistent": true,
+        "rank": 1,
+        "defect_before_offsets": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "states": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "offsets": [
+          2,
+          0,
+          0
+        ],
+        "circuit_colors": [
+          [
+            3,
+            2,
+            3,
+            2
+          ],
+          [
+            2,
+            0,
+            2,
+            0
+          ],
+          [
+            3,
+            0,
+            3,
+            0
+          ]
+        ],
+        "affine_dimension": 5
+      }
+    },
+    "independent_offset_enumeration": {
+      "closure_assignments": 21,
+      "rotation_offset_pairs_checked": 1344,
+      "successful_pairs": 96,
+      "successful_zero_offset_assignments": 0,
+      "defect_histogram": {
+        "0": 96,
+        "2": 1152,
+        "4": 96
+      }
+    },
+    "repaired": {
+      "flow": [
+        7,
+        6,
+        7,
+        6,
+        6,
+        4,
+        6,
+        4,
+        7,
+        4,
+        7,
+        4,
+        1,
+        2,
+        3,
+        1,
+        2,
+        3,
+        1,
+        2,
+        3,
+        1,
+        2,
+        3
+      ],
+      "lift": {
+        "system": {
+          "equations": 28,
+          "variables": 24,
+          "rank": 24,
+          "consistent": true,
+          "affine_dimension": 0
+        },
+        "new_binary_coordinate": [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        "four_bit_flow": [
+          7,
+          14,
+          7,
+          14,
+          14,
+          12,
+          14,
+          12,
+          7,
+          12,
+          7,
+          12,
+          9,
+          2,
+          11,
+          9,
+          2,
+          11,
+          9,
+          2,
+          11,
+          9,
+          2,
+          11
+        ],
+        "cover": {
+          "0": [
+            5,
+            7,
+            9,
+            11,
+            13,
+            14,
+            16,
+            17,
+            19,
+            20,
+            22,
+            23
+          ],
+          "1": [],
+          "2": [
+            1,
+            3,
+            4,
+            6,
+            12,
+            13,
+            15,
+            16,
+            18,
+            19,
+            21,
+            22
+          ],
+          "3": [
+            0,
+            2,
+            8,
+            10,
+            12,
+            14,
+            15,
+            17,
+            18,
+            20,
+            21,
+            23
+          ],
+          "4": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "exact_double_coverage_and_even_degrees_verified": true
+      }
+    }
+  },
+  "boundary_case_audit": {
+    "all_four_by_three_tables_with_zero_row_and_column_sums": 4096,
+    "case_counts": {
+      "entrywise_balanced": 1,
+      "stable_direct_sum": 1470,
+      "four_collinear_rows": 105,
+      "full_offset_rank": 2520
+    },
+    "all_sixteen_bilinear_forms_checked": true,
+    "unique_form_without_an_off_diagonal_zero": "omega(a,b)"
+  }
+}
