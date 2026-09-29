@@ -1,0 +1,669 @@
+[
+  {
+    "vertices": 4,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "seed": 77,
+    "random_trials": 2331,
+    "nz_flows_checked": 1000,
+    "good_normal_histogram": {
+      "4": 804,
+      "7": 196
+    },
+    "all_palettes_fail_witness": null,
+    "name": "K4"
+  },
+  {
+    "vertices": 6,
+    "edges": [
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "seed": 77,
+    "random_trials": 3615,
+    "nz_flows_checked": 1000,
+    "good_normal_histogram": {
+      "4": 931,
+      "7": 69
+    },
+    "all_palettes_fail_witness": null,
+    "name": "K33"
+  },
+  {
+    "vertices": 6,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "seed": 77,
+    "random_trials": 3837,
+    "nz_flows_checked": 1000,
+    "good_normal_histogram": {
+      "1": 473,
+      "4": 487,
+      "7": 40
+    },
+    "all_palettes_fail_witness": null,
+    "name": "Prism6"
+  },
+  {
+    "vertices": 8,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "seed": 77,
+    "random_trials": 5,
+    "nz_flows_checked": 1,
+    "good_normal_histogram": {
+      "0": 1
+    },
+    "all_palettes_fail_witness": {
+      "flow": [
+        2,
+        7,
+        5,
+        5,
+        7,
+        1,
+        4,
+        6,
+        1,
+        4,
+        7,
+        3
+      ],
+      "normal_obstructions": {
+        "1": [
+          {
+            "vertices": [
+              2,
+              6
+            ],
+            "cut_edges": [
+              3,
+              5,
+              10,
+              11
+            ],
+            "outside_values": [
+              1,
+              3,
+              5,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              4,
+              7
+            ],
+            "cut_edges": [
+              2,
+              4,
+              8,
+              11
+            ],
+            "outside_values": [
+              1,
+              3,
+              5,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          }
+        ],
+        "2": [
+          {
+            "vertices": [
+              0,
+              4,
+              5,
+              7
+            ],
+            "cut_edges": [
+              0,
+              1,
+              4,
+              7,
+              10,
+              11
+            ],
+            "outside_values": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              3
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              1,
+              2,
+              3,
+              6
+            ],
+            "cut_edges": [
+              0,
+              1,
+              4,
+              7,
+              10,
+              11
+            ],
+            "outside_values": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              3
+            ],
+            "obstruction": 1
+          }
+        ],
+        "3": [
+          {
+            "vertices": [
+              0,
+              3
+            ],
+            "cut_edges": [
+              0,
+              2,
+              5,
+              7
+            ],
+            "outside_values": [
+              1,
+              2,
+              5,
+              6
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              1,
+              2,
+              4,
+              5,
+              6,
+              7
+            ],
+            "cut_edges": [
+              0,
+              2,
+              5,
+              7
+            ],
+            "outside_values": [
+              1,
+              2,
+              5,
+              6
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          }
+        ],
+        "4": [
+          {
+            "vertices": [
+              2,
+              3
+            ],
+            "cut_edges": [
+              1,
+              3,
+              6,
+              7
+            ],
+            "outside_values": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              4,
+              5
+            ],
+            "cut_edges": [
+              2,
+              7,
+              9,
+              10
+            ],
+            "outside_values": [
+              4,
+              5,
+              6,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          }
+        ],
+        "5": [
+          {
+            "vertices": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              7
+            ],
+            "cut_edges": [
+              6,
+              7,
+              8,
+              11
+            ],
+            "outside_values": [
+              1,
+              3,
+              4,
+              6
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              5,
+              6
+            ],
+            "cut_edges": [
+              6,
+              7,
+              8,
+              11
+            ],
+            "outside_values": [
+              1,
+              3,
+              4,
+              6
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          }
+        ],
+        "6": [
+          {
+            "vertices": [
+              0,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "cut_edges": [
+              0,
+              3,
+              9,
+              11
+            ],
+            "outside_values": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              1,
+              7
+            ],
+            "cut_edges": [
+              0,
+              3,
+              9,
+              11
+            ],
+            "outside_values": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          }
+        ],
+        "7": [
+          {
+            "vertices": [
+              0,
+              4
+            ],
+            "cut_edges": [
+              0,
+              1,
+              8,
+              9
+            ],
+            "outside_values": [
+              1,
+              2,
+              4,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          },
+          {
+            "vertices": [
+              1,
+              2
+            ],
+            "cut_edges": [
+              0,
+              4,
+              5,
+              6
+            ],
+            "outside_values": [
+              1,
+              2,
+              4,
+              7
+            ],
+            "cut_color_counts": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "obstruction": 1
+          }
+        ]
+      }
+    },
+    "name": "Cube"
+  },
+  {
+    "vertices": 8,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "seed": 77,
+    "random_trials": 5593,
+    "nz_flows_checked": 1000,
+    "good_normal_histogram": {
+      "1": 350,
+      "2": 51,
+      "4": 471,
+      "5": 34,
+      "6": 66,
+      "7": 28
+    },
+    "all_palettes_fail_witness": null,
+    "name": "Wagner8"
+  }
+]

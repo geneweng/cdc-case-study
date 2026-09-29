@@ -2,6 +2,10 @@
 
 Research date: **29 September 2026**.
 
+Follow-up: [A proof attempt for the 5-cycle double cover conjecture](five-cdc-attempt/attempt.md), including an exact extra-coordinate formulation, failed shortcuts, and reproducible certificates. The general conjecture is not proved by that attempt.
+
+Continuation: [Exhaustive repair checks and alternating bilinear forms](five-cdc-attempt/continuation.md). The proposed repair rule passes all flow classes on every bridgeless simple cubic graph through 14 vertices and the two qualifying 18-vertex snarks. A new exact formulation makes the third flow coordinate a linear completion once the first two are chosen; the general existence step remains open.
+
 Graphs are finite. The local lifting discussion uses loopless cubic graphs; the quantitative counting conjecture below is stated for simple graphs, as in the cited counting papers.
 
 **Yes to both questions, with a qualification: the mapping generalizes much more broadly than the proof that the resulting equations have a solution.** The most promising next conjectures are the **5-cycle double cover conjecture** and the **exponential circuit-double-cover counting conjecture**. Prescribing a circuit, imposing orientations, and constructing perfect-matching covers are further plausible directions, each with an identifiable extra obstruction.

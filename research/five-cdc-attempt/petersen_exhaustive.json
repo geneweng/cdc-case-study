@@ -1,0 +1,275 @@
+{
+  "vertices": 10,
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      0,
+      5
+    ],
+    [
+      1,
+      6
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      4,
+      9
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      7,
+      9
+    ],
+    [
+      8,
+      5
+    ],
+    [
+      9,
+      6
+    ]
+  ],
+  "cycle_space_dimension": 6,
+  "all_binary_3_flows_examined_including_zero_edges": 262144,
+  "nz_flows": 28560,
+  "good_normal_histogram": {
+    "1": 26880,
+    "3": 1680
+  },
+  "first_coordinate_supports": 63,
+  "supports_with_no_good_flow": [
+    {
+      "first_coordinate_edges": [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13
+      ],
+      "flows": 960,
+      "good_flows": 0,
+      "witness": [
+        5,
+        3,
+        6,
+        7,
+        1,
+        4,
+        6,
+        5,
+        1,
+        6,
+        1,
+        4,
+        4,
+        5,
+        2
+      ]
+    },
+    {
+      "first_coordinate_edges": [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14
+      ],
+      "flows": 960,
+      "good_flows": 0,
+      "witness": [
+        4,
+        6,
+        3,
+        6,
+        1,
+        5,
+        2,
+        5,
+        5,
+        7,
+        4,
+        4,
+        1,
+        1,
+        6
+      ]
+    },
+    {
+      "first_coordinate_edges": [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        13,
+        14
+      ],
+      "flows": 960,
+      "good_flows": 0,
+      "witness": [
+        1,
+        6,
+        3,
+        6,
+        4,
+        5,
+        7,
+        5,
+        5,
+        2,
+        1,
+        1,
+        4,
+        4,
+        6
+      ]
+    },
+    {
+      "first_coordinate_edges": [
+        0,
+        2,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14
+      ],
+      "flows": 960,
+      "good_flows": 0,
+      "witness": [
+        5,
+        2,
+        7,
+        3,
+        4,
+        1,
+        7,
+        5,
+        4,
+        7,
+        4,
+        1,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "first_coordinate_edges": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "flows": 960,
+      "good_flows": 0,
+      "witness": [
+        1,
+        7,
+        6,
+        3,
+        4,
+        5,
+        6,
+        1,
+        5,
+        7,
+        4,
+        4,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "first_coordinate_edges": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "flows": 960,
+      "good_flows": 0,
+      "witness": [
+        5,
+        7,
+        6,
+        7,
+        4,
+        1,
+        2,
+        1,
+        1,
+        3,
+        4,
+        4,
+        5,
+        5,
+        6
+      ]
+    }
+  ],
+  "extra_coordinate_crosschecks": 28560,
+  "canonical_extra_coordinate_successes": 4560
+}

@@ -1,0 +1,551 @@
+[
+  {
+    "name": "Petersen",
+    "vertices": 10,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        9,
+        6
+      ]
+    ],
+    "cycle_dimension": 6,
+    "pairs_examined": 4096,
+    "consistent_pairs": 750,
+    "successful_labeled_flows_counted_by_affine_dimension": 4560,
+    "affine_dimension_histogram": {
+      "2": 360,
+      "3": 390
+    },
+    "first_cycles_with_no_completion": [
+      [],
+      [
+        1,
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      [
+        0,
+        2,
+        3,
+        5,
+        6,
+        7,
+        9,
+        11,
+        12,
+        13
+      ],
+      [
+        0,
+        1,
+        3,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        14
+      ],
+      [
+        0,
+        2,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14
+      ],
+      [
+        1,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        12,
+        13,
+        14
+      ],
+      [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    ],
+    "form_identity_basis_checks": 2304,
+    "every_consistent_pair_decoded_and_checked": true,
+    "example": {
+      "first_cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "second_cycle_edges": [
+        0,
+        3,
+        5,
+        6,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "third_cycle_edges": [
+        1,
+        3,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14
+      ],
+      "flow": [
+        6,
+        5,
+        4,
+        7,
+        4,
+        2,
+        3,
+        1,
+        3,
+        3,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "linear_system": {
+        "equations": 14,
+        "variables": 15,
+        "rank": 12,
+        "consistent": true,
+        "affine_dimension": 3
+      },
+      "lift": {
+        "system": {
+          "equations": 15,
+          "variables": 15,
+          "rank": 14,
+          "consistent": true,
+          "affine_dimension": 1
+        },
+        "new_binary_coordinate": [
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "four_bit_flow": [
+          14,
+          13,
+          12,
+          7,
+          12,
+          2,
+          3,
+          1,
+          11,
+          11,
+          11,
+          2,
+          10,
+          9,
+          1
+        ],
+        "cover": {
+          "0": [
+            2,
+            4,
+            5,
+            7,
+            8,
+            9,
+            10,
+            11,
+            14
+          ],
+          "1": [
+            1,
+            6,
+            7,
+            12,
+            14
+          ],
+          "2": [
+            0,
+            5,
+            6,
+            11,
+            13
+          ],
+          "3": [
+            3,
+            8,
+            9,
+            10,
+            12,
+            13
+          ],
+          "4": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        "exact_double_coverage_and_even_degrees_verified": true
+      }
+    },
+    "inconsistency_example": {
+      "first_cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "second_cycle_edges": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "linear_system_inconsistency": {
+        "equations": 21,
+        "variables": 15,
+        "rank": 14,
+        "consistent": false,
+        "contradiction_row_indices": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          10,
+          11,
+          12,
+          13,
+          14
+        ],
+        "certificate_verified": true
+      }
+    },
+    "independent_cube_enumeration": null
+  },
+  {
+    "name": "Cube",
+    "vertices": 8,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    "cycle_dimension": 5,
+    "pairs_examined": 1024,
+    "consistent_pairs": 507,
+    "successful_labeled_flows_counted_by_affine_dimension": 2784,
+    "affine_dimension_histogram": {
+      "1": 18,
+      "2": 303,
+      "3": 180,
+      "4": 6
+    },
+    "first_cycles_with_no_completion": [],
+    "form_identity_basis_checks": 800,
+    "every_consistent_pair_decoded_and_checked": true,
+    "example": {
+      "first_cycle_edges": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "second_cycle_edges": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        9,
+        10
+      ],
+      "third_cycle_edges": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        11
+      ],
+      "flow": [
+        4,
+        7,
+        3,
+        7,
+        3,
+        4,
+        3,
+        3,
+        1,
+        2,
+        2,
+        1
+      ],
+      "linear_system": {
+        "equations": 11,
+        "variables": 12,
+        "rank": 9,
+        "consistent": true,
+        "affine_dimension": 3
+      },
+      "lift": {
+        "system": {
+          "equations": 12,
+          "variables": 12,
+          "rank": 11,
+          "consistent": true,
+          "affine_dimension": 1
+        },
+        "new_binary_coordinate": [
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "four_bit_flow": [
+          12,
+          7,
+          11,
+          7,
+          11,
+          12,
+          11,
+          11,
+          1,
+          10,
+          10,
+          1
+        ],
+        "cover": {
+          "0": [
+            0,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            11
+          ],
+          "1": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "2": [],
+          "3": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            9,
+            10
+          ],
+          "4": [
+            0,
+            1,
+            3,
+            5
+          ]
+        },
+        "exact_double_coverage_and_even_degrees_verified": true
+      }
+    },
+    "inconsistency_example": {
+      "first_cycle_edges": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "second_cycle_edges": [
+        0,
+        1,
+        3,
+        5
+      ],
+      "linear_system_inconsistency": {
+        "equations": 17,
+        "variables": 12,
+        "rank": 11,
+        "consistent": false,
+        "contradiction_row_indices": [
+          4,
+          8,
+          12,
+          13
+        ],
+        "certificate_verified": true
+      }
+    },
+    "independent_cube_enumeration": {
+      "all_three_coordinate_flows_examined": 32768,
+      "nowhere_zero_flows": 5712,
+      "canonical_lifts": 2784
+    }
+  }
+]
