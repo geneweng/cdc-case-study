@@ -1,0 +1,23 @@
+{
+  "independent_dfs_circuit_count": 229,
+  "distinct_neighbors": 175,
+  "neutral_neighbors": 35,
+  "improving_neighbors": 0,
+  "two_move_escape_potentials": [
+    [
+      2,
+      18
+    ],
+    [
+      2,
+      18
+    ],
+    [
+      0,
+      18
+    ]
+  ],
+  "exact_five_layer_cover_verified": true,
+  "simple_connected_bridgeless_cubic_graph_verified": true,
+  "all_checks_passed": true
+}

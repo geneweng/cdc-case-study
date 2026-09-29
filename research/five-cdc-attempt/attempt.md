@@ -6,7 +6,7 @@ I found no verified general resolution. A September 23 primary preprint explicit
 
 This attempt produced an exact algebraic reformulation, three rejected proof shortcuts with certificates, and a more specific unproved repair lemma. The elementary derivations below are supplied here without a claim of research novelty. Finite computations are distinguished from statements proved for arbitrary graphs.
 
-**Continuation:** [Exhaustive repair tests and a bilinear reformulation](continuation.md) adds complete flow-class checks on all 587 connected bridgeless simple cubic graphs through 14 vertices and both 18-vertex snarks of girth at least five and cyclic edge-connectivity at least four. It also proves an exact alternating-form formulation and a linear third-coordinate completion criterion. The conjecture and candidate repair lemma remain unproved in general.
+**Latest status:** the candidate repair lemma below is now **refuted** by an explicit 16-vertex graph. See [the counterexample and triangle reduction](repair-obstruction.md). The original 5-CDC conjecture remains unproved by this work. The [earlier continuation](continuation.md) records exhaustive positive checks through 14 vertices and on two 18-vertex snarks, plus an exact alternating-form formulation and a linear third-coordinate completion criterion; those algebraic equivalences remain valid.
 
 ## 1. An exact reformulation: one extra binary flow coordinate
 
@@ -167,7 +167,7 @@ The graph has 116 circuits. Exhausting every allowed circuit/value pair gives 12
 
 A neutral first move does escape: the saved two-move path reaches D=0, and the extra-coordinate solver then constructs and verifies five even layers covering every edge exactly twice. The complete graph, initial flow, neighborhood summary, moves, and final cover are in [descent_trap_certificate.json](descent_trap_certificate.json).
 
-## 6. A more precise remaining proof target
+## 6. A more precise repair target, subsequently refuted
 
 A stronger potential handles that particular plateau:
 
@@ -177,7 +177,7 @@ A stronger potential handles that particular plateau:
 
 ordered lexicographically. A move can preserve the minimum while decreasing the second entry.
 
-**Unproved candidate repair lemma.** For every connected bridgeless cubic graph and every nowhere-zero F₂³-flow f with D(f)>0, there is an allowed circuit move that strictly decreases Ψ(f).
+**Candidate repair lemma (now refuted).** For every connected bridgeless cubic graph and every nowhere-zero F₂³-flow f with D(f)>0, there is an allowed circuit move that strictly decreases Ψ(f).
 
 If this lemma were true, the existing nowhere-zero 8-flow theorem would supply a starting flow. Repeated improvement must terminate because Ψ takes finitely many nonnegative integer values. The terminal flow would have D=0, and Sections 1–2 would construct a five-layer cover. Combined with the standard cubic reduction for five-layer CDC, this would prove the conjecture.
 
@@ -185,7 +185,7 @@ If this lemma were true, the existing nowhere-zero 8-flow theorem would supply a
 
 **Subsequent stronger check:** the [continuation](continuation.md) exhausts all flow classes on 589 specified graphs, including 1,349,868 classes requiring repair; every such class has an improving move. Its exact finite scope and symmetry reduction are explained there.
 
-**What is missing:** a proof that an improving move always exists, or a counterexample to that lemma. The component structure changes under a move, so I have not obtained a sign-controlled expression for the change in Ψ. The experiments provide no universal guarantee. This lemma is stronger than merely asserting that some successful flow exists; it could be false even if 5-CDC is true.
+**Later outcome:** [a 16-vertex counterexample](repair-obstruction.md) has Ψ=(2,18), and all 175 neighboring flows have at least this potential. A neutral move followed by an improvement reaches a verified five-layer cover. Thus the strict-descent lemma is false even though the graph itself has the desired cover. The positive finite checks did not supply a universal guarantee.
 
 ### A tractable subproblem, with a proved linear formulation
 
@@ -209,7 +209,7 @@ Thus choosing such a modification to repair specified component parities is a li
 | Holding F fixed does not always suffice | Petersen structural argument and full flow enumeration | Counterexample to the proposed shortcut |
 | Strict descent of D does not always work | Exhaustive neighborhood of one 14-vertex graph | Counterexample to the proposed shortcut |
 | A neutral move can be useful | Explicit two-step path and verified cover | One constructive example |
-| Lexicographic repair always works | **Not proved**; samples and the continuation's exhaustive finite checks passed | Candidate lemma only |
+| Strict lexicographic repair always works | **False**; a 16-vertex counterexample exhausts all 175 allowed neighbors | See the latest [counterexample report](repair-obstruction.md) |
 | Every bridgeless graph has a five-layer CDC | **Not proved in this attempt** | Original open conjecture |
 
 Reproduce the saved experiments with Python 3.10+ and NetworkX 3.6.1 (pinned in [requirements.txt](requirements.txt)):
@@ -220,4 +220,4 @@ python3 research/five-cdc-attempt/run_experiments.py
 
 The scripts validate decoded covers by actual integer edge counts and even vertex degrees. Inconsistency witnesses are verified by XORing the indicated equations to obtain 0=1. The strict-descent counterexample uses every circuit, obtained by enumerating the binary cycle space and retaining connected supports. The runtime versions are recorded in [environment.json](environment.json).
 
-The next substantive mathematical step is to prove or disprove the candidate repair lemma, preferably first on irreducible snarks. Repeating successful small examples cannot replace that argument.
+The strict repair lemma is now disproved. The next mathematical issue is whether suitable sequences allowing neutral moves, or an appropriate reduction to a smaller graph class, always reach a successful flow. The [triangle reduction](repair-obstruction.md#3-a-proved-triangle-flattening-lemma) supplies one proved step; no general reachability result is established.

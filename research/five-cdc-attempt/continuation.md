@@ -2,6 +2,8 @@
 
 **29 September 2026. The general conjecture is still not proved by this work.**
 
+**Subsequent correction to the proof strategy:** the proposed strict lexicographic repair lemma tested here is **false on a 16-vertex graph**. See [the explicit counterexample and triangle reduction](repair-obstruction.md). The finite checks and algebraic reformulations below remain valid; the proposed universal inference does not.
+
 This continues [the first attempt](attempt.md). The new mathematical result is an exact formulation using alternating bilinear forms, followed by a linear completion problem. The new computational result is exhaustive verification of the proposed lexicographic repair lemma on every connected bridgeless simple cubic graph with at most 14 vertices. These are finite checks of a proposed lemma, not a proof of that lemma for arbitrary graphs. No novelty over the complete literature is claimed for the algebraic deductions.
 
 ## 1. Exhaustive verification of the candidate repair lemma
@@ -130,9 +132,9 @@ On Petersen, the first coordinates admitting no completion are precisely F=0 and
 
 ## 4. What remains unproved
 
-There are two concrete mathematical questions, and neither has been answered in general here:
+The two concrete mathematical questions from this stage now have different statuses:
 
-- Does every unsuccessful three-bit flow have a circuit move decreasing Ψ? The finite census supports this candidate, while providing no general guarantee.
+- Does every unsuccessful three-bit flow have a circuit move decreasing Ψ? **No.** The later [16-vertex counterexample](repair-obstruction.md) answers this negatively, despite every finite check recorded above passing.
 - Can one always choose F,y so that (2) is consistent? This is exactly the missing existence step in the new formulation, and is equivalent to the original five-layer problem via the encoding.
 
 The latter question has two coupled requirements: common isotropy for the cut forms and full support outside F. A generic dimension argument for isotropic subspaces does not ensure that all those edge coordinates are covered. Holding F fixed is already known to fail. These are substantive obstacles, not omitted routine steps.

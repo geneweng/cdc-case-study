@@ -4,7 +4,9 @@ Research date: **29 September 2026**.
 
 Follow-up: [A proof attempt for the 5-cycle double cover conjecture](five-cdc-attempt/attempt.md), including an exact extra-coordinate formulation, failed shortcuts, and reproducible certificates. The general conjecture is not proved by that attempt.
 
-Continuation: [Exhaustive repair checks and alternating bilinear forms](five-cdc-attempt/continuation.md). The proposed repair rule passes all flow classes on every bridgeless simple cubic graph through 14 vertices and the two qualifying 18-vertex snarks. A new exact formulation makes the third flow coordinate a linear completion once the first two are chosen; the general existence step remains open.
+Continuation: [Exhaustive repair checks and alternating bilinear forms](five-cdc-attempt/continuation.md). An exact formulation makes the third flow coordinate a linear completion once the first two are chosen; the general existence step remains open.
+
+Latest result: [A counterexample to strict repair, and a proved triangle reduction](five-cdc-attempt/repair-obstruction.md). The proposed strictly decreasing repair rule fails on an explicit 16-vertex graph, despite all the earlier positive checks. Neutral moves escape the example and yield a verified five-layer cover. The original conjecture remains unresolved by this work.
 
 Graphs are finite. The local lifting discussion uses loopless cubic graphs; the quantitative counting conjecture below is stated for simple graphs, as in the cited counting papers.
 
