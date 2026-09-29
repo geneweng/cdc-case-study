@@ -2,6 +2,8 @@
 
 **29 September 2026. A conditional existence proof is supplied below. The general 5-cycle double cover conjecture remains unproved by this work. No claim of novelty over the complete literature is made.**
 
+**Further result:** [Rank one obstructions and component reflections](rank-one-obstruction.md) proves completion whenever the five-component boundary matrix has two distinct nonzero columns. It also gives an exact Hermitian model for a remaining restricted recoloring problem and an explicit graph repaired by a reflection.
+
 The preceding result completes every admissible prescribed layer whose complement has at most four components. At five components, a further algebraic condition suffices: the boundary rows must span at least two dimensions over the four-element field. The proof works with any number of circuits in the prescribed layer.
 
 Consequently, a prescribed layer with five complement components can fail only if **every witnessing boundary coloring has rank exactly one over the four-element field**. Rank zero is covered by the earlier balanced theorem. Rank one does not itself imply failure: many such inputs succeed, but Petersen supplies a failure.
