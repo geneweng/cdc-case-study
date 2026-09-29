@@ -2,6 +2,8 @@
 
 **29 September 2026. This continues the proof attempt; it does not prove the general 5-cycle double cover conjecture.**
 
+**Later continuation:** [Balanced boundary colors](balanced-completion.md) proves a conditional existence result using a three-state parity lemma, identifies the remaining closure constraints for multiple circuits, and gives a graph where no single-circuit first coordinate is admissible.
+
 The complete 16-vertex computation now verifies repair sequences that allow neutral moves. Every starting flow in the census can eventually reach a five-label lift without increasing the potential. There are exactly four flow classes for which the first move cannot improve the potential, and all four admit an improvement after one neutral move.
 
 A second result is a proved normalization lemma for a pair of parallel edges. It reduces all seven obstruction counts simultaneously. However, a concrete example shows why this lemma does not automatically let us lift an entire nonincreasing repair sequence from a smaller graph. The graph-level existence problem does transfer across this reduction; the stronger requirement on every intermediate flow is the difficulty.

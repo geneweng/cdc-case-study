@@ -8,7 +8,9 @@ Continuation: [Exhaustive repair checks and alternating bilinear forms](five-cdc
 
 Earlier result: [A counterexample to strict repair, and a proved triangle reduction](five-cdc-attempt/repair-obstruction.md). The proposed strictly decreasing repair rule fails on an explicit 16-vertex graph, despite all the earlier positive checks. Neutral moves escape the example and yield a verified five-layer cover. The original conjecture remains unresolved by this work.
 
-Latest result: [Neutral repair and parallel-edge reductions](five-cdc-attempt/neutral-repair.md). The completed 16-vertex census verifies nonincreasing repair for 91,351,392 flow classes; exactly four need a neutral first step. A parallel-pair normalization lemma is proved, and an explicit example identifies a limitation of lifting repair moves through that reduction. The general existence gap remains.
+Further result: [Neutral repair and parallel-edge reductions](five-cdc-attempt/neutral-repair.md). The completed 16-vertex census verifies nonincreasing repair for 91,351,392 flow classes; exactly four need a neutral first step. A parallel-pair normalization lemma is proved, and an explicit example identifies a limitation of lifting repair moves through that reduction. The general existence gap remains.
+
+Latest result: [Balanced boundary colors and a conditional existence proof](five-cdc-attempt/balanced-completion.md). A known three-state parity lemma completes any admissible single-circuit first coordinate, and more generally any componentwise balanced boundary coloring. A 32-vertex example shows why a single-circuit restriction cannot handle all graphs directly. The report also gives exact odd-cut certificates and a census of 2,132,424 prescribed first coordinates; the general multiple-circuit existence step remains unproved.
 
 Graphs are finite. The local lifting discussion uses loopless cubic graphs; the quantitative counting conjecture below is stated for simple graphs, as in the cited counting papers.
 
