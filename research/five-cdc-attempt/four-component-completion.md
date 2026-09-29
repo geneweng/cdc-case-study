@@ -2,6 +2,8 @@
 
 **29 September 2026. This proves a conditional result, not the general 5-cycle double cover conjecture. No claim of novelty over the complete literature is made.**
 
+**Further result:** [Five component completion](five-component-completion.md) handles five complement components when the boundary rows have rank at least two over F₄. Combined with balanced completion, it confines any failed five-component prescribed layer to boundary rank one for every admissible coloring.
+
 The multiple-circuit completion problem can be solved when the complement has at most four connected components. This turns the corresponding observation in the preceding census into a theorem, with an explicit proof below. The bound is sharp for prescribed layers: a two-factor of Petersen has five complement components, is an admissible flow coordinate, and cannot be a whole layer of a five-layer cover.
 
 The additional freedom is to add a constant two-bit color around each circuit. For fixed component recolorings, the constants solve a binary linear system. Combining this system with the earlier three-state parity argument handles every boundary configuration on at most four components, including configurations that are not entrywise balanced.
