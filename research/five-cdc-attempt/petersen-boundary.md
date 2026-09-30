@@ -4,6 +4,8 @@
 
 **Subsequent result:** [A finite algebra for prescribed layers in Petersen chains](petersen-chain-algebra.md) classifies all conditional serial-chain relations into 36 nonzero types, each realized by at most three pieces. It proves both a persistent odd/even boundary obstruction and completion of every prescribed even subgraph on closed Petersen necklaces, with independent certificates. The attachment vertices in general blowups remain an additional constraint.
 
+**Further reduction:** [Joint boundary completion](joint-boundary-completion.md) aligns a given three-bit flow with a compatible cover boundary after at most two internal pentagon switches. Contracting disjoint Petersen pieces preserves five-layer-cover existence exactly, and prescribed-coordinate completion after internal repair is equivalent to completion on that quotient, whose contracted vertices have degree four.
+
 The Petersen four-pole used in the [34-vertex experiment](cyclic-core-completion.md) has a particularly useful property: **every parity-compatible assignment of five-layer cover labels to its four ports extends through the piece**. Ten explicit partial covers prove this, up to permutations of layer names.
 
 This yields a structural result, independent of graph size:

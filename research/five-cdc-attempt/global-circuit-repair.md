@@ -6,6 +6,8 @@ This sharpens the [previous repair result](petersen-flow-repair.md), which estab
 
 The report also extends the local lifting lemma to an arbitrary collection of disjoint Petersen pieces, with a bound in terms of how many pieces each quotient circuit visits. All new certificates use only the Python standard library. No literature-wide novelty or minimum-length claim is made.
 
+**Continuation:** [Joint boundary completion](joint-boundary-completion.md) proves that a flow and a prescribed quotient cover can be extended together after at most two pentagon switches per piece. It gives an exact coordinate-completion reduction and shows that each of the seven normals in this family can be repaired separately in exactly m internal pentagons.
+
 A switch adds a nonzero vector a∈F₂³ on a single connected circuit C, requiring a to be absent from C. A successful flow has at least one nonzero linear coordinate support that is a whole layer of a CDC. For the positive witnesses here, five layers suffice; the negative witnesses exclude any number of layers. Layers may be disconnected even subgraphs.
 
 ## 1. The explicit switch
