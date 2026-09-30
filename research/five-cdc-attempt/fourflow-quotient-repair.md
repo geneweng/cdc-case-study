@@ -12,6 +12,8 @@ This replaces a separate quotient-cover search with a construction whenever K ha
 
 The graph constructions are Hägglund's, using his Petersen four-pole and attachment conventions. They are not new graph families. [Hägglund, *On snarks that are far from being 3-edge colorable*, Constructions 1–2](https://arxiv.org/html/1203.2015v1#S2)
 
+**Continuation:** [Triangle quotient reduction](triangle-quotient-reduction.md) handles the explicit Petersen contraction even though it has no four-flow. It gives an exact prescribed-layer and circuit-repair reduction to the cubic core, classifies every Petersen-core flow, and constructs larger examples where all seven coordinates survive every internal repair until a core edge changes.
+
 ## 1. A four-flow completes every prescribed even subgraph
 
 Let h be a nowhere-zero F₂²-flow on any finite graph H. Loops are allowed and count twice in vertex parity. For the three nonzero linear functionals λ on F₂², put

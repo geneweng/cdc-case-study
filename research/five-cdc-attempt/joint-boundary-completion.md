@@ -8,6 +8,8 @@ The local two-switch bound is sharp for a specified cover boundary. An exhaustiv
 
 **Continuation:** [A four-flow criterion](fourflow-quotient-repair.md) supplies the quotient cover explicitly whenever contracting the selected cycles of the original blowup or semiblowup graph leaves a four-flow. It handles every starting flow and every chosen normal on all prism constructions, using at most two pentagons per piece, and identifies cases where this sufficient condition fails.
 
+**Beyond the four-flow condition:** [Triangle quotient reduction](triangle-quotient-reduction.md) transfers the remaining prescribed-layer problem exactly to a cubic core. It gives both positive repair theorems for a Petersen core and examples where all seven coordinates remain obstructed under every internal Petersen repair.
+
 ## 1. Joint boundary data
 
 Let B be the Petersen graph with adjacent vertices 0,1 deleted, using the internal edge and port order
