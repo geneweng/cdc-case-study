@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture remains unproved here. This report proves a local extension lemma, a reduction, and a conditional theorem for entire graph families. No claim of novelty over the complete literature is made.**
 
+**Subsequent result:** [A finite algebra for prescribed layers in Petersen chains](petersen-chain-algebra.md) classifies all conditional serial-chain relations into 36 nonzero types, each realized by at most three pieces. It proves both a persistent odd/even boundary obstruction and completion of every prescribed even subgraph on closed Petersen necklaces, with independent certificates. The attachment vertices in general blowups remain an additional constraint.
+
 The Petersen four-pole used in the [34-vertex experiment](cyclic-core-completion.md) has a particularly useful property: **every parity-compatible assignment of five-layer cover labels to its four ports extends through the piece**. Ten explicit partial covers prove this, up to permutations of layer names.
 
 This yields a structural result, independent of graph size:
@@ -200,4 +202,4 @@ The graph certificates include Blowup(K₄,C₃), both constructions on several 
 
 Files: [metadata and graph covers](petersen_boundary.json), [compressed prescribed-layer witnesses](petersen_boundary_relation.txt.gz), [constructor](petersen_boundary.py), and [independent verifier](verify_petersen_boundary.py). No SAT solver or proof assistant is required or claimed. The constructor reuses the already verified Petersen seed cover from the preceding checkpoint.
 
-The next unresolved step is to control conditional boundary relations such as R_{B,F}, or to find similarly useful reductions in graphs without this Petersen piece. Charge conservation supplies an exact composition law for unrestricted covers here; it does not yet supply a universal five-layer existence proof.
+The [next report](petersen-chain-algebra.md) controls conditional boundary relations such as R_{B,F} on arbitrary serial chains. Branching attachment vertices and useful reductions in graphs without this Petersen piece remain unresolved. Charge conservation supplies an exact composition law for unrestricted covers here; it does not yet supply a universal five-layer existence proof.
