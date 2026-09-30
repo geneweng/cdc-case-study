@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture remains unproved here. This report gives a conditional theorem, a proved algebraic reduction with a finite computer-assisted classification, and an explicit graph demonstrating a new repair step. No claim of novelty over the complete literature is made.**
 
+**Further result:** [Full component permutations](component-permutations.md) adds a second interaction matrix, classifies the obstructions surviving every component-color permutation, and constructs covers after changing the prescribed layer in all 215 saved test cases.
+
 With five complement components, the preceding report confined a failed prescribed layer to boundary rank one over F₄. Allowing all six permutations of the nonzero component colors sharpens this condition: **two distinct nonzero boundary columns guarantee completion**. Any genuine failure must have all its nonzero columns equal, and exactly four or five nonzero rows.
 
 For that remaining form, cyclic component recoloring and circuit offsets reduce to a Hermitian matrix on the complement components. At five components, an exhaustive finite classification leaves two explicit obstruction patterns. This is an exact test for the restricted recoloring family, not for the existence of a cover with the prescribed layer.
