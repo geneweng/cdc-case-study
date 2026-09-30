@@ -6,6 +6,8 @@ The key is a joint extension property: a three-bit flow boundary and a five-laye
 
 The local two-switch bound is sharp for a specified cover boundary. An exhaustive independent computation checks 21,640 compatible boundary pairs and 2,455,920 starting-flow/cover-boundary cases. As an application, each of the seven coordinates in the earlier 72m-vertex obstructed family can be repaired separately in **exactly m internal pentagon switches**, with all exterior flow values fixed.
 
+**Continuation:** [A four-flow criterion](fourflow-quotient-repair.md) supplies the quotient cover explicitly whenever contracting the selected cycles of the original blowup or semiblowup graph leaves a four-flow. It handles every starting flow and every chosen normal on all prism constructions, using at most two pentagons per piece, and identifies cases where this sufficient condition fails.
+
 ## 1. Joint boundary data
 
 Let B be the Petersen graph with adjacent vertices 0,1 deleted, using the internal edge and port order
