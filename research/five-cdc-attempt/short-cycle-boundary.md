@@ -6,6 +6,8 @@ The failure at eight concerns a **particular supplied core cover**. It does not 
 
 The proof combines an exact eight-charge extension criterion with a finite exhaustive computation. An independent, standard-library verifier reconstructs all junction relations and all **16,384 automaton states**. It also checks explicit covers, rejected boundaries, and full cubic graph certificates.
 
+Follow-up: [Repairs inside full cycle regions reduce exactly to the core](region-joint-repair.md) permits junction values and the regional coordinate to change. Under that broader repair rule, the core criterion holds at every cycle length, and the two rejected core covers below are realized after explicit regional switches. The present obstruction with the entire quotient layer fixed remains valid.
+
 ## 1. Two contractions and the extension question
 
 Use the graph and port conventions in the [four-flow quotient report](fourflow-quotient-repair.md). Let S be a simple cubic graph, D a union of vertex-disjoint selected cycles, and X either Blowup(S,D) or SemiBlowup(S,D). Write q for the total number of vertices in D, hence the number of inserted Petersen four-poles B.
