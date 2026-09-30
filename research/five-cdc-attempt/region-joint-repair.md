@@ -12,6 +12,8 @@ The former eight-cycle obstruction becomes a useful test. On its 96-vertex Blowu
 
 The general 5-cycle double cover conjecture remains unproved here. No literature-wide novelty claim is made.
 
+Follow-up: [Linear regional repair using circuits of length at most ten](linear-region-repair.md) replaces the exponential bound below by at most 2q+3Σ⌊k_j/4⌋ switches. It also preserves every B-piece flow charge and gives an exact distance for quotient moves confined to individual junctions. The two displayed octagon repairs improve to four and five full-graph switches.
+
 ## 1. Which edges and which layer are fixed?
 
 Use the construction and edge conventions of the [preceding reports](fourflow-quotient-repair.md). Start from a simple cubic graph S and a union D of disjoint selected cycles. Let X be Blowup(S,D) or SemiBlowup(S,D). Contract each inserted Petersen four-pole B to obtain H; contracting each full cycle region of H gives K=S/D. Nonselected edges of S survive as **core edges**, including loops created by contraction, with two incidences per loop.
@@ -158,7 +160,7 @@ For repair with a supplied core cover, construct its target joint flow and cover
 \tag{6}
 \]
 
-as an upper bound on the number of switches. It is not a useful estimate of observed distances or an optimality claim. The certified examples below are much shorter. Establishing a sharp or polynomial regional bound remains a separate problem.
+as an upper bound on the number of switches. It is not a useful estimate of observed distances or an optimality claim. The certified examples below are much shorter. The subsequent [linear repair theorem](linear-region-repair.md) supersedes this bound for reaching a compatible completion of a supplied core cover; it does not claim a linear diameter for arbitrary pairs of specified flows.
 
 ## 7. Realizing the previously rejected eight-cycle cover
 
@@ -192,4 +194,4 @@ python3 -B verify_short_cycle_boundary.py
 
 The remaining commands verify the prior local B lifting/completion results and the original eight-cycle obstruction and graph structures. Every script uses the standard library. General all-length statements use the propagation and contraction proofs above, not extrapolation from the saved examples.
 
-The theorem is about changing a selected coordinate **inside full regions**. It leaves unresolved fixed-layer completion equivalence for long regions, efficient regional repair distances, and the existence of a successful flow in every relevant core component. In particular it provides no general proof of the 5-CDC conjecture.
+The theorem is about changing a selected coordinate **inside full regions**. It leaves unresolved fixed-layer completion equivalence for long regions, sharp unrestricted repair distances, and the existence of a successful flow in every relevant core component. A linear upper bound for the supplied-cover completion task is established in the follow-up above. These results provide no general proof of the 5-CDC conjecture.

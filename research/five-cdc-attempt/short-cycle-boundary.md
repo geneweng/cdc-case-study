@@ -8,6 +8,8 @@ The proof combines an exact eight-charge extension criterion with a finite exhau
 
 Follow-up: [Repairs inside full cycle regions reduce exactly to the core](region-joint-repair.md) permits junction values and the regional coordinate to change. Under that broader repair rule, the core criterion holds at every cycle length, and the two rejected core covers below are realized after explicit regional switches. The present obstruction with the entire quotient layer fixed remains valid.
 
+The subsequent [linear repair bound](linear-region-repair.md) minimizes the number of initially incompatible junctions over the same eight candidate charges used here. That minimum is the exact distance for quotient switches confined to single junctions, and it yields short full-graph repairs with a linear switch bound.
+
 ## 1. Two contractions and the extension question
 
 Use the graph and port conventions in the [four-flow quotient report](fourflow-quotient-repair.md). Let S be a simple cubic graph, D a union of vertex-disjoint selected cycles, and X either Blowup(S,D) or SemiBlowup(S,D). Write q for the total number of vertices in D, hence the number of inserted Petersen four-poles B.
