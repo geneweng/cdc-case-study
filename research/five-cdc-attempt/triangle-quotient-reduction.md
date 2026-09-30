@@ -9,6 +9,8 @@ This gives both a positive result and a limitation of internal repair:
 
 The finite classification exhausts all 28,560 three-bit flows on Petersen, and separately verifies all 5,760 bad cases for one normalized coordinate have a one-pentagon escape. A general three-terminal lifting lemma proves an exact equality of repair distances when only moves touching core edges are counted.
 
+Follow-up: [Cycle regions through length seven preserve prescribed cover boundaries](short-cycle-boundary.md) extends the completion and internal-repair reduction to selected cycles of lengths three through seven. A specified boundary can first fail at length eight. The circuit-distance theorem is not extended: a square region already supplies a counterexample to preparation-free lifting.
+
 ## 1. The construction and the two levels of contraction
 
 Let K be a connected loopless cubic graph. Replace each of its N vertices by a triangle, attaching its three incident edges at distinct triangle vertices. Call the resulting graph S, and let D consist of the N inserted triangles. Apply either Blowup(S,D) or SemiBlowup(S,D) to form X. There are q=3N Petersen four-poles in X.
