@@ -4,6 +4,8 @@
 
 The [preceding obstruction](junction-selection-obstruction.md) concerns a *fixed* flow: none of its seven coordinate supports can be a whole layer of any CDC. Here the flow is allowed to change. For that particular starting flow on 72m vertices, the minimum number of switches confined to individual Petersen pieces is **exactly m**. The endpoint has an explicit five-layer cover containing its normal-4 support.
 
+**Continuation:** [One global circuit repairs every repetition](global-circuit-repair.md) determines the unrestricted distance: it is exactly one, via a winding circuit of length 13m. The distance remains exactly m if every switch has length at most seven. The continuation also extends quantitative lifting to multiple disjoint pieces and exhibits the necessity of preparation in that lifting model.
+
 Throughout, a switch adds one nonzero vector a∈F₂³ along one connected circuit, provided that a is absent from its edges. All intermediate flows must remain nowhere-zero. A k-layer CDC consists of at most k even subgraphs, each possibly disconnected. We distinguish a completable coordinate from the more restrictive palette-dependent defect criterion in the original attempt.
 
 ## 1. Every fixed-boundary Petersen flow can be changed locally
@@ -94,7 +96,7 @@ The terminal graph has a single empty flow, so repeated application of the cited
 
 The qualitative reduction through an individual Petersen piece also follows from its pentagon–triangle–digon contraction above. The independent finite checks in Sections 1–2 add exact diameters, a one-pentagon preparation bound with a three-edge path, and clearing certificates. We do not present qualitative short-cycle contraction as a new theorem.
 
-This establishes unrestricted reachability for this family. It does not impose monotonicity on the original defect potential, bound the lengths of lifted circuits independently of m, or give the exact unrestricted repair distance.
+This establishes unrestricted reachability for this family. It does not impose monotonicity on the original defect potential or bound the lengths of lifted circuits independently of m. The exact unrestricted repair distance of the specified starting flow is determined in the [continuation](global-circuit-repair.md).
 
 ## 4. Exact distance when switches stay inside pieces
 
