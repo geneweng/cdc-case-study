@@ -2,6 +2,8 @@
 
 **30 September 2026. The general 5-cycle double cover conjecture remains unproved here. The results below concern serial chains of one specified four-pole and their closure into rings. The finite classification is proved by exhaustive, independently checked local enumeration; no claim of novelty over the complete literature is made.**
 
+**Subsequent result:** [All seven coordinates can fail at cyclic edge connectivity four](junction-selection-obstruction.md) supplies exact junction constraints and uses a charge contradiction to block all seven coordinates on a 72-vertex graph and an infinite family. These graphs have five-layer covers. The serial-chain results here remain valid; branching attachments introduce the additional obstruction.
+
 The [previous report](petersen-boundary.md) showed that a Petersen four-pole accepts every parity-compatible boundary for an unrestricted five-layer cover. Prescribing the internal edges of one layer leaves 900 impossible boundary states. This report controls how those conditional constraints compose:
 
 > The 64 possible prescribed layers in one Petersen four-pole give 27 distinct boundary relations. All nonempty compatible serial chains give exactly 36 distinct relations. Each is already realized by a chain of at most three pieces, and some require three.
@@ -188,4 +190,4 @@ Both scripts use only Python's standard library. The [constructor](petersen_chai
 
 The infinite statements follow from closure, Boolean multiplication, and the local construction, not from merely testing these finite graph examples. The general 5-CDC conjecture remains unproved by this work.
 
-The next structural obstacle is branching attachment. In the blowup constructions, pairs of ports meet additional cubic vertices rather than simply the next pair of ports. Those vertices couple several charges, so the serial-chain semigroup alone does not decide their prescribed-layer problem. An exact relation for these junctions, composed with the 36 chain states, is a concrete next step. A useful graph reduction would need to control those coupled constraints as well as the chains.
+The next structural obstacle is branching attachment. In the blowup constructions, pairs of ports meet additional cubic vertices rather than simply the next pair of ports. Those vertices couple several charges, so the serial-chain semigroup alone does not decide their prescribed-layer problem. The [next report](junction-selection-obstruction.md) supplies their exact local relations and uses them to disprove universal coordinate selection even after eliminating small cyclic cuts. A general existence proof would still need a way to choose or change the flow while controlling these coupled constraints.

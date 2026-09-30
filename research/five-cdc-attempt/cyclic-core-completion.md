@@ -4,12 +4,14 @@
 
 **Subsequent result:** [Petersen boundary relations and a cover inheritance theorem](petersen-boundary.md) replaces graph-size enumeration with an exact local relation for the inserted pieces. It proves conditional cover inheritance for both blowup families and a reduction excluding the Petersen four-pole with connected outside from a smallest counterexample. Prescribed-layer boundary obstructions remain, so it does not extend this report's every-flow selection theorem to those families.
 
+**Later obstruction:** [All seven coordinates can fail at cyclic edge connectivity four](junction-selection-obstruction.md) disproves the universal selection rule on a 72-vertex graph and an infinite blowup family. It also gives a structural proof that this report's three failed supports are impossible as whole layers with any number of cover layers. The positive theorem for every flow on the particular 34-vertex graph remains valid.
+
 The next test is Hägglund's 34-vertex graph Blowup(K₄,C₃), which has no cyclic edge cut of size below four. The outcome separates two possible selection rules:
 
 - **The sum-free shortcut fails.** There is a nowhere-zero F₂³-flow with three supports F₁,F₂,F₃ satisfying F₁△F₂=F₃, none of which can be a whole layer of a five-layer cover. All three are nonspanning even subgraphs. Independently checked nonexistence proofs are supplied.
 - **The seven-choice rule holds on this entire graph.** Every nowhere-zero F₂³-flow on it has at least one coordinate support that is a whole layer of a five-layer cover. This is proved by an exhaustive certificate over its binary cycle space, without enumerating all three-bit flows.
 
-The second conclusion is specific to this graph. It does not prove the seven-choice rule for all cyclically 4-edge-connected graphs, or the general 5-CDC conjecture.
+The second conclusion is specific to this graph. The seven-choice rule for all cyclically 4-edge-connected graphs is disproved by the later report linked above. The general 5-CDC conjecture is not proved by this work.
 
 ## The graph and why it is a useful test
 
@@ -58,7 +60,7 @@ In particular F₁=A, F₂=B, and F₃=A△B are all failed **admissible** suppo
 
 This disproves the conjectural sum-free property of failed admissible supports even on cyclically 4-edge-connected graphs. That property held in the [previous saved census](three-cut-completion.md#the-saved-census-implies-much-stronger-finite-success). It also disproves the rule that every two-dimensional subspace of an admissible three-flow's coordinate space must contain a completable nonzero support.
 
-It does **not** disprove selection among all seven coordinates: the other four succeed in this witness. Nor do the supplied negative proofs exclude covers with more than five layers containing A, B, or A△B.
+It does **not** disprove selection among all seven coordinates: the other four succeed in this witness. The supplied DRUP proofs concern five layers. The [later junction argument](junction-selection-obstruction.md#6-a-stronger-explanation-of-the-earlier-34-vertex-failures) additionally excludes covers with any number of layers containing A, B, or A△B.
 
 ## A precise encoding of nonexistence
 
@@ -129,4 +131,4 @@ The search used preliminary sampling to locate a failed triple, but the reported
 
 The general sum-free shortcut is now ruled out even after eliminating cyclic cuts of size two and three. The weaker seven-choice rule survives a complete check on a graph already known to resist all spanning-2-factor choices.
 
-The useful remaining distinction is between **failed cycles forming a subspace** and **failed cycles forming a subspace that covers every edge**. A structural argument excluding the latter on all cyclically 4-edge-connected cubic graphs would establish the stronger selection rule there; no such argument is proved in this report. The exact small-cut composition results would then transfer independently constructed covers to larger decomposable graphs. That general existence step remains open here.
+The distinction between **failed cycles forming a subspace** and **failed cycles forming a subspace that covers every edge** proves useful on this particular graph. The [later 72-vertex obstruction](junction-selection-obstruction.md) shows that the latter configuration does occur on cyclically 4-edge-connected cubic graphs, so a universal exclusion argument cannot hold. The exact small-cut composition results still transfer independently constructed covers to larger decomposable graphs. The general existence step remains open here.
