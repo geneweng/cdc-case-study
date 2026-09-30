@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture remains unproved here. The result below is a computer-assisted characterization of a fixed-coloring repair family, followed by a finite layer-selection experiment. No claim of novelty over the complete literature is made.**
 
+**Subsequent result:** [All seven coordinates can be impossible prescribed layers](layer-selection-obstruction.md) gives a 30-vertex counterexample to universal coordinate selection from an arbitrary flow. The finite successes below remain valid. The new example has a verified five-layer cover after one circuit switch changes the flow's coordinate space.
+
 The remaining rank-one interaction problem can now be classified under **all six color permutations on every complement component**, together with arbitrary circuit constants. A second matrix records the reflections omitted by cyclic recoloring. After normalization, exactly two choices of this second matrix remain obstructed for each of the two previously identified obstruction types.
 
 For the 215 saved failed prescribed-layer cases, representing 35 distinct graphs, every selected starting coloring has one of these persistent forms. Nevertheless, choosing another coordinate of the same three-bit flow and then completing that new layer produces a verified five-layer cover in every case. This is finite evidence for changing the layer; it is not a proof that such a choice always works.
@@ -208,4 +210,4 @@ Files: [construction and classification](component_permutations.py), [independen
 
 Beyond the complete matrix enumeration, checks compare 8,000 reflected matrices against direct word recomputation on 500 seeded systems, test the six constructed exceptional word systems and the 26-vertex graph, and check all 215 changed-layer covers. The saved graph checks also recompute all reflected matrices directly from their circuit words.
 
-The matrix classification now completely describes the full component-permutation family for the remaining five-component binary-generator form. The unresolved step is broader: prove that some choice of layer, or some internal change to the component colorings, always avoids a persistent obstruction. The successful coordinate-selection experiment identifies a concrete candidate mechanism, but does not establish that it works beyond the tested inputs.
+The matrix classification completely describes the full component-permutation family for the remaining five-component binary-generator form. The successful coordinate-selection experiment suggested a broader mechanism, but the [subsequent counterexample](layer-selection-obstruction.md) rules out selecting from the seven coordinates of an arbitrary fixed flow, even with unrestricted changes to the remaining coordinates. A general proof must allow changes beyond that starting coordinate space, or use decomposition and independent cover choices on the pieces. The existence step remains unresolved here.
