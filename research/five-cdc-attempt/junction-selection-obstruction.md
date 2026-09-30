@@ -13,6 +13,8 @@ is impossible as one whole layer of a cycle double cover, **regardless of the nu
 
 The construction repeats to an infinite family on 72m vertices, m≥1, with the same obstruction and with five-layer covers. On the 72-vertex example, one valid switch along a five-edge circuit produces a new flow with a completable coordinate.
 
+**Continuation:** [Petersen flow repair](petersen-flow-repair.md) proves that every three-bit flow on this family can reach a completable coordinate, using explicit contractions and an existing reconfiguration theorem. For the particular starting flow below, exactly m switches are necessary and sufficient when every switch stays inside one Petersen piece. It also gives a complete local flow classification and quantitative lifting bounds.
+
 This settles negatively the selection question left open by the [34-vertex experiment](cyclic-core-completion.md). It does not conflict with that experiment's positive theorem about every flow on its particular graph. The [30-vertex](layer-selection-obstruction.md) and [26-vertex](three-cut-completion.md) counterexamples depended on small cyclic cuts; those mechanisms are absent here.
 
 ## 1. Branching junctions change the charge
