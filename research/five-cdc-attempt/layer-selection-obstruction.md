@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture remains unproved here. This report disproves a stronger proposed selection rule, gives a decomposition theorem, and supplies two verified five-layer covers of the example. No claim of novelty over the complete literature is made.**
 
+**Subsequent result:** [Three-edge cuts and a stronger selection obstruction](three-cut-completion.md) extends exact composition to three-edge sums and gives a 26-vertex counterexample with no one- or two-edge cut. It also audits the full saved census and identifies why four-edge boundaries require additional information.
+
 The preceding [layer-selection experiment](component-permutations.md) succeeded on all 215 chosen input flows. That mechanism does **not** work for every starting flow: there is a simple connected bridgeless cubic graph on **30 vertices** with a nowhere-zero F₂³-flow f such that none of its seven coordinate supports
 
 \[
@@ -152,4 +154,4 @@ For the larger graph, verification checks simplicity, connectivity, cubic degree
 
 This closes the proposed universal shortcut from the previous report: **choosing a coordinate of an arbitrary starting flow, even followed by unrestricted repair of the remaining coordinates, is insufficient.** The conditional completion theorems remain valid. They must be combined with a way to change the coordinate space, or with independent choices on factors followed by cover gluing.
 
-The example relies on two-edge cuts. It does not decide whether an analogous selection rule might hold after reducing to graphs without such cuts, and it does not prove the existence of a suitable flow on every remaining graph. The exact composition theorem identifies how a proof on those remaining pieces would transfer through two-edge sums.
+This example relies on two-edge cuts. The [subsequent 26-vertex construction](three-cut-completion.md) shows that removing those cuts alone does not restore the selection rule; the new example uses cyclic three-edge cuts instead. Exact composition now handles both kinds of cuts. Selection on cyclically 4-edge-connected graphs, and the general existence of a suitable flow, remain unresolved here.
