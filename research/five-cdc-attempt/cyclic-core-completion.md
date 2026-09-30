@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture remains unproved here. This report gives a certified result for one specified graph and a counterexample to a stronger proposed algebraic shortcut. No claim of novelty over the complete literature is made.**
 
+**Subsequent result:** [Petersen boundary relations and a cover inheritance theorem](petersen-boundary.md) replaces graph-size enumeration with an exact local relation for the inserted pieces. It proves conditional cover inheritance for both blowup families and a reduction excluding the Petersen four-pole with connected outside from a smallest counterexample. Prescribed-layer boundary obstructions remain, so it does not extend this report's every-flow selection theorem to those families.
+
 The next test is Hägglund's 34-vertex graph Blowup(K₄,C₃), which has no cyclic edge cut of size below four. The outcome separates two possible selection rules:
 
 - **The sum-free shortcut fails.** There is a nowhere-zero F₂³-flow with three supports F₁,F₂,F₃ satisfying F₁△F₂=F₃, none of which can be a whole layer of a five-layer cover. All three are nonspanning even subgraphs. Independently checked nonexistence proofs are supplied.
