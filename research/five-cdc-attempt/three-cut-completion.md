@@ -2,6 +2,8 @@
 
 **29 September 2026. The general 5-cycle double cover conjecture remains unproved here. The results below concern decomposition and the limits of selecting a layer from an arbitrary fixed flow. No claim of novelty over the complete literature is made.**
 
+**Subsequent result:** [Coordinate selection on a cyclically four-edge-connected graph](cyclic-core-completion.md) disproves the sum-free shortcut on a known 34-vertex snark, but certifies the seven-choice rule for every nowhere-zero three-bit flow on that entire graph. It supplies explicit covers and independently checked nonexistence proofs.
+
 The [previous 30-vertex obstruction](layer-selection-obstruction.md) used two-edge cuts. Removing that weakness does not restore the proposed selection rule: an explicit **26-vertex, 3-edge-connected cubic graph** has a nowhere-zero F₂³-flow whose seven coordinate supports are all impossible as whole CDC layers, even with arbitrarily many cover layers. The graph nevertheless has an explicitly verified five-layer cover.
 
 The construction uses three-edge cuts. Prescribed-layer completion composes exactly across these cuts, extending the previous two-edge-cut theorem. At four-edge cuts, parity allows additional boundary patterns, and the same automatic capping argument fails. Two actual covers of the cube demonstrate that limitation.
@@ -149,4 +151,4 @@ Files: [constructor and census audit](three_cut_obstruction.py), [complete certi
 
 The current conclusion is precise: two- and three-edge-cut decomposition permits independent choices of covers on the pieces, but a single global starting flow can encode incompatible choices. Requiring the graph merely to have no two-edge cut does not cure that problem.
 
-The corresponding selection question on **cyclically 4-edge-connected cubic graphs** remains unresolved by this work. More broadly, the 5-CDC existence problem on those remaining pieces is still open here. The four-port analysis identifies boundary data that any further reduction would need to preserve or change deliberately.
+The corresponding selection question on **all cyclically 4-edge-connected cubic graphs** remains unresolved by this work. The [next report](cyclic-core-completion.md) settles it positively for one specified 34-vertex graph, while refuting a stronger sum-free rule on that graph. More broadly, the 5-CDC existence problem on those remaining pieces is still open here. The four-port analysis identifies boundary data that any further reduction would need to preserve or change deliberately.
