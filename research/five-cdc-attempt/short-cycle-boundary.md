@@ -16,6 +16,8 @@ The subsequent [simultaneous completion theorem](simultaneous-eight-completion.m
 
 The later [length-nine theorem](nine-cycle-completion.md) extends that existential reduction through length nine after classifying all marked-boundary patterns. The failure to preserve a particular supplied cover at length eight remains valid.
 
+The subsequent [length-ten theorem](ten-cycle-completion.md) extends the existential reduction through length ten, including regions with four distinguished-layer ports.
+
 ## 1. Two contractions and the extension question
 
 Use the graph and port conventions in the [four-flow quotient report](fourflow-quotient-repair.md). Let S be a simple cubic graph, D a union of vertex-disjoint selected cycles, and X either Blowup(S,D) or SemiBlowup(S,D). Write q for the total number of vertices in D, hence the number of inserted Petersen four-poles B.

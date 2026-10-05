@@ -6,6 +6,8 @@ The finite proof treats all three possible length-nine obstruction types. Indepe
 
 The result requires a compatible core cover. It does not establish the general 5-cycle double cover conjecture or completion for longer regions with at least eight marked cuts. No literature novelty is claimed.
 
+Follow-up: [Fixed-layer completion through length ten](ten-cycle-completion.md) exhausts eighteen marked/parity patterns and extends the same simultaneous reduction through length ten. Some new rejected boundaries have only one auxiliary pair that guarantees an escape.
+
 ## 1. Statement and retained repair bound
 
 Use the conventions of the [simultaneous eight-cycle theorem](simultaneous-eight-completion.md). Form X by either blowup construction on disjoint selected cycles D of a simple cubic base S. Contract the inserted Petersen four-poles B to obtain H, and contract the full selected cycle regions to obtain K=S/D. Let E₀ be the full-graph edges retained in H. Core loops and parallel edges are allowed, with loops counted twice in incidence.
