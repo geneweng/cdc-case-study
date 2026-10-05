@@ -168,4 +168,4 @@ python3 -B research/five-cdc-attempt/auxiliary_exchange_orbit.py
 python3 -B research/five-cdc-attempt/verify_auxiliary_exchange_orbit.py
 ```
 
-The next questions are whether other attachment patterns admit equally local neutral repairs, and whether neutral auxiliary exchanges eventually escape in arbitrary cores. The structural eleven-cycle result does not cover targets with distinguished-layer ports or arbitrary outside attachments. No general length-eleven reduction or proof of the 5-CDC conjecture is claimed.
+Follow-up: [Two local circuits repair every placement of the six-port star](cherry-port-placements.md) removes the port-order restriction by allowing circuits through the common center. Its independent census covers all 350 placement classes and proves the same two-move bound; cherry-only sequences can be permanently trapped in two classes. Targets with distinguished-layer ports, arbitrary outside attachments, and general eventual auxiliary escape remain unresolved. No general length-eleven reduction or proof of the 5-CDC conjecture is claimed.
