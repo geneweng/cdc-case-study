@@ -1,0 +1,2026 @@
+{
+  "date": "2026-10-05",
+  "source": {
+    "file": "flow_space_components.json",
+    "sha256": "102b9649bfa1dcbe8172aaea2ee6fdaba6c7905bdb2932783bd85b86941b1035"
+  },
+  "scope": "General cut duality; all feasible Petersen planes and the first fiber neighborhood of one hard J5 state.",
+  "petersen_audit": {
+    "planes": 400,
+    "marked_planes": 335,
+    "consistent_flags": 375,
+    "successful_z_sum": 2280,
+    "completion_rank_histogram": [
+      [
+        0,
+        495
+      ],
+      [
+        1,
+        345
+      ],
+      [
+        2,
+        330
+      ],
+      [
+        3,
+        30
+      ]
+    ],
+    "locally_blocked_flags": 600,
+    "failed_flags_without_local_blocker": 225,
+    "unmarked_planes_with_all_three_local_blockers": 20,
+    "unmarked_planes_without_local_blockers": 15,
+    "flag_records_sha256": "92d16f6dd947f98e066926fc00de070f0a6b4c040c7c7a151e89a0c684796b50"
+  },
+  "flower_audit": {
+    "planes": 1076,
+    "marked_planes": 532,
+    "consistent_flags": 594,
+    "successful_z_sum": 4328,
+    "completion_rank_histogram": [
+      [
+        0,
+        11
+      ],
+      [
+        1,
+        103
+      ],
+      [
+        2,
+        369
+      ],
+      [
+        3,
+        813
+      ],
+      [
+        4,
+        977
+      ],
+      [
+        5,
+        688
+      ],
+      [
+        6,
+        245
+      ],
+      [
+        7,
+        22
+      ]
+    ],
+    "locally_blocked_flags": 2319,
+    "failed_flags_without_local_blocker": 315,
+    "unmarked_planes_with_all_three_local_blockers": 360,
+    "unmarked_planes_without_local_blockers": 1,
+    "flag_records_sha256": "5ebeb1c6e8283ca87943d398882be7a6d46c08f9cb1a8cd865f1e499328a44fb"
+  },
+  "flower_states": [
+    {
+      "space_key": 4565596897686,
+      "marked_planes": 0,
+      "consistent_flags": 0,
+      "planes": [
+        {
+          "cycles": [
+            406,
+            712
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 712,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 8200,
+                "X": 8,
+                "cut_A": 35360,
+                "cut_X": 3584,
+                "shared_cut": 2560,
+                "forced_odd_cut": 1024
+              }
+            },
+            {
+              "F": 712,
+              "y": 406,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 6,
+              "completion_rank": 3,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 257,
+                "X": 256,
+                "cut_A": 50331654,
+                "cut_X": 50331649,
+                "shared_cut": 50331648,
+                "forced_odd_cut": 1
+              }
+            },
+            {
+              "F": 862,
+              "y": 406,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 514,
+                "X": 2,
+                "cut_A": 201326640,
+                "cut_X": 56,
+                "shared_cut": 48,
+                "forced_odd_cut": 8
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 0,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 712
+            },
+            {
+              "edge": 3,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 10,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 16,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 29,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 406
+            }
+          ]
+        },
+        {
+          "cycles": [
+            406,
+            1063
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 1063,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 16388,
+                "X": 4,
+                "cut_A": 264384,
+                "cut_X": 448,
+                "shared_cut": 192,
+                "forced_odd_cut": 256
+              }
+            },
+            {
+              "F": 1063,
+              "y": 406,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 4,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 2049,
+                "X": 2048,
+                "cut_A": 4613,
+                "cut_X": 4610,
+                "shared_cut": 4608,
+                "forced_odd_cut": 2
+              }
+            },
+            {
+              "F": 1457,
+              "y": 406,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 4,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 32832,
+                "X": 64,
+                "cut_A": 1384448,
+                "cut_X": 1835008,
+                "shared_cut": 1310720,
+                "forced_odd_cut": 524288
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 1,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1063
+            },
+            {
+              "edge": 8,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 19,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1457
+            },
+            {
+              "edge": 26,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1457
+            }
+          ]
+        },
+        {
+          "cycles": [
+            406,
+            1775
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 1775,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 65664,
+                "X": 65536,
+                "cut_A": 29491200,
+                "cut_X": 19005440,
+                "shared_cut": 16908288,
+                "forced_odd_cut": 2097152
+              }
+            },
+            {
+              "F": 1775,
+              "y": 406,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 4,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 32784,
+                "X": 16,
+                "cut_A": 610304,
+                "cut_X": 28672,
+                "shared_cut": 20480,
+                "forced_odd_cut": 8192
+              }
+            },
+            {
+              "F": 1913,
+              "y": 406,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 4,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 4097,
+                "X": 4096,
+                "cut_A": 147,
+                "cut_X": 148,
+                "shared_cut": 144,
+                "forced_odd_cut": 4
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 2,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1913
+            },
+            {
+              "edge": 13,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1775
+            },
+            {
+              "edge": 21,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 27,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1913
+            }
+          ]
+        },
+        {
+          "cycles": [
+            712,
+            1063
+          ],
+          "flags": [
+            {
+              "F": 712,
+              "y": 1063,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 6,
+              "completion_rank": 3,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 900927,
+                "X": 128,
+                "cut_A": 79186176,
+                "cut_X": 14680064,
+                "shared_cut": 10485760,
+                "forced_odd_cut": 4194304
+              }
+            },
+            {
+              "F": 1063,
+              "y": 712,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 4098,
+                "X": 4096,
+                "cut_A": 172,
+                "cut_X": 148,
+                "shared_cut": 132,
+                "forced_odd_cut": 16
+              }
+            },
+            {
+              "F": 1775,
+              "y": 712,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 6159,
+                "X": 16384,
+                "cut_A": 7529,
+                "cut_X": 264448,
+                "shared_cut": 2304,
+                "forced_odd_cut": 262144
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 4,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1063
+            },
+            {
+              "edge": 22,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 712
+            },
+            {
+              "edge": 28,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1063
+            }
+          ]
+        },
+        {
+          "cycles": [
+            712,
+            1457
+          ],
+          "flags": [
+            {
+              "F": 712,
+              "y": 1457,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 6,
+              "completion_rank": 4,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 2064,
+                "X": 16,
+                "cut_A": 25090,
+                "cut_X": 28672,
+                "shared_cut": 24576,
+                "forced_odd_cut": 4096
+              }
+            },
+            {
+              "F": 1457,
+              "y": 712,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 4,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 23581,
+                "X": 16,
+                "cut_A": 805594129,
+                "cut_X": 28672,
+                "shared_cut": 24576,
+                "forced_odd_cut": 4096
+              }
+            },
+            {
+              "F": 1913,
+              "y": 712,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 4,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 1028,
+                "X": 4,
+                "cut_A": 805306752,
+                "cut_X": 448,
+                "shared_cut": 384,
+                "forced_odd_cut": 64
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 6,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1913
+            },
+            {
+              "edge": 12,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 712
+            },
+            {
+              "edge": 17,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1457
+            }
+          ]
+        },
+        {
+          "cycles": [
+            862,
+            1063
+          ],
+          "flags": [
+            {
+              "F": 862,
+              "y": 1063,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 131088,
+                "X": 16,
+                "cut_A": 71315456,
+                "cut_X": 28672,
+                "shared_cut": 12288,
+                "forced_odd_cut": 16384
+              }
+            },
+            {
+              "F": 1063,
+              "y": 862,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 65792,
+                "X": 65536,
+                "cut_A": 35782657,
+                "cut_X": 19005440,
+                "shared_cut": 2228224,
+                "forced_odd_cut": 16777216
+              }
+            },
+            {
+              "F": 1913,
+              "y": 862,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 5,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 16392,
+                "X": 16384,
+                "cut_A": 263936,
+                "cut_X": 264448,
+                "shared_cut": 262400,
+                "forced_odd_cut": 2048
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 11,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1913
+            },
+            {
+              "edge": 14,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 20,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1913
+            },
+            {
+              "edge": 24,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1063
+            }
+          ]
+        },
+        {
+          "cycles": [
+            862,
+            1457
+          ],
+          "flags": [
+            {
+              "F": 862,
+              "y": 1457,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 4100,
+                "X": 4096,
+                "cut_A": 340,
+                "cut_X": 148,
+                "shared_cut": 20,
+                "forced_odd_cut": 128
+              }
+            },
+            {
+              "F": 1457,
+              "y": 862,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 5,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 524416,
+                "X": 128,
+                "cut_A": 544210944,
+                "cut_X": 14680064,
+                "shared_cut": 6291456,
+                "forced_odd_cut": 8388608
+              }
+            },
+            {
+              "F": 1775,
+              "y": 862,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 2056,
+                "X": 2048,
+                "cut_A": 7170,
+                "cut_X": 4610,
+                "shared_cut": 4098,
+                "forced_odd_cut": 512
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 7,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 9,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1775
+            },
+            {
+              "edge": 23,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1457
+            },
+            {
+              "edge": 25,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1457
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "space_key": 4599956636054,
+      "marked_planes": 0,
+      "consistent_flags": 0,
+      "planes": [
+        {
+          "cycles": [
+            406,
+            712
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 712,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 8200,
+                "X": 8,
+                "cut_A": 35360,
+                "cut_X": 3584,
+                "shared_cut": 2560,
+                "forced_odd_cut": 1024
+              }
+            },
+            {
+              "F": 712,
+              "y": 406,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 6,
+              "completion_rank": 3,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 257,
+                "X": 256,
+                "cut_A": 50331654,
+                "cut_X": 50331649,
+                "shared_cut": 50331648,
+                "forced_odd_cut": 1
+              }
+            },
+            {
+              "F": 862,
+              "y": 406,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 514,
+                "X": 2,
+                "cut_A": 201326640,
+                "cut_X": 56,
+                "shared_cut": 48,
+                "forced_odd_cut": 8
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 0,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 712
+            },
+            {
+              "edge": 3,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 10,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 16,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 29,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 406
+            }
+          ]
+        },
+        {
+          "cycles": [
+            406,
+            1071
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 1071,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 113145,
+                "X": 808518,
+                "cut_A": 47466672,
+                "cut_X": 109578276,
+                "shared_cut": 41945120,
+                "forced_odd_cut": 67633156
+              }
+            },
+            {
+              "F": 1071,
+              "y": 406,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 4,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 207800,
+                "X": 808518,
+                "cut_A": 176236587,
+                "cut_X": 109578276,
+                "shared_cut": 41945120,
+                "forced_odd_cut": 67633156
+              }
+            },
+            {
+              "F": 1465,
+              "y": 406,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 10,
+              "completion_rank": 5,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 4097,
+                "X": 4096,
+                "cut_A": 147,
+                "cut_X": 148,
+                "shared_cut": 144,
+                "forced_odd_cut": 4
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 2,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 19,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 26,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1465
+            }
+          ]
+        },
+        {
+          "cycles": [
+            406,
+            1767
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 1767,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 16388,
+                "X": 4,
+                "cut_A": 264384,
+                "cut_X": 448,
+                "shared_cut": 192,
+                "forced_odd_cut": 256
+              }
+            },
+            {
+              "F": 1767,
+              "y": 406,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 2049,
+                "X": 2048,
+                "cut_A": 4613,
+                "cut_X": 4610,
+                "shared_cut": 4608,
+                "forced_odd_cut": 2
+              }
+            },
+            {
+              "F": 1905,
+              "y": 406,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 6,
+              "completion_rank": 2,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 174107,
+                "X": 141850,
+                "cut_A": 71927837,
+                "cut_X": 138455058,
+                "shared_cut": 4229136,
+                "forced_odd_cut": 134225922
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 1,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1767
+            },
+            {
+              "edge": 8,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 13,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1767
+            },
+            {
+              "edge": 21,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 27,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1905
+            }
+          ]
+        },
+        {
+          "cycles": [
+            712,
+            1071
+          ],
+          "flags": [
+            {
+              "F": 712,
+              "y": 1071,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 6,
+              "completion_rank": 3,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 16448,
+                "X": 16384,
+                "cut_A": 1575168,
+                "cut_X": 264448,
+                "shared_cut": 2304,
+                "forced_odd_cut": 262144
+              }
+            },
+            {
+              "F": 1071,
+              "y": 712,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 6159,
+                "X": 16384,
+                "cut_A": 7529,
+                "cut_X": 264448,
+                "shared_cut": 2304,
+                "forced_odd_cut": 262144
+              }
+            },
+            {
+              "F": 1767,
+              "y": 712,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 4098,
+                "X": 4096,
+                "cut_A": 172,
+                "cut_X": 148,
+                "shared_cut": 132,
+                "forced_odd_cut": 16
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 4,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1767
+            },
+            {
+              "edge": 18,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 712
+            },
+            {
+              "edge": 22,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 712
+            },
+            {
+              "edge": 28,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1071
+            }
+          ]
+        },
+        {
+          "cycles": [
+            712,
+            1465
+          ],
+          "flags": [
+            {
+              "F": 712,
+              "y": 1465,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 6,
+              "completion_rank": 3,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 898606,
+                "X": 122984,
+                "cut_A": 129510148,
+                "cut_X": 19931936,
+                "shared_cut": 19931904,
+                "forced_odd_cut": 32
+              }
+            },
+            {
+              "F": 1465,
+              "y": 712,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 10,
+              "completion_rank": 3,
+              "dual_dimension": 7,
+              "completions": 0,
+              "obstruction": {
+                "A": 1028,
+                "X": 4,
+                "cut_A": 805306752,
+                "cut_X": 448,
+                "shared_cut": 384,
+                "forced_odd_cut": 64
+              }
+            },
+            {
+              "F": 1905,
+              "y": 712,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 6,
+              "completion_rank": 3,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 231865,
+                "X": 808518,
+                "cut_A": 109612036,
+                "cut_X": 109578276,
+                "shared_cut": 109578244,
+                "forced_odd_cut": 32
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 6,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 17,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1465
+            }
+          ]
+        },
+        {
+          "cycles": [
+            862,
+            1071
+          ],
+          "flags": [
+            {
+              "F": 862,
+              "y": 1071,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 4100,
+                "X": 4,
+                "cut_A": 340,
+                "cut_X": 448,
+                "shared_cut": 320,
+                "forced_odd_cut": 128
+              }
+            },
+            {
+              "F": 1071,
+              "y": 862,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 7,
+              "completion_rank": 3,
+              "dual_dimension": 4,
+              "completions": 0,
+              "obstruction": {
+                "A": 2056,
+                "X": 2048,
+                "cut_A": 7170,
+                "cut_X": 4610,
+                "shared_cut": 4098,
+                "forced_odd_cut": 512
+              }
+            },
+            {
+              "F": 1905,
+              "y": 862,
+              "fiber_cycle_dimension": 6,
+              "complement_components": 6,
+              "completion_rank": 4,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 524352,
+                "X": 64,
+                "cut_A": 546045952,
+                "cut_X": 1835008,
+                "shared_cut": 786432,
+                "forced_odd_cut": 1048576
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 7,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 9,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1071
+            },
+            {
+              "edge": 14,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 862
+            },
+            {
+              "edge": 20,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1905
+            },
+            {
+              "edge": 24,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1071
+            }
+          ]
+        },
+        {
+          "cycles": [
+            862,
+            1465
+          ],
+          "flags": [
+            {
+              "F": 862,
+              "y": 1465,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 4,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 361251,
+                "X": 404122,
+                "cut_A": 338206774,
+                "cut_X": 312518674,
+                "shared_cut": 270573586,
+                "forced_odd_cut": 41945088
+              }
+            },
+            {
+              "F": 1465,
+              "y": 862,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 10,
+              "completion_rank": 5,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 16392,
+                "X": 16384,
+                "cut_A": 263936,
+                "cut_X": 264448,
+                "shared_cut": 262400,
+                "forced_odd_cut": 2048
+              }
+            },
+            {
+              "F": 1767,
+              "y": 862,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 764081,
+                "X": 808518,
+                "cut_A": 622331429,
+                "cut_X": 109578276,
+                "shared_cut": 67633188,
+                "forced_odd_cut": 41945088
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 11,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 23,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 25,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1465
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "space_key": 4599947788694,
+      "marked_planes": 3,
+      "consistent_flags": 3,
+      "planes": [
+        {
+          "cycles": [
+            406,
+            577
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 577,
+              "fiber_cycle_dimension": 4,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 16388,
+                "X": 16384,
+                "cut_A": 264384,
+                "cut_X": 264448,
+                "shared_cut": 264192,
+                "forced_odd_cut": 256
+              }
+            },
+            {
+              "F": 577,
+              "y": 406,
+              "fiber_cycle_dimension": 4,
+              "complement_components": 2,
+              "completion_rank": 1,
+              "dual_dimension": 1,
+              "completions": 8,
+              "z": 1656,
+              "fourth": 989
+            },
+            {
+              "F": 983,
+              "y": 406,
+              "fiber_cycle_dimension": 4,
+              "complement_components": 8,
+              "completion_rank": 1,
+              "dual_dimension": 7,
+              "completions": 0,
+              "obstruction": {
+                "A": 257,
+                "X": 256,
+                "cut_A": 50331654,
+                "cut_X": 50331649,
+                "shared_cut": 50331648,
+                "forced_odd_cut": 1
+              }
+            }
+          ],
+          "marked": true,
+          "local_blockers": [
+            {
+              "edge": 0,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 983
+            },
+            {
+              "edge": 8,
+              "endpoint_colors": [
+                1,
+                3
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 10,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 406
+            },
+            {
+              "edge": 16,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 983
+            },
+            {
+              "edge": 27,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 983
+            }
+          ]
+        },
+        {
+          "cycles": [
+            406,
+            1071
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 1071,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 113145,
+                "X": 808518,
+                "cut_A": 47466672,
+                "cut_X": 109578276,
+                "shared_cut": 41945120,
+                "forced_odd_cut": 67633156
+              }
+            },
+            {
+              "F": 1071,
+              "y": 406,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 4,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 207800,
+                "X": 808518,
+                "cut_A": 176236587,
+                "cut_X": 109578276,
+                "shared_cut": 41945120,
+                "forced_odd_cut": 67633156
+              }
+            },
+            {
+              "F": 1465,
+              "y": 406,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 10,
+              "completion_rank": 5,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 4097,
+                "X": 4096,
+                "cut_A": 147,
+                "cut_X": 148,
+                "shared_cut": 144,
+                "forced_odd_cut": 4
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 2,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 19,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1465
+            },
+            {
+              "edge": 26,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1465
+            }
+          ]
+        },
+        {
+          "cycles": [
+            406,
+            1646
+          ],
+          "flags": [
+            {
+              "F": 406,
+              "y": 1646,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 408331,
+                "X": 16,
+                "cut_A": 289462400,
+                "cut_X": 28672,
+                "shared_cut": 20480,
+                "forced_odd_cut": 8192
+              }
+            },
+            {
+              "F": 1646,
+              "y": 406,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 10,
+              "completion_rank": 5,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 2049,
+                "X": 2048,
+                "cut_A": 4613,
+                "cut_X": 4610,
+                "shared_cut": 4608,
+                "forced_odd_cut": 2
+              }
+            },
+            {
+              "F": 2040,
+              "y": 406,
+              "fiber_cycle_dimension": 8,
+              "complement_components": 7,
+              "completion_rank": 4,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 232509,
+                "X": 640228,
+                "cut_A": 896044421,
+                "cut_X": 289450112,
+                "shared_cut": 289441920,
+                "forced_odd_cut": 8192
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 1,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1646
+            },
+            {
+              "edge": 3,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1646
+            },
+            {
+              "edge": 13,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1646
+            }
+          ]
+        },
+        {
+          "cycles": [
+            577,
+            1071
+          ],
+          "flags": [
+            {
+              "F": 577,
+              "y": 1071,
+              "fiber_cycle_dimension": 5,
+              "complement_components": 2,
+              "completion_rank": 1,
+              "dual_dimension": 1,
+              "completions": 16,
+              "z": 1464,
+              "fourth": 609
+            },
+            {
+              "F": 1071,
+              "y": 577,
+              "fiber_cycle_dimension": 5,
+              "complement_components": 7,
+              "completion_rank": 2,
+              "dual_dimension": 5,
+              "completions": 0,
+              "obstruction": {
+                "A": 137887,
+                "X": 640228,
+                "cut_A": 144715105,
+                "cut_X": 289450112,
+                "shared_cut": 10240,
+                "forced_odd_cut": 289439872
+              }
+            },
+            {
+              "F": 1646,
+              "y": 577,
+              "fiber_cycle_dimension": 5,
+              "complement_components": 10,
+              "completion_rank": 3,
+              "dual_dimension": 7,
+              "completions": 0,
+              "obstruction": {
+                "A": 4100,
+                "X": 4096,
+                "cut_A": 340,
+                "cut_X": 148,
+                "shared_cut": 20,
+                "forced_odd_cut": 128
+              }
+            }
+          ],
+          "marked": true,
+          "local_blockers": [
+            {
+              "edge": 7,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1646
+            },
+            {
+              "edge": 20,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 1646
+            },
+            {
+              "edge": 22,
+              "endpoint_colors": [
+                2,
+                1
+              ],
+              "blocked_first_cycle": 1646
+            }
+          ]
+        },
+        {
+          "cycles": [
+            577,
+            1465
+          ],
+          "flags": [
+            {
+              "F": 577,
+              "y": 1465,
+              "fiber_cycle_dimension": 5,
+              "complement_components": 2,
+              "completion_rank": 0,
+              "dual_dimension": 2,
+              "completions": 32,
+              "z": 1830,
+              "fourth": 615
+            },
+            {
+              "F": 1465,
+              "y": 577,
+              "fiber_cycle_dimension": 5,
+              "complement_components": 10,
+              "completion_rank": 3,
+              "dual_dimension": 7,
+              "completions": 0,
+              "obstruction": {
+                "A": 8194,
+                "X": 2,
+                "cut_A": 33816,
+                "cut_X": 56,
+                "shared_cut": 24,
+                "forced_odd_cut": 32
+              }
+            },
+            {
+              "F": 2040,
+              "y": 577,
+              "fiber_cycle_dimension": 5,
+              "complement_components": 7,
+              "completion_rank": 1,
+              "dual_dimension": 6,
+              "completions": 0,
+              "obstruction": {
+                "A": 165913,
+                "X": 808518,
+                "cut_A": 71896069,
+                "cut_X": 109578276,
+                "shared_cut": 67635204,
+                "forced_odd_cut": 41943072
+              }
+            }
+          ],
+          "marked": true,
+          "local_blockers": [
+            {
+              "edge": 5,
+              "endpoint_colors": [
+                3,
+                2
+              ],
+              "blocked_first_cycle": 1465
+            }
+          ]
+        },
+        {
+          "cycles": [
+            983,
+            1071
+          ],
+          "flags": [
+            {
+              "F": 983,
+              "y": 1071,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 8,
+              "completion_rank": 5,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 4098,
+                "X": 2,
+                "cut_A": 172,
+                "cut_X": 56,
+                "shared_cut": 40,
+                "forced_odd_cut": 16
+              }
+            },
+            {
+              "F": 1071,
+              "y": 983,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 2056,
+                "X": 2048,
+                "cut_A": 7170,
+                "cut_X": 4610,
+                "shared_cut": 4098,
+                "forced_odd_cut": 512
+              }
+            },
+            {
+              "F": 2040,
+              "y": 983,
+              "fiber_cycle_dimension": 7,
+              "complement_components": 7,
+              "completion_rank": 5,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 16448,
+                "X": 64,
+                "cut_A": 1575168,
+                "cut_X": 1835008,
+                "shared_cut": 1572864,
+                "forced_odd_cut": 262144
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": [
+            {
+              "edge": 4,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 983
+            },
+            {
+              "edge": 9,
+              "endpoint_colors": [
+                2,
+                3
+              ],
+              "blocked_first_cycle": 1071
+            },
+            {
+              "edge": 14,
+              "endpoint_colors": [
+                3,
+                1
+              ],
+              "blocked_first_cycle": 983
+            },
+            {
+              "edge": 18,
+              "endpoint_colors": [
+                1,
+                2
+              ],
+              "blocked_first_cycle": 2040
+            }
+          ]
+        },
+        {
+          "cycles": [
+            983,
+            1465
+          ],
+          "flags": [
+            {
+              "F": 983,
+              "y": 1465,
+              "fiber_cycle_dimension": 10,
+              "complement_components": 8,
+              "completion_rank": 6,
+              "dual_dimension": 2,
+              "completions": 0,
+              "obstruction": {
+                "A": 365218,
+                "X": 640228,
+                "cut_A": 399024292,
+                "cut_X": 289450112,
+                "shared_cut": 289448064,
+                "forced_odd_cut": 2048
+              }
+            },
+            {
+              "F": 1465,
+              "y": 983,
+              "fiber_cycle_dimension": 10,
+              "complement_components": 10,
+              "completion_rank": 7,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 623844,
+                "X": 640228,
+                "cut_A": 289710464,
+                "cut_X": 289450112,
+                "shared_cut": 289448064,
+                "forced_odd_cut": 2048
+              }
+            },
+            {
+              "F": 1646,
+              "y": 983,
+              "fiber_cycle_dimension": 10,
+              "complement_components": 10,
+              "completion_rank": 7,
+              "dual_dimension": 3,
+              "completions": 0,
+              "obstruction": {
+                "A": 240049,
+                "X": 808518,
+                "cut_A": 109577764,
+                "cut_X": 109578276,
+                "shared_cut": 109576228,
+                "forced_odd_cut": 2048
+              }
+            }
+          ],
+          "marked": false,
+          "local_blockers": []
+        }
+      ]
+    }
+  ],
+  "initial_neighbors": {
+    "count": 185,
+    "marked_plane_histogram": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        17
+      ],
+      [
+        2,
+        41
+      ],
+      [
+        3,
+        62
+      ],
+      [
+        4,
+        36
+      ],
+      [
+        5,
+        20
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "records_sha256": "54d996a537c6972098fa0828fab3d5d09df1734c4739e39e300c2efd627a05b2"
+  },
+  "unmarked_successful_fiber": {
+    "cycles": [
+      406,
+      1071
+    ],
+    "successful_space": 4599947788694,
+    "successful_first_cycle": 577,
+    "extension_spaces": 64,
+    "successful_extensions": [
+      4599947788694,
+      4599947985302,
+      4599948247446,
+      4599949623702,
+      4599950279062,
+      4599950999958,
+      4599951327638,
+      4599958929814,
+      4599959716246
+    ]
+  }
+}

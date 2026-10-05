@@ -163,3 +163,5 @@ python3 -B research/five-cdc-attempt/verify_flow_space_components.py
 ```
 
 The next structural question is whether every incidence component on an arbitrary bridgeless cubic core meets a plane satisfying the linear completion test. A closed unmarked component would refute the all-starting-flow repair mechanism, while cover existence could still hold in another component. The weaker existence target requires only one marked plane per graph. Neither universal statement is established by this checkpoint.
+
+Follow-up: [Cut certificates for failed coordinate completion](fiber-cut-obstructions.md) gives an exact paired-cut obstruction and completion-count formula. It also verifies that an unmarked plane can contain successful extensions, including nine among 64 extensions of the plane used by the second switch above.
