@@ -135,3 +135,5 @@ python3 -B research/five-cdc-attempt/verify_cherry_port_placements.py
 The new explicit graph certificate concerns the contracted core and its cubic base. The exhaustive junction relations certify regional extension; the mixed-region conclusion follows from the phase-ordering proof. The preceding report retains the full Blowup/SemiBlowup graph and flow certificates for the original placement.
 
 The remaining questions include other outside tree shapes, distinguished-layer target ports, and eventual auxiliary escape in arbitrary cores. This result does not settle those general cases or prove the 5-CDC conjecture.
+
+Strategic continuation: [Flow components through affine coordinate fibers](flow-space-components.md) returns to flow repair on the cores themselves. It proves an exact component reduction and checks a Petersen-piece-free, cyclically 5-edge-connected core without assuming a starting cover.
