@@ -14,6 +14,8 @@ The later [single-eight-cycle theorem](eight-cycle-completion.md) resolves exist
 
 The subsequent [simultaneous completion theorem](simultaneous-eight-completion.md) handles any number of eight-cycle regions using protected port pairings. Thus existential completion reduces to the core for all selected cycle lengths three through eight, although preserving a specified boundary still fails at eight as proved below.
 
+The later [length-nine theorem](nine-cycle-completion.md) extends that existential reduction through length nine after classifying all marked-boundary patterns. The failure to preserve a particular supplied cover at length eight remains valid.
+
 ## 1. Two contractions and the extension question
 
 Use the graph and port conventions in the [four-flow quotient report](fourflow-quotient-repair.md). Let S be a simple cubic graph, D a union of vertex-disjoint selected cycles, and X either Blowup(S,D) or SemiBlowup(S,D). Write q for the total number of vertices in D, hence the number of inserted Petersen four-poles B.

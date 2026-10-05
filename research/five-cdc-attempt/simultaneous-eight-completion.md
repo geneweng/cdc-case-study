@@ -6,6 +6,8 @@ The new ingredient is a way to protect boundaries that already extend. Pair thei
 
 This is a conditional completion theorem for the specified graph constructions. It still requires a core cover containing the restricted prescribed layer. Regions longer than eight with at least eight marked cuts, and the general 5-cycle double cover conjecture, remain unresolved by this work. No literature novelty is claimed.
 
+Follow-up: [Fixed-layer completion through length nine](nine-cycle-completion.md) handles all three new marked-boundary types at length nine, including two distinguished-layer ports. The same protected-trail argument then gives simultaneous completion for any mixture of selected lengths three through nine.
+
 ## 1. The reduction and repair bounds
 
 As in the [single-eight-cycle report](eight-cycle-completion.md), let X be either Blowup(S,D) or SemiBlowup(S,D) for a simple cubic base S and vertex-disjoint selected cycles D. Contract every inserted Petersen four-pole B to obtain H, and contract each selected cycle region to obtain K=S/D. Let E₀ be the edges retained in H, including the core edges E(K). Loops and parallel edges in K are allowed; a loop has two incidences.
