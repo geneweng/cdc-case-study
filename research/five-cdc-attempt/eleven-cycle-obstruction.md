@@ -135,3 +135,5 @@ python3 -B verify_eleven_cycle_obstruction.py
 ```
 
 The [constructor](eleven_cycle_obstruction.py) writes the [certificate](eleven_cycle_obstruction.json). The [independent verifier](verify_eleven_cycle_obstruction.py) imports no constructor or earlier verifier. It checks the finite negative result and all eight positive graph completions. Earlier [length-ten](ten-cycle-completion.md) and [joint Petersen](joint-boundary-completion.md) results supply the sharpness comparison and the unchanged local flow-repair step.
+
+Follow-up: [Exact auxiliary exchanges from core connected components](core-component-exchange.md) replaces arbitrary outside pairings by an exact reachability test for the actual core and supplied protecting transitions. It classifies all even component partitions for A and B, proves a finite single-circuit repair result for all 10,812 simple colored rim realizations of B, and verifies twelve further full completions. The general length-eleven existence questions remain open.
