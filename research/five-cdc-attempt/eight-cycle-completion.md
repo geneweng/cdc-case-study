@@ -4,6 +4,8 @@
 
 This answers the first length-eight case left open by the [boundary obstruction](short-cycle-boundary.md). That obstruction to preserving a particular core cover remains valid. The new result proves that a different compatible core cover always works under the stated restriction. Multiple eight-cycle regions, general longer regions, and the general 5-cycle double cover conjecture remain unresolved by this work. No literature novelty is claimed.
 
+Follow-up: [Simultaneous eight-cycle completion](simultaneous-eight-completion.md) removes the restriction to one eight-cycle. Protected port pairings ensure that each chosen closed-trail cover exchange fixes a bad region while preserving all good regions. That later result covers any number of selected cycles of lengths three through eight.
+
 The proof has two parts. An exact formula identifies the forbidden charges at marked positions around a region. If an eight-cycle boundary fails, its prefix values visit all eight auxiliary states. A finite lemma then guarantees that swapping two auxiliary labels along a core circuit makes a prefix repeat, allowing extension. An independent standard-library verifier checks all **1,488** possible failing boundary words, their **11** symmetry classes, and **52,848** outside pairings for the chosen label swaps.
 
 ## 1. Statement and the two kinds of change
