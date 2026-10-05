@@ -10,6 +10,8 @@ Follow-up: [Repairs inside full cycle regions reduce exactly to the core](region
 
 The subsequent [linear repair bound](linear-region-repair.md) minimizes the number of initially incompatible junctions over the same eight candidate charges used here. That minimum is the exact distance for quotient switches confined to single junctions, and it yields short full-graph repairs with a linear switch bound.
 
+The later [single-eight-cycle theorem](eight-cycle-completion.md) resolves existential completion when at most one selected cycle has length eight and the others have lengths three through seven. An auxiliary-label exchange changes a rejected core cover so that it extends with the entire quotient layer fixed. The supplied-boundary obstruction proved here is unchanged.
+
 ## 1. Two contractions and the extension question
 
 Use the graph and port conventions in the [four-flow quotient report](fourflow-quotient-repair.md). Let S be a simple cubic graph, D a union of vertex-disjoint selected cycles, and X either Blowup(S,D) or SemiBlowup(S,D). Write q for the total number of vertices in D, hence the number of inserted Petersen four-poles B.

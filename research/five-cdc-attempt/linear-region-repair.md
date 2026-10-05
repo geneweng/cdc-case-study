@@ -214,3 +214,5 @@ python3 -B verify_short_cycle_boundary.py
 The preceding verifiers establish the general one-preparation/three-edge-path lemma and two-pentagon completion bound used in the lifting proof, as well as the earlier octagon graph structures and obstruction. All scripts use the standard library.
 
 This resolves the previous exponential-bound limitation for the stated completion task. It does not solve how to find a compatible core cover in every case, fixed-layer completion equivalence for long regions, exact unrestricted repair distances, or the general 5-CDC existence conjecture.
+
+Follow-up: [Fixed-layer completion with one eight-cycle region](eight-cycle-completion.md) allows the chosen core cover to change while keeping the quotient flow and layer fixed. With at most one eight-cycle and all other selected cycles of lengths three through seven, completion again needs at most two B pentagons per piece. This answers that first existential case without altering the fixed-boundary distance results above.
