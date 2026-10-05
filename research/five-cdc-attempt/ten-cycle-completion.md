@@ -6,6 +6,8 @@ Two independent exhaustive implementations agree on **82,397,184 normalized clos
 
 This remains conditional on a compatible core cover. It does not prove the general 5-cycle double cover conjecture. No literature novelty is claimed.
 
+Follow-up: [The escape obstruction at length eleven](eleven-cycle-obstruction.md) shows that the universal local escape lemma fails at eleven even when arbitrary unions of paired trails are allowed. The length-ten completion theorem remains valid; the general length-eleven reduction remains open.
+
 ## 1. The theorem and flow repair bound
 
 Use the conventions of the [length-nine theorem](nine-cycle-completion.md). Let X be either Blowup(S,D) or SemiBlowup(S,D), for a simple cubic base S and vertex-disjoint selected cycles D. Contract each inserted Petersen four-pole B to obtain H, then contract each whole selected region to obtain K=S/D. Let E₀ be the edges of X retained in H. Core loops and parallel edges are allowed; a loop contributes two incidences.
