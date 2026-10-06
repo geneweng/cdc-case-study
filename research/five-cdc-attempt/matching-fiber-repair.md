@@ -237,3 +237,5 @@ python3 -B research/five-cdc-attempt/verify_matching_fiber_repair.py
 The five-layer existence problem can now be expressed as finding a nowhere-zero three-bit flow with **one color class that is the intersection of two binary cycles**. A successful flow supplies four such classes; one suitable class supplies a successful flow after a fiber update. This equivalence does not prove that a suitable class occurs on every graph or in every exchange component.
 
 The new question is therefore concrete: can changes of increment always create such a matching, or otherwise reach a marked plane? The initial J₅ example shows why one increment can be permanently insufficient and how a neutral move changes the relevant matching geometry. A general argument must still guarantee that some sequence reaches the favorable case.
+
+Follow-up: [Terminal flows and two-edge color classes](matching-terminal-flow.md) give an exact max-flow/cut test parameterized by matching size, prove repair for every two-edge color class on cyclically four-edge-connected cubic cores, and track matching endpoints under actual switches. The global existence step remains open.
