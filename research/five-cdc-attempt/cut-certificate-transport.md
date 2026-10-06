@@ -241,3 +241,5 @@ python3 -B research/five-cdc-attempt/verify_cut_certificate_transport.py
 The survival, individual-escape, and charge-update theorems have direct proofs; the numerical audits check their implementations and the explicit examples. They do not establish a general bound on the number of moves to success.
 
 The next structural target is to control charge when the first coordinate changes and complement components are rearranged. A proof must allow replacement certificates and the already demonstrated neutral moves. The ability to destroy a current witness, even the entire current family for a fixed pair, supplies no termination argument on its own.
+
+Follow-up: [A matching criterion for complete coordinate-fiber repair](matching-fiber-repair.md) handles the changing-first-coordinate case by a fixed color matching. Success in that part of the fiber is equivalent to expressing the matching as the intersection of two binary cycles; this supplies structural failure certificates and reconstructs the J₅ repair directly.
