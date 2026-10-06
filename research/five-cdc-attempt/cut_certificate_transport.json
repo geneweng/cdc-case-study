@@ -1,0 +1,1438 @@
+{
+  "date": "2026-10-05",
+  "source": {
+    "file": "flow_space_components.json",
+    "sha256": "102b9649bfa1dcbe8172aaea2ee6fdaba6c7905bdb2932783bd85b86941b1035"
+  },
+  "scope": "Exact certificate survival and single-certificate escape; replacement obstructs global progress.",
+  "petersen_audit": {
+    "prescribed_first_cycle": 57,
+    "feasible_flags_mod_y_plus_F": 30,
+    "nowhere_zero_flows_with_prescribed_first": 960,
+    "completable_flows_with_prescribed_first": 0,
+    "dual_dimension_histogram": [
+      [
+        2,
+        5
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        20
+      ]
+    ],
+    "normalized_certificate_count": 95,
+    "representative_flow_legal_moves": 3390,
+    "certificate_move_checks": 10660,
+    "surviving_certificate_move_pairs": 1590,
+    "certificate_move_records_sha256": "29005937cf745710fd3b40c52bf3b64e7e211b32f82b4c3724f89f5bea72efb0",
+    "constructed_single_certificate_escapes": 190,
+    "escape_records_sha256": "90364c5794c9381628e791d182867b399096301c2a97a45bbfd4e132032700b3",
+    "fixed_component_charge_updates": 41110
+  },
+  "petersen_turnover": {
+    "initial_coordinates": {
+      "F": 57,
+      "y": 14,
+      "z": 16
+    },
+    "final_coordinates": {
+      "F": 57,
+      "y": 15,
+      "z": 16
+    },
+    "increment": 2,
+    "circuit_code": 1,
+    "circuit_edges": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "initial_certificates": [
+      {
+        "A": 528,
+        "X": 16,
+        "cut_A": 20504,
+        "cut_X": 536
+      }
+    ],
+    "final_certificates": [
+      {
+        "A": 198,
+        "X": 710,
+        "cut_A": 23557,
+        "cut_X": 3589
+      },
+      {
+        "A": 726,
+        "X": 710,
+        "cut_A": 3101,
+        "cut_X": 3589
+      }
+    ],
+    "initial_local_blockers": [
+      {
+        "edge": 9,
+        "endpoint_colors": [
+          3,
+          1
+        ],
+        "blocked_first_cycle": 57
+      }
+    ],
+    "final_local_blockers": [],
+    "initial_flag": {
+      "F": 57,
+      "y": 14,
+      "fiber_cycle_dimension": 5,
+      "complement_components": 5,
+      "completion_rank": 3,
+      "dual_dimension": 2,
+      "completions": 0,
+      "obstruction": {
+        "A": 495,
+        "X": 16,
+        "cut_A": 20504,
+        "cut_X": 536,
+        "shared_cut": 24,
+        "forced_odd_cut": 512
+      }
+    },
+    "final_flag": {
+      "F": 57,
+      "y": 15,
+      "fiber_cycle_dimension": 5,
+      "complement_components": 5,
+      "completion_rank": 2,
+      "dual_dimension": 3,
+      "completions": 0,
+      "obstruction": {
+        "A": 198,
+        "X": 710,
+        "cut_A": 23557,
+        "cut_X": 3589,
+        "shared_cut": 3077,
+        "forced_odd_cut": 512
+      }
+    },
+    "initial_normals": {
+      "flow": [
+        4,
+        6,
+        4,
+        6,
+        7,
+        3,
+        2,
+        2,
+        2,
+        1,
+        7,
+        6,
+        5,
+        4,
+        4
+      ],
+      "vertex_normals": [
+        3,
+        1,
+        1,
+        1,
+        6,
+        3,
+        1,
+        5,
+        1,
+        2
+      ],
+      "tests": [
+        {
+          "first_functional": 1,
+          "components": [
+            1023
+          ],
+          "charges": [
+            0
+          ],
+          "bad_components": [],
+          "bad_isolated_edges": []
+        },
+        {
+          "first_functional": 2,
+          "components": [
+            3,
+            12,
+            720,
+            288
+          ],
+          "charges": [
+            2,
+            0,
+            0,
+            2
+          ],
+          "bad_components": [
+            3,
+            288
+          ],
+          "bad_isolated_edges": [
+            0,
+            13
+          ]
+        },
+        {
+          "first_functional": 3,
+          "components": [
+            435,
+            12,
+            576
+          ],
+          "charges": [
+            3,
+            0,
+            3
+          ],
+          "bad_components": [
+            435,
+            576
+          ],
+          "bad_isolated_edges": [
+            14
+          ]
+        },
+        {
+          "first_functional": 4,
+          "components": [
+            33,
+            66,
+            132,
+            264,
+            528
+          ],
+          "charges": [
+            0,
+            0,
+            4,
+            0,
+            4
+          ],
+          "bad_components": [
+            132,
+            528
+          ],
+          "bad_isolated_edges": [
+            7,
+            9
+          ]
+        },
+        {
+          "first_functional": 5,
+          "components": [
+            17,
+            66,
+            676,
+            264
+          ],
+          "charges": [
+            5,
+            0,
+            5,
+            0
+          ],
+          "bad_components": [
+            17,
+            676
+          ],
+          "bad_isolated_edges": [
+            4
+          ]
+        },
+        {
+          "first_functional": 6,
+          "components": [
+            537,
+            6,
+            160,
+            320
+          ],
+          "charges": [
+            6,
+            0,
+            6,
+            0
+          ],
+          "bad_components": [
+            537,
+            160
+          ],
+          "bad_isolated_edges": [
+            10
+          ]
+        },
+        {
+          "first_functional": 7,
+          "components": [
+            33,
+            6,
+            24,
+            320,
+            640
+          ],
+          "charges": [
+            0,
+            0,
+            7,
+            0,
+            7
+          ],
+          "bad_components": [
+            24,
+            640
+          ],
+          "bad_isolated_edges": [
+            3,
+            12
+          ]
+        }
+      ],
+      "successful_firsts": [
+        1
+      ]
+    },
+    "final_normals": {
+      "flow": [
+        6,
+        4,
+        6,
+        4,
+        5,
+        3,
+        2,
+        2,
+        2,
+        1,
+        7,
+        6,
+        5,
+        4,
+        4
+      ],
+      "vertex_normals": [
+        7,
+        1,
+        1,
+        1,
+        2,
+        3,
+        1,
+        5,
+        1,
+        2
+      ],
+      "tests": [
+        {
+          "first_functional": 1,
+          "components": [
+            1023
+          ],
+          "charges": [
+            0
+          ],
+          "bad_components": [],
+          "bad_isolated_edges": []
+        },
+        {
+          "first_functional": 2,
+          "components": [
+            729,
+            6,
+            288
+          ],
+          "charges": [
+            2,
+            0,
+            2
+          ],
+          "bad_components": [
+            729,
+            288
+          ],
+          "bad_isolated_edges": [
+            13
+          ]
+        },
+        {
+          "first_functional": 3,
+          "components": [
+            417,
+            6,
+            24,
+            576
+          ],
+          "charges": [
+            0,
+            0,
+            3,
+            3
+          ],
+          "bad_components": [
+            24,
+            576
+          ],
+          "bad_isolated_edges": [
+            3,
+            14
+          ]
+        },
+        {
+          "first_functional": 4,
+          "components": [
+            33,
+            66,
+            132,
+            264,
+            528
+          ],
+          "charges": [
+            4,
+            0,
+            4,
+            0,
+            0
+          ],
+          "bad_components": [
+            33,
+            132
+          ],
+          "bad_isolated_edges": [
+            5,
+            7
+          ]
+        },
+        {
+          "first_functional": 5,
+          "components": [
+            17,
+            66,
+            676,
+            264
+          ],
+          "charges": [
+            5,
+            0,
+            5,
+            0
+          ],
+          "bad_components": [
+            17,
+            676
+          ],
+          "bad_isolated_edges": [
+            4
+          ]
+        },
+        {
+          "first_functional": 6,
+          "components": [
+            3,
+            12,
+            528,
+            160,
+            320
+          ],
+          "charges": [
+            6,
+            0,
+            0,
+            6,
+            0
+          ],
+          "bad_components": [
+            3,
+            160
+          ],
+          "bad_isolated_edges": [
+            0,
+            10
+          ]
+        },
+        {
+          "first_functional": 7,
+          "components": [
+            51,
+            12,
+            320,
+            640
+          ],
+          "charges": [
+            7,
+            0,
+            0,
+            7
+          ],
+          "bad_components": [
+            51,
+            640
+          ],
+          "bad_isolated_edges": [
+            12
+          ]
+        }
+      ],
+      "successful_firsts": [
+        1
+      ]
+    },
+    "cover_using_another_first_coordinate": {
+      "flow": [
+        6,
+        4,
+        6,
+        4,
+        5,
+        3,
+        2,
+        2,
+        2,
+        1,
+        7,
+        6,
+        5,
+        4,
+        4
+      ],
+      "coordinate_functionals": [
+        4,
+        2,
+        1
+      ],
+      "transformed_flow": [
+        3,
+        1,
+        3,
+        1,
+        5,
+        6,
+        2,
+        2,
+        2,
+        4,
+        7,
+        3,
+        5,
+        1,
+        1
+      ],
+      "fourth_coordinate_mask": 15090,
+      "cover_pairs": [
+        6,
+        12,
+        6,
+        3,
+        18,
+        20,
+        10,
+        10,
+        5,
+        17,
+        24,
+        9,
+        18,
+        12,
+        3
+      ]
+    }
+  },
+  "flower_path": [
+    {
+      "flow": [
+        4,
+        2,
+        6,
+        4,
+        1,
+        5,
+        5,
+        7,
+        2,
+        7,
+        4,
+        3,
+        5,
+        6,
+        3,
+        1,
+        4,
+        5,
+        1,
+        2,
+        3,
+        6,
+        1,
+        7,
+        3,
+        7,
+        2,
+        6,
+        1,
+        4
+      ],
+      "vertex_normals": [
+        1,
+        2,
+        5,
+        3,
+        7,
+        2,
+        4,
+        6,
+        3,
+        1,
+        2,
+        5,
+        6,
+        2,
+        4,
+        1,
+        7,
+        4,
+        6,
+        3
+      ],
+      "tests": [
+        {
+          "first_functional": 1,
+          "components": [
+            6401,
+            393730,
+            16388,
+            8200,
+            32880,
+            65664,
+            525312
+          ],
+          "charges": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "bad_components": [
+            6401,
+            393730,
+            16388,
+            8200,
+            65664,
+            525312
+          ],
+          "bad_isolated_edges": [
+            8,
+            10,
+            21,
+            29
+          ]
+        },
+        {
+          "first_functional": 2,
+          "components": [
+            257,
+            111146,
+            787460,
+            2064,
+            16448,
+            131200
+          ],
+          "charges": [
+            2,
+            0,
+            2,
+            2,
+            0,
+            2
+          ],
+          "bad_components": [
+            257,
+            787460,
+            2064,
+            131200
+          ],
+          "bad_isolated_edges": [
+            0,
+            12,
+            22
+          ]
+        },
+        {
+          "first_functional": 3,
+          "components": [
+            327937,
+            514,
+            4100,
+            26632,
+            131088,
+            32800,
+            525504
+          ],
+          "charges": [
+            3,
+            3,
+            3,
+            0,
+            3,
+            3,
+            3
+          ],
+          "bad_components": [
+            327937,
+            514,
+            4100,
+            131088,
+            32800,
+            525504
+          ],
+          "bad_isolated_edges": [
+            3,
+            7,
+            14,
+            16
+          ]
+        },
+        {
+          "first_functional": 4,
+          "components": [
+            2049,
+            4098,
+            573516,
+            131728,
+            8224,
+            65792,
+            263168
+          ],
+          "charges": [
+            4,
+            4,
+            4,
+            4,
+            0,
+            4,
+            4
+          ],
+          "bad_components": [
+            2049,
+            4098,
+            573516,
+            131728,
+            65792,
+            263168
+          ],
+          "bad_isolated_edges": [
+            1,
+            4,
+            24,
+            28
+          ]
+        },
+        {
+          "first_functional": 5,
+          "components": [
+            2073,
+            8194,
+            21508,
+            65568,
+            32832,
+            524416,
+            262400,
+            131584
+          ],
+          "charges": [
+            0,
+            0,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "bad_components": [
+            21508,
+            65568,
+            32832,
+            524416,
+            262400,
+            131584
+          ],
+          "bad_isolated_edges": [
+            17,
+            19,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "first_functional": 6,
+          "components": [
+            4103,
+            2056,
+            32784,
+            8224,
+            16448,
+            721024,
+            263936
+          ],
+          "charges": [
+            0,
+            6,
+            6,
+            0,
+            0,
+            6,
+            6
+          ],
+          "bad_components": [
+            2056,
+            32784,
+            721024,
+            263936
+          ],
+          "bad_isolated_edges": [
+            9,
+            13
+          ]
+        },
+        {
+          "first_functional": 7,
+          "components": [
+            4097,
+            8194,
+            1028,
+            16392,
+            165904,
+            65952,
+            524352,
+            262656
+          ],
+          "charges": [
+            7,
+            0,
+            7,
+            7,
+            7,
+            0,
+            7,
+            7
+          ],
+          "bad_components": [
+            4097,
+            1028,
+            16392,
+            165904,
+            524352,
+            262656
+          ],
+          "bad_isolated_edges": [
+            2,
+            6,
+            11,
+            20,
+            27
+          ]
+        }
+      ],
+      "successful_firsts": []
+    },
+    {
+      "flow": [
+        4,
+        6,
+        2,
+        4,
+        1,
+        5,
+        5,
+        3,
+        6,
+        3,
+        4,
+        7,
+        5,
+        6,
+        3,
+        1,
+        4,
+        5,
+        1,
+        2,
+        3,
+        6,
+        1,
+        7,
+        3,
+        7,
+        2,
+        6,
+        1,
+        4
+      ],
+      "vertex_normals": [
+        1,
+        2,
+        7,
+        3,
+        7,
+        2,
+        4,
+        6,
+        3,
+        1,
+        2,
+        7,
+        4,
+        2,
+        6,
+        1,
+        7,
+        4,
+        6,
+        3
+      ],
+      "tests": [
+        {
+          "first_functional": 1,
+          "components": [
+            6401,
+            393730,
+            16388,
+            8200,
+            32880,
+            65664,
+            525312
+          ],
+          "charges": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "bad_components": [
+            6401,
+            393730,
+            16388,
+            8200,
+            65664,
+            525312
+          ],
+          "bad_isolated_edges": [
+            8,
+            10,
+            21,
+            29
+          ]
+        },
+        {
+          "first_functional": 2,
+          "components": [
+            257,
+            111146,
+            787460,
+            2064,
+            16448,
+            131200
+          ],
+          "charges": [
+            2,
+            2,
+            0,
+            0,
+            2,
+            2
+          ],
+          "bad_components": [
+            257,
+            111146,
+            16448,
+            131200
+          ],
+          "bad_isolated_edges": [
+            0,
+            18,
+            22
+          ]
+        },
+        {
+          "first_functional": 3,
+          "components": [
+            327937,
+            514,
+            4100,
+            26632,
+            131088,
+            32800,
+            525504
+          ],
+          "charges": [
+            3,
+            3,
+            3,
+            0,
+            3,
+            3,
+            3
+          ],
+          "bad_components": [
+            327937,
+            514,
+            4100,
+            131088,
+            32800,
+            525504
+          ],
+          "bad_isolated_edges": [
+            3,
+            7,
+            14,
+            16
+          ]
+        },
+        {
+          "first_functional": 4,
+          "components": [
+            4103,
+            2056,
+            131728,
+            8224,
+            573504,
+            65792,
+            263168
+          ],
+          "charges": [
+            0,
+            4,
+            4,
+            0,
+            0,
+            4,
+            4
+          ],
+          "bad_components": [
+            2056,
+            131728,
+            65792,
+            263168
+          ],
+          "bad_isolated_edges": [
+            9,
+            24,
+            28
+          ]
+        },
+        {
+          "first_functional": 5,
+          "components": [
+            4097,
+            8194,
+            1028,
+            16392,
+            2064,
+            65568,
+            32832,
+            524416,
+            262400,
+            131584
+          ],
+          "charges": [
+            5,
+            0,
+            5,
+            5,
+            0,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "bad_components": [
+            4097,
+            1028,
+            16392,
+            65568,
+            32832,
+            524416,
+            262400,
+            131584
+          ],
+          "bad_isolated_edges": [
+            2,
+            6,
+            11,
+            17,
+            19,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "first_functional": 6,
+          "components": [
+            2049,
+            4098,
+            16460,
+            32784,
+            8224,
+            721024,
+            263936
+          ],
+          "charges": [
+            6,
+            6,
+            6,
+            6,
+            0,
+            6,
+            6
+          ],
+          "bad_components": [
+            2049,
+            4098,
+            16460,
+            32784,
+            721024,
+            263936
+          ],
+          "bad_isolated_edges": [
+            1,
+            4,
+            13
+          ]
+        },
+        {
+          "first_functional": 7,
+          "components": [
+            165913,
+            8194,
+            21508,
+            65952,
+            524352,
+            262656
+          ],
+          "charges": [
+            7,
+            0,
+            7,
+            0,
+            7,
+            7
+          ],
+          "bad_components": [
+            165913,
+            21508,
+            524352,
+            262656
+          ],
+          "bad_isolated_edges": [
+            20,
+            27
+          ]
+        }
+      ],
+      "successful_firsts": []
+    },
+    {
+      "flow": [
+        4,
+        6,
+        2,
+        6,
+        3,
+        5,
+        5,
+        1,
+        4,
+        3,
+        4,
+        7,
+        5,
+        6,
+        3,
+        1,
+        4,
+        5,
+        3,
+        2,
+        1,
+        4,
+        1,
+        5,
+        1,
+        5,
+        2,
+        4,
+        1,
+        4
+      ],
+      "vertex_normals": [
+        1,
+        7,
+        2,
+        3,
+        7,
+        2,
+        4,
+        2,
+        2,
+        1,
+        2,
+        7,
+        4,
+        2,
+        3,
+        1,
+        2,
+        4,
+        2,
+        2
+      ],
+      "tests": [
+        {
+          "first_functional": 1,
+          "components": [
+            6401,
+            393730,
+            16388,
+            8200,
+            32880,
+            65664,
+            525312
+          ],
+          "charges": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "bad_components": [
+            16388,
+            8200
+          ],
+          "bad_isolated_edges": [
+            8,
+            10
+          ]
+        },
+        {
+          "first_functional": 2,
+          "components": [
+            1046511,
+            2064
+          ],
+          "charges": [
+            0,
+            0
+          ],
+          "bad_components": [],
+          "bad_isolated_edges": []
+        },
+        {
+          "first_functional": 3,
+          "components": [
+            257,
+            4098,
+            26700,
+            131088,
+            32800,
+            65664,
+            262656,
+            525312
+          ],
+          "charges": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            0,
+            3,
+            0
+          ],
+          "bad_components": [
+            257,
+            4098,
+            26700,
+            131088,
+            32800,
+            262656
+          ],
+          "bad_isolated_edges": [
+            0,
+            4,
+            14,
+            16,
+            27
+          ]
+        },
+        {
+          "first_functional": 4,
+          "components": [
+            4103,
+            2056,
+            131728,
+            8224,
+            573504,
+            65792,
+            263168
+          ],
+          "charges": [
+            0,
+            4,
+            0,
+            0,
+            4,
+            0,
+            0
+          ],
+          "bad_components": [
+            2056,
+            573504
+          ],
+          "bad_isolated_edges": [
+            9
+          ]
+        },
+        {
+          "first_functional": 5,
+          "components": [
+            4097,
+            8194,
+            1028,
+            16392,
+            2064,
+            65568,
+            32832,
+            524416,
+            262400,
+            131584
+          ],
+          "charges": [
+            5,
+            5,
+            0,
+            0,
+            0,
+            0,
+            5,
+            0,
+            0,
+            5
+          ],
+          "bad_components": [
+            4097,
+            8194,
+            32832,
+            131584
+          ],
+          "bad_isolated_edges": [
+            2,
+            5,
+            19,
+            26
+          ]
+        },
+        {
+          "first_functional": 6,
+          "components": [
+            2049,
+            514,
+            4100,
+            16392,
+            32784,
+            8224,
+            524352,
+            131200,
+            65792,
+            263168
+          ],
+          "charges": [
+            6,
+            6,
+            6,
+            0,
+            6,
+            0,
+            6,
+            6,
+            0,
+            0
+          ],
+          "bad_components": [
+            2049,
+            514,
+            4100,
+            32784,
+            524352,
+            131200
+          ],
+          "bad_isolated_edges": [
+            1,
+            3,
+            7,
+            13,
+            20,
+            22
+          ]
+        },
+        {
+          "first_functional": 7,
+          "components": [
+            165913,
+            12802,
+            1028,
+            65568,
+            16448,
+            524416,
+            262400
+          ],
+          "charges": [
+            7,
+            0,
+            0,
+            0,
+            7,
+            0,
+            0
+          ],
+          "bad_components": [
+            165913,
+            16448
+          ],
+          "bad_isolated_edges": [
+            18
+          ]
+        }
+      ],
+      "successful_firsts": [
+        2
+      ]
+    }
+  ],
+  "flower_move_audit": {
+    "initial_legal_moves": 610,
+    "fixed_component_charge_updates": 13210
+  }
+}
