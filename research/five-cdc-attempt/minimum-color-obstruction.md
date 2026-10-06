@@ -8,6 +8,8 @@ Nevertheless, a seven-edge circuit switch followed by a 77-edge circuit switch g
 
 This refutes the proposed sufficient condition that an arbitrary minimum-size color class must be the intersection of two binary cycles. It does not refute the five-cycle double cover conjecture, a suitable secondary choice among minimizers, or repair by neutral moves. The graph contains ten Petersen four-poles and belongs to a family already covered by the earlier conditional lifting results; it is not an example without those pieces.
 
+**Follow-up (6 October 2026):** [Global minimum failure without Petersen four-poles](petersen-free-minimum-obstruction.md) replaces the blocks with flower four-poles. The resulting 214-vertex graph has girth six and no Petersen four-pole, yet retains minimum six, seven blocked fibers, and exact two-switch repair. This closes the specific Petersen-free possibility left open here. Cyclically five-edge-connected graphs and secondary choices among minimizers remain unresolved.
+
 ## 1. The optimization proposal
 
 For a nowhere-zero F₂³-flow f, write Mₐ=f⁻¹(a), and define
