@@ -204,3 +204,5 @@ python3 -B research/five-cdc-attempt/verify_cyclic_five_minimum_obstruction.py
 ```
 
 The JSON certificate has 48,978 bytes and SHA-256 `e8ee46bb12c877499e3b631a3cac412f679b562cce48a9f4484a7e23197e2dd0`. Regeneration is byte-identical. Discovery used SAT and terminal-flow searches, but the saved proof and verification require neither solver. The work makes no smallest-order or literature-novelty claim.
+
+Follow-up: [An odd-component secondary objective succeeds on the 130-vertex graph](minimum-matching-secondary.md). A complete local intersection relation classifies every one-edge-per-region matching: 261,356 are suitable and the other 26 have forced odd singleton components. Consequently every minimizer of class size followed by odd unmatched-component count is suitable on this graph. The local transfer lemma applies to other assemblies of the same five-pole; the general minimization and reachability questions remain open.
