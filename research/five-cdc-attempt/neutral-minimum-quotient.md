@@ -8,6 +8,8 @@ For the [138-vertex counterexample](secondary-minimum-obstruction.md), the class
 
 There is also a much shorter escape than the previously saved forty-edge move. A **six-edge circuit**, shortest possible for a neutral change of this class, preserves the entire color-size vector and reaches a suitable matching. One further 55-edge switch constructs a five-layer cover. The general existence of neutral escape remains unproved.
 
+**Follow-up:** [Neutral escape from an entire fixed-projection family](prepared-minimum-exchange.md) extends the classification to all 2⁶⁷ lifts of this projection. The same six-edge circuit works for every lift with an adaptive increment, and an exact prepared-exchange theorem describes all 37 potential replacement matchings.
+
 ## 1. Contract the edges with zero switching cost
 
 Let f be a nowhere-zero F₂³-flow on a connected loopless cubic graph G. Fix distinct nonzero colors a,b and write
