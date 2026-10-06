@@ -8,6 +8,8 @@ The graph has no Petersen four-pole: every such four-pole contains a pentagon, w
 
 This removes the Petersen-piece qualification from the [previous minimum-color obstruction](minimum-color-obstruction.md). It does not establish a failure on cyclically five-edge-connected graphs: the new graph still contains ten larger four-poles behind cyclic four-edge cuts. Favorable minimizers, secondary optimization, and a general neutral-repair theorem remain possible. The five-cycle double cover conjecture remains unproved by this work.
 
+**Follow-up (6 October 2026):** [Global minimum failure with cyclic edge connectivity five](cyclic-five-minimum-obstruction.md) supplies a 130-vertex example with global minimum three, all seven initial fibers blocked, and exact two-switch repair. Its exhaustive four-cut audit closes the stronger-connectivity possibility left open in this checkpoint. Favorable minimizers and a general neutral-repair argument remain unresolved.
+
 ## 1. The precise statement
 
 For a nowhere-zero three-bit flow f, put

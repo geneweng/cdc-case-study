@@ -121,6 +121,8 @@ The certificate supplies a nowhere-zero flow having exactly these three edges of
 
 Each contains three of the matching endpoints {0,1,2,3,4,5}. Both fail the required parity, proving that M is unsuitable. Independently, all ten balanced terminal choices have deficient cuts. Other color matchings of this flow do permit repair; the example only limits the cardinality guarantee for a specified class.
 
+**Later strengthening (6 October 2026):** The [cyclic-five minimum obstruction](cyclic-five-minimum-obstruction.md) has a globally minimum three-edge class that is unsuitable, with all seven incident fibers blocked. The graph has cyclic edge connectivity five and no Petersen four-pole. Thus even global minimality and that stronger connectivity cannot extend the two-edge guarantee to size three.
+
 ## 4. Why the connectivity hypothesis matters
 
 Two explicit simple cubic examples have a nowhere-zero three-bit flow with a two-edge color class that fails (1). Both H graphs are connected and bridgeless. These are counterexamples to repairing that specified matching, not to the five-cycle double cover conjecture or to all possible fiber repairs.
