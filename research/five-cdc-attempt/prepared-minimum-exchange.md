@@ -8,6 +8,8 @@ The complete classification is stronger than this one escape: each flow has exac
 
 Two general deductions support the calculation: an exact test for exchanges after preparation within a coordinate fiber, and a bijection between whole fibers supplied by a particular kind of single-edge exchange. Neither proves that an arbitrary obstructed minimum admits an escape. The five-cycle double cover conjecture remains unproved by this work.
 
+**Follow-up:** [Every globally minimizing flow escapes on the 138-vertex graph](short-circuit-minimum-escape.md) removes the fixed-projection restriction. A complete matching census finds only one unsuitable candidate, and a general short-circuit lemma forces a neutral replacement of it in every projection.
+
 ## 1. What preparation preserves
 
 Let f be a nowhere-zero F₂³-flow on a connected loopless cubic graph. Fix distinct nonzero values a,b, and write c=a+b. Set
